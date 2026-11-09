@@ -34,7 +34,11 @@
     "tab_emojis": "絵文字",
     "placeholder_emojis": "名前やキーワードで絵文字を検索...",
     "search_run": "{provider} で検索",
-    "search_hint": "入力して {provider} で検索"
+    "search_hint": "入力して {provider} で検索",
+    "command_run": "コマンドを実行: {cmd}",
+    "command_hint": "実行するコマンドを入力",
+    "calc_result": "計算結果（Enterでコピー）",
+    "no_emojis_found": "絵文字が見つかりません"
   },
   "calendar": {
     "loading": "読み込み中...",
@@ -70,12 +74,14 @@
       "locked": "ロック中",
       "access_denied": "アクセスが拒否されました",
       "authenticating": "認証中...",
-      "enter_pin": "PINを入力"
+      "enter_pin": "PINを入力",
+      "too_many_attempts": "試行回数が多すぎます"
     },
     "fingerprint": {
       "ready": "センサーに触れてください",
       "not_recognized": "指紋を認識できませんでした",
-      "recognized": "指紋を認識しました"
+      "recognized": "指紋を認識しました",
+      "blocked": "指紋認証は無効です"
     },
     "power": {
       "suspend": "サスペンド",
@@ -223,7 +229,8 @@
       },
       "weather": {
         "fallback_summary": "天気予報",
-        "fallback_body": "詳細データがありません。"
+        "fallback_body": "詳細データがありません。",
+        "title": "天気"
       },
       "screenshot": {
         "badge": "スクリーンショット",
@@ -466,7 +473,8 @@
       "blue": "青",
       "purple": "紫",
       "pink": "ピンク",
-      "monochrome": "モノクロ"
+      "monochrome": "モノクロ",
+      "history": "履歴"
     }
   },
   "weather": {
@@ -595,17 +603,21 @@
       "stretched": "Stretched",
       "lumen": "ルーメン",
       "lyrics": "歌詞",
-      "simpleLyrics": "シンプル歌詞"
+      "simpleLyrics": "シンプル歌詞",
+      "circle": "円"
     },
     "presets": {
       "minimal": {
-        "name": "ミニマル"
+        "name": "ミニマル",
+        "desc": "ミニマルなデジタル時計とコンパクトな天気を備えた、すっきりした控えめなレイアウト。"
       },
       "media_station": {
-        "name": "メディアステーション"
+        "name": "メディアステーション",
+        "desc": "中央のオーディオビジュアライザーと円形ミュージックプレーヤーを備えた専用メディアレイアウト。"
       },
       "dashboard": {
-        "name": "ダッシュボード"
+        "name": "ダッシュボード",
+        "desc": "デジタル時計、ハードウェア使用率、バッテリー残量を備えた充実のシステムモニター。"
       }
     },
     "github": {
@@ -622,7 +634,11 @@
     "settings": {
       "lyricsLines": "行数",
       "lyricsAlignment": "配置",
-      "textContent": "テキスト"
+      "textContent": "テキスト",
+      "lineThickness": "太さ",
+      "showNoLyrics": "「歌詞なし」のテキストを表示",
+      "usageStyle": "スタイル",
+      "visualizerStyle": "ビジュアライザーのスタイル"
     },
     "align": {
       "left": "左揃え",
@@ -634,6 +650,10 @@
     },
     "text": {
       "placeholder": "テキストを入力"
+    },
+    "style": {
+      "circle": "円",
+      "wave": "波"
     }
   },
   "cli": {
@@ -819,7 +839,12 @@
       "installing_title": "システムパッケージと依存関係をインストール中...",
       "installing_pkg": "{pkg} をインストール中...",
       "install_ok": "{pkg} のインストールに成功しました",
-      "install_failed": "{pkg} のインストールに失敗しました"
+      "install_failed": "{pkg} のインストールに失敗しました",
+      "enabling_copr": "COPR リポジトリ {repo} を有効にしています...",
+      "enabling_repo": "リポジトリ {repo} を有効にしています...",
+      "enabling_terra": "Terra リポジトリを有効にしています...",
+      "quickshell_outdated": "Quickshell {version} は古すぎます。{minimum} 以降が必要です。アップグレードしています...",
+      "quickshell_still_old": "Quickshell は依然として {minimum} より古いままです。手動で更新してください。そうしないと設定が開きません。"
     },
     "deploy": {
       "configuring_sddm": "SDDM ディスプレイマネージャーを設定中...",
@@ -829,6 +854,42 @@
       "sddm_no_xorg": "Xorg が見つからないため、SDDM には {compositor} を使用します。",
       "sddm_no_backend": "/usr/local/bin、/usr/bin、/bin のいずれにも Xorg と、ログイン画面用に対応する Wayland コンポジター（kwin_wayland/weston）が見つかりませんでした。",
       "sddm_skipped": "SDDM のセットアップをスキップしました。使用可能なディスプレイサーバーまたはログイン用コンポジターが見つかりません。現在のディスプレイマネージャーは変更されません。"
+    },
+    "audio": {
+      "building": "このシステム用のビルド済みオーディオエンジンがないため、ソースからビルドしています...",
+      "checksum_failed": "オーディオエンジンのダウンロードがチェックサム検証に失敗したため、スキップします。",
+      "download_failed": "Serpantinum オーディオエンジンをダウンロードできなかったため、スキップします。後で github.com/ilyamiro/serpantinum-audio からインストールできます。",
+      "install_failed": "Serpantinum オーディオエンジンのインストールに失敗しました。github.com/ilyamiro/serpantinum-audio からインストールするまでイコライザーは動作しません。",
+      "installed": "Serpantinum オーディオエンジン {version} をインストールしました",
+      "installing": "Serpantinum オーディオエンジンをインストールしています...",
+      "up_to_date": "-> Serpantinum オーディオエンジン {version} は既にインストールされています。"
+    },
+    "core": {
+      "checksum_failed": "コアサービスのダウンロードがチェックサム検証に失敗したため、スキップします。",
+      "download_failed": "Serpantinum コアサービスをダウンロードできなかったため、スキップします。後で github.com/ilyamiro/serpantinum-core からインストールできます。",
+      "install_failed": "Serpantinum コアサービスのインストールに失敗しました。github.com/ilyamiro/serpantinum-core からインストールするまで、システム使用状況、キーボードロック表示、クリップボードは動作しません。",
+      "installed": "Serpantinum コアサービス {version} をインストールしました",
+      "installing": "Serpantinum コアサービスをインストールしています...",
+      "unsupported_arch": "ビルド済みのコアサービスパッケージは x86_64 のみ提供されているため、スキップします。",
+      "up_to_date": "-> Serpantinum コアサービス {version} は既にインストールされています。"
+    },
+    "gamma": {
+      "checksum_failed": "ブルーライトフィルターのダウンロードがチェックサム検証に失敗したため、スキップします。",
+      "download_failed": "Serpantinum ブルーライトフィルターをダウンロードできなかったため、スキップします。後で github.com/ilyamiro/serpantinum-gamma からインストールできます。",
+      "install_failed": "Serpantinum ブルーライトフィルターのインストールに失敗しました。github.com/ilyamiro/serpantinum-gamma からインストールするまで動作しません。",
+      "installed": "Serpantinum ブルーライトフィルター {version} をインストールしました",
+      "installing": "Serpantinum ブルーライトフィルターをインストールしています...",
+      "unsupported_arch": "ビルド済みのブルーライトフィルターパッケージは x86_64 のみ提供されているため、スキップします。",
+      "up_to_date": "-> Serpantinum ブルーライトフィルター {version} は既にインストールされています。"
+    },
+    "ski": {
+      "checksum_failed": "Ski のダウンロードがチェックサム検証に失敗したため、スキップします。",
+      "download_failed": "Ski をダウンロードできなかったため、スキップします。後で github.com/ilyamiro/Ski からインストールできます。",
+      "install_failed": "Ski のインストールに失敗しました",
+      "installed": "Ski {version} をインストールしました",
+      "installing": "ファイルマネージャー Ski をインストールしています...",
+      "unsupported_arch": "ビルド済みの Ski パッケージは x86_64 のみ提供されているため、スキップします。",
+      "up_to_date": "-> Ski {version} は既にインストールされています。"
     }
   },
   "translator": {
@@ -852,7 +913,10 @@
     "keep_clipboard_sub": "無効にすると、貼り付け後に元のクリップボードの内容が復元されます"
   },
   "datetime": {
-    "full_date": "MMMM d日 dddd"
+    "full_date": "MMMM d日 dddd",
+    "just_now": "たった今",
+    "minutes_ago": "{mins}分前",
+    "yesterday": "昨日 {time}"
   },
   "guide": {
     "about": {
@@ -875,7 +939,10 @@
         "shell": "シェル",
         "uptime": "稼働時間",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "オリジナル開発者: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "変更履歴"
     },
     "tabs": {
       "welcome": "ようこそ",
@@ -904,7 +971,8 @@
       "theme_wallpapers": "壁紙",
       "general_main": "一般",
       "general_presets": "プリセット",
-      "desktop": "デスクトップ"
+      "desktop": "デスクトップ",
+      "autostart": "自動起動"
     },
     "launcher": {
       "position": {
@@ -936,6 +1004,10 @@
       "search": {
         "title": "ウェブ検索プロバイダー",
         "desc": "? で始まるクエリに使用する検索エンジン"
+      },
+      "sections": {
+        "layout": "レイアウト",
+        "search": "検索"
       }
     },
     "notifications": {
@@ -1049,7 +1121,10 @@
     "welcome": {
       "about": "概要",
       "hold_for_tutorial": "長押しでチュートリアル開始",
-      "start_tutorial": "チュートリアルを開始"
+      "start_tutorial": "チュートリアルを開始",
+      "by_author": "作者: {author}",
+      "original_dev": "オリジナル開発者: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "{section} チュートリアル",
@@ -1130,6 +1205,12 @@
           "apply": "適用",
           "cancel": "キャンセル"
         }
+      },
+      "sections": {
+        "profile": "プロフィール",
+        "sound": "サウンド",
+        "behavior": "動作",
+        "location": "位置情報と天気"
       }
     },
     "display": {
@@ -1182,8 +1263,12 @@
         },
         "mode_canvas": "無限デスクトップ",
         "mode_tiled": "タイル",
-        "mode_title": "現在のモード",
-        "mode_hint": "ウィジェットはタイル表示モードと無限デスクトップモードで別々に保存されます。Super+G で 2 つのモードを切り替えられます。"
+        "delete_all": {
+          "title": "すべてのウィジェットを削除",
+          "desc": "すべてのワークスペースと画面で、タイル式と無限デスクトップの両方からすべてのウィジェットを削除します",
+          "button": "すべて削除",
+          "confirm": "もう一度クリックして確定"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -1218,8 +1303,7 @@
       "sections": {
         "lockscreen": "ロック画面",
         "screens": "ディスプレイ",
-        "redactor": "エディター",
-        "mode": "モード"
+        "redactor": "エディター"
       }
     },
     "bar": {
@@ -1232,7 +1316,10 @@
               "pills": "ピル",
               "numbers": "数字",
               "pacman": "パックマン"
-            }
+            },
+            "pills": "ミニマルなピル型インジケーター",
+            "numbers": "番号付きインデックス",
+            "pacman": "アニメーションするアーケード風ドット"
           },
           "name": "ワークスペース"
         },
@@ -1252,11 +1339,17 @@
               "classic": "クラシック",
               "material": "マテリアル",
               "badge": "ドットマトリクス"
-            }
+            },
+            "classic": "すっきり積み重ねた時刻と日付",
+            "material": "斜めの太字アクセント数字",
+            "badge": "カプセル型の分割カード"
           }
         },
         "info": "録画/タイマー",
-        "weather": "天気"
+        "weather": "天気",
+        "notifications": "通知",
+        "usage": "システム使用率",
+        "clock": "時計"
       },
       "position": {
         "title": "バーの位置",
@@ -1286,6 +1379,14 @@
         "style": {
           "title": "スタイル",
           "desc": "ワークスペースインジケーターの視覚スタイルを選択します"
+        },
+        "per_monitor": {
+          "title": "モニターごとの番号付け",
+          "desc": "Hyprland のみ。各モニターでワークスペースを 1 から番号付けし、モニターごとのワークスペース数を設定します",
+          "unavailable": "Hyprland でのみ利用できます"
+        },
+        "monitor_count": {
+          "desc": "このモニターが持つワークスペース"
         }
       },
       "style": {
@@ -1387,11 +1488,13 @@
           "name": {
             "classic": "クラシック",
             "minimal": "ミニマル",
-            "text": "テキスト"
+            "text": "テキスト",
+            "button": "ボタン"
           },
           "classic": "グラデーション波形塗りのピル型",
           "minimal": "iOS/Android風カプセル型",
-          "text": "背景なしのシンプルなテキストとアイコン"
+          "text": "背景なしのシンプルなテキストとアイコン",
+          "button": "背景付きのインタラクティブなボタン型ピル"
         }
       },
       "wifi": {
@@ -1529,6 +1632,10 @@
         "behavior": "動作",
         "layout": "レイアウト",
         "modules": "モジュール"
+      },
+      "height": {
+        "title": "バーの高さ",
+        "desc": "バーの高さをパーセンテージで設定します"
       }
     },
     "theme": {
@@ -1660,7 +1767,8 @@
         "empty": "テーマ適用中のアプリはまだありません。リストから追加してください"
       },
       "sections": {
-        "presets": "プリセット"
+        "presets": "プリセット",
+        "appearance": "外観"
       }
     },
     "file_picker": {
@@ -1729,7 +1837,8 @@
         "pink": "ピンク",
         "flamingo": "フラミンゴ",
         "rosewater": "ローズウォーター"
-      }
+      },
+      "edit_title": "カスタムテーマを編集"
     },
     "wellbeing": {
       "desktop": "デスクトップ",
@@ -1782,7 +1891,8 @@
         "picker_search": "アプリを検索...",
         "picker_empty": "一致するアプリはありません",
         "picker_apply": "適用",
-        "picker_cancel": "キャンセル"
+        "picker_cancel": "キャンセル",
+        "add_app": "アプリを追加"
       },
       "notify": {
         "title": "デジタルウェルビーイング",
@@ -1792,7 +1902,19 @@
       "limit_overlay": {
         "title": "1日の制限に達しました",
         "hold": "長押しして続ける"
-      }
+      },
+      "day": "日",
+      "week": "週",
+      "screen_time": "スクリーンタイム",
+      "less_than_prev": "前日より {time} 少ない",
+      "more_than_prev": "前日より {time} 多い",
+      "same_as_prev": "前日と同じ",
+      "limit_progress": "1 日の上限 {limit} のうち {used}",
+      "limit_reached": "1 日の上限 {limit} に達しました",
+      "peak_hour": "ピーク時間",
+      "week_total": "週の合計",
+      "less": "少ない",
+      "more": "多い"
     },
     "update_available": "アップデートが利用可能です",
     "osd": {
@@ -1861,7 +1983,8 @@
       },
       "timeout": {
         "title": "自動非表示の遅延時間",
-        "desc": "ポインターが離れてから非表示になるまでの時間"
+        "desc": "ポインターが離れてから非表示になるまでの時間",
+        "required": "先に自動非表示をオンにしてください"
       },
       "floating": {
         "title": "フローティングドック",
@@ -1891,7 +2014,8 @@
       },
       "scrolling": {
         "title": "要素のスクロールを有効化",
-        "desc": "表示要素数を制限し、マウスホイールやタッチパッドでのスクロールを許可します"
+        "desc": "表示要素数を制限し、マウスホイールやタッチパッドでのスクロールを許可します",
+        "required": "先に要素のスクロールをオンにしてください"
       },
       "visible_elements": {
         "title": "表示要素数",
@@ -1938,7 +2062,10 @@
         "workspace": "アクティブなワークスペースのみ"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "新しいウィンドウ",
+        "pin": "Dock に固定",
+        "unpin": "Dock から固定解除"
       },
       "background": {
         "title": "アプリの背面に背景を描画",
@@ -1952,7 +2079,8 @@
         "effects": "エフェクト",
         "autohide": "自動非表示",
         "behavior": "動作"
-      }
+      },
+      "unavailable": "先に Dock を有効にしてください"
     },
     "lyrics_picker": {
       "title": "歌詞ファイルを選択",
@@ -1962,7 +2090,8 @@
     "search": {
       "placeholder": "設定を検索...",
       "prompt": "入力して設定を検索...",
-      "no_results": "設定が見つかりませんでした"
+      "no_results": "設定が見つかりませんでした",
+      "results": "検索結果"
     },
     "screenshot": {
       "ocr": {
@@ -1982,6 +2111,11 @@
         "title": "スクリーンショットの保存先",
         "desc": "スクリーンショットを保存するフォルダー",
         "select_dir": "ディレクトリを選択..."
+      },
+      "sections": {
+        "capture": "キャプチャ",
+        "files": "ファイル",
+        "ocr": "テキスト認識"
       }
     },
     "desktop": {
@@ -2027,7 +2161,8 @@
         "tiled": "タイル",
         "workspace": "ワークスペース",
         "window": "ウィンドウ",
-        "windows": "ウィンドウ"
+        "windows": "ウィンドウ",
+        "unsupported2": "Hyprland と Sway のみ"
       },
       "actions": {
         "overview": "概要",
@@ -2068,13 +2203,60 @@
         "title": "モーションをリセット",
         "desc": "速度・間隔・ぼかしを既定に戻します",
         "button": "リセット"
-      }
+      },
+      "supported_only": "Hyprland と Sway のみ"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "壁紙",
         "transition": "トランジション"
       }
+    },
+    "autostart": {
+      "title": "自動起動",
+      "desc": "セッション開始時に自動実行されるプログラム、バイナリ、スクリプトを管理します",
+      "master_switch": {
+        "title": "自動起動を有効にする",
+        "desc": "ログイン時に設定済みの自動起動アプリ一覧を全体で実行します"
+      },
+      "add_button": "アプリを追加",
+      "empty_title": "自動起動アプリがありません",
+      "empty_desc": "「アプリを追加」をクリックして、コマンド、バイナリ、遅延、繰り返しを設定します。",
+      "name_label": "名前",
+      "name_placeholder": "例: Discord、Telegram、スクリプト",
+      "exec_label": "実行するコマンド",
+      "exec_placeholder": "バイナリのパス、またはフラグ付きの名前（例: discord --start-minimized）",
+      "browse_file": "ファイルを参照",
+      "delay_label": "起動遅延",
+      "delay_desc": "起動前に待機する秒数",
+      "delay_unit": "秒",
+      "count_label": "起動回数",
+      "count_desc": "起動時に実行するインスタンス数",
+      "repeat_delay_label": "繰り返し間隔",
+      "repeat_delay_desc": "繰り返し起動の間の遅延",
+      "workspace_label": "ワークスペース",
+      "workspace_default": "デフォルト",
+      "silent_label": "サイレント起動",
+      "silent_desc": "フォーカスを奪わずにウィンドウをバックグラウンドで開く",
+      "condition_label": "起動条件",
+      "condition_always": "常に",
+      "condition_ac_only": "AC電源時のみ",
+      "condition_battery_only": "バッテリー駆動時のみ",
+      "condition_multi_monitor": "複数モニター時のみ",
+      "restart_crash_label": "クラッシュ時に再起動",
+      "restart_crash_desc": "クラッシュした場合にサービスを自動で再起動する",
+      "status_running": "実行中",
+      "status_success": "成功",
+      "status_failed": "失敗",
+      "status_idle": "待機中",
+      "view_log": "ログ",
+      "no_log": "ログは現在空です",
+      "run_now": "今すぐ実行",
+      "delete": "削除",
+      "toggle": "有効 / 無効"
     }
+  },
+  "common": {
+    "select": "選択..."
   }
 }

@@ -17,6 +17,56 @@ Item {
     scale: 0.95 + (0.05 * popup.introContent)
     transform: Translate { y: popup.s(20) * (1.0 - popup.introContent) }
 
+    // Staggered entrance of the rows whenever a tab is shown (see GuideStagger)
+    GuideStagger {
+        id: stagger
+        popup: contentArea.popup
+    }
+
+    function activeTabItem() {
+        let w = contentRepeater.itemAt(popup.currentTab);
+        if (!w) return null;
+        if (w.hasSubtabs) {
+            let l = w.subLoadersRepeater.itemAt(popup.currentSubTab);
+            return l ? l.item : null;
+        }
+        return w.singleLoader.item;
+    }
+
+    property int staggerRetries: 0
+    function playStagger() {
+        if (!popup.visible || popup.searchActive) return;
+        let it = contentArea.activeTabItem();
+        if (!it && contentArea.staggerRetries < 3) {
+            contentArea.staggerRetries++;
+            staggerTimer.interval = 80;
+            staggerTimer.restart();
+            return;
+        }
+        contentArea.staggerRetries = 0;
+        // Digital Wellbeing runs its own intro
+        if (it && it.introHeader !== undefined) return;
+        stagger.play(it);
+    }
+
+    Timer {
+        id: staggerTimer
+        interval: 30
+        repeat: false
+        onTriggered: contentArea.playStagger()
+    }
+
+    Connections {
+        target: contentArea.popup
+        ignoreUnknownSignals: true
+        function onCurrentTabChanged() { contentArea.staggerRetries = 0; staggerTimer.interval = 30; staggerTimer.restart(); }
+        function onCurrentSubTabChanged() { contentArea.staggerRetries = 0; staggerTimer.interval = 30; staggerTimer.restart(); }
+        function onVisibleChanged() {
+            if (contentArea.popup.visible) { contentArea.staggerRetries = 0; staggerTimer.interval = 260; staggerTimer.restart(); }
+            else stagger.stop();
+        }
+    }
+
     Item {
         id: body
         anchors.top: parent.top

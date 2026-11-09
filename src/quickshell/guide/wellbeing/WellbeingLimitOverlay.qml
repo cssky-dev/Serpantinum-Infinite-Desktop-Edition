@@ -146,6 +146,7 @@ Scope {
                             anchors.fill: parent
                             anchors.margins: 10
                             fillMode: Image.PreserveAspectFit
+                            sourceSize: Qt.size(Math.max(32, width * 2), Math.max(32, height * 2))
                             asynchronous: true
                             mipmap: true
                             visible: status === Image.Ready

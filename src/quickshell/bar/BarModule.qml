@@ -153,9 +153,34 @@ Rectangle {
         updateVisible();
     }
 
+    // Startup cascade: modules appear one after another along the bar. Outside the real
+    // bar (previews) there is no clock, so the face is simply fully shown.
+    readonly property real introClock: (barWindow && barWindow.introClock !== undefined) ? barWindow.introClock : 1.0
+    readonly property real introPos: {
+        let len = barWindow ? (isVertical ? barWindow.height : barWindow.width) : 0;
+        let at = isVertical ? y : x;
+        return len > 1 ? Math.max(0, Math.min(1, at / len)) : 0;
+    }
+    readonly property real introP: {
+        if (introClock >= 1.0) return 1.0;
+        let start = 0.30 + 0.34 * introPos;
+        let t = Math.max(0, Math.min(1, (introClock - start) / 0.36));
+        return t;
+    }
+    readonly property real introMove: {
+        let u = introP - 1.0;
+        return 1.0 + 1.9 * u * u * u + 0.9 * u * u;
+    }
+
     Loader {
         id: faceLoader
         anchors.fill: parent
+        opacity: 1.0 - Math.pow(1.0 - Math.min(1.0, root.introP * 1.6), 3)
+        scale: 0.82 + 0.18 * root.introMove
+        transform: Translate {
+            x: root.isVertical ? (root.isRightBar ? 1 : -1) * root.s(10) * (1.0 - root.introMove) : 0
+            y: root.isVertical ? 0 : root.s(10) * (1.0 - root.introMove)
+        }
 
         onLoaded: {
             if (item) {

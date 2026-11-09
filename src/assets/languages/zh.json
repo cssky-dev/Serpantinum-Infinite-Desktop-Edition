@@ -20,7 +20,10 @@
         "shell": "Shell",
         "uptime": "运行时间",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "原作者：@{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "更新日志"
     },
     "tabs": {
       "welcome": "欢迎",
@@ -49,7 +52,8 @@
       "theme_wallpapers": "壁纸",
       "general_main": "通用",
       "general_presets": "预设",
-      "desktop": "桌面"
+      "desktop": "桌面",
+      "autostart": "自动启动"
     },
     "launcher": {
       "position": {
@@ -81,6 +85,10 @@
       "search": {
         "title": "网络搜索提供商",
         "desc": "查询以 ? 开头时使用的搜索引擎"
+      },
+      "sections": {
+        "layout": "布局",
+        "search": "搜索"
       }
     },
     "notifications": {
@@ -194,7 +202,10 @@
     "welcome": {
       "about": "关于",
       "hold_for_tutorial": "长按查看教程",
-      "start_tutorial": "开始教程"
+      "start_tutorial": "开始教程",
+      "by_author": "作者：{author}",
+      "original_dev": "原作者：@{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "{section} 教程",
@@ -275,6 +286,12 @@
           "apply": "应用",
           "cancel": "取消"
         }
+      },
+      "sections": {
+        "profile": "个人资料",
+        "sound": "声音",
+        "behavior": "行为",
+        "location": "位置与天气"
       }
     },
     "display": {
@@ -327,8 +344,12 @@
         },
         "mode_canvas": "无限桌面",
         "mode_tiled": "平铺",
-        "mode_title": "当前模式",
-        "mode_hint": "小组件会分别为平铺模式和无限桌面模式保存。按 Super+G 可在两种模式之间切换。"
+        "delete_all": {
+          "title": "删除所有小组件",
+          "desc": "在所有工作区和屏幕上，从平铺桌面和无限桌面中删除每个小组件",
+          "button": "全部删除",
+          "confirm": "再次点击以确认"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -363,8 +384,7 @@
       "sections": {
         "lockscreen": "锁屏",
         "screens": "屏幕",
-        "redactor": "编辑器",
-        "mode": "模式"
+        "redactor": "编辑器"
       }
     },
     "bar": {
@@ -377,7 +397,10 @@
               "pills": "胶囊",
               "numbers": "数字",
               "pacman": "吃豆人"
-            }
+            },
+            "pills": "极简胶囊指示器",
+            "numbers": "带编号的索引",
+            "pacman": "动画街机圆点"
           },
           "name": "工作区"
         },
@@ -397,11 +420,17 @@
               "classic": "经典",
               "material": "Material",
               "badge": "点阵"
-            }
+            },
+            "classic": "整洁堆叠的时间和日期",
+            "material": "斜向加粗强调数字",
+            "badge": "胶囊形分段卡片"
           }
         },
         "info": "录制/计时器",
-        "weather": "天气"
+        "weather": "天气",
+        "notifications": "通知",
+        "usage": "系统占用",
+        "clock": "时钟"
       },
       "position": {
         "title": "顶栏位置",
@@ -431,6 +460,14 @@
         "style": {
           "title": "样式",
           "desc": "选择工作区指示器的视觉样式"
+        },
+        "per_monitor": {
+          "title": "按显示器编号",
+          "desc": "仅限 Hyprland。在每个显示器上从 1 开始为工作区编号，并设置每个显示器拥有的工作区数量",
+          "unavailable": "仅在 Hyprland 上可用"
+        },
+        "monitor_count": {
+          "desc": "此显示器拥有的工作区"
         }
       },
       "style": {
@@ -532,11 +569,13 @@
           "name": {
             "classic": "经典",
             "minimal": "极简",
-            "text": "纯文本"
+            "text": "纯文本",
+            "button": "按钮"
           },
           "classic": "带渐变波浪填充的胶囊",
           "minimal": "带电极端子的 iOS/Android 胶囊",
-          "text": "无背景的简洁文本和图标"
+          "text": "无背景的简洁文本和图标",
+          "button": "带背景的交互式按钮胶囊"
         }
       },
       "wifi": {
@@ -674,6 +713,10 @@
         "behavior": "行为",
         "layout": "布局",
         "modules": "模块"
+      },
+      "height": {
+        "title": "栏高度",
+        "desc": "以百分比设置栏的高度"
       }
     },
     "theme": {
@@ -805,7 +848,8 @@
         "empty": "还没有应用主题。请从列表中添加"
       },
       "sections": {
-        "presets": "预设"
+        "presets": "预设",
+        "appearance": "外观"
       }
     },
     "file_picker": {
@@ -874,7 +918,8 @@
         "pink": "粉红",
         "flamingo": "火烈鸟粉",
         "rosewater": "玫瑰水"
-      }
+      },
+      "edit_title": "编辑自定义主题"
     },
     "wellbeing": {
       "desktop": "桌面",
@@ -927,7 +972,8 @@
         "picker_search": "搜索应用...",
         "picker_empty": "没有匹配的应用",
         "picker_apply": "应用",
-        "picker_cancel": "取消"
+        "picker_cancel": "取消",
+        "add_app": "添加应用"
       },
       "notify": {
         "title": "数字健康",
@@ -937,7 +983,19 @@
       "limit_overlay": {
         "title": "已达到每日限额",
         "hold": "长按以继续"
-      }
+      },
+      "day": "日",
+      "week": "周",
+      "screen_time": "屏幕使用时间",
+      "less_than_prev": "比前一天少 {time}",
+      "more_than_prev": "比前一天多 {time}",
+      "same_as_prev": "与前一天相同",
+      "limit_progress": "每日限额 {limit} 中已用 {used}",
+      "limit_reached": "已达到每日限额 {limit}",
+      "peak_hour": "高峰时段",
+      "week_total": "本周总计",
+      "less": "较少",
+      "more": "较多"
     },
     "update_available": "有可用更新",
     "osd": {
@@ -1006,7 +1064,8 @@
       },
       "timeout": {
         "title": "自动隐藏延迟",
-        "desc": "鼠标移开后隐藏前的等待时长"
+        "desc": "鼠标移开后隐藏前的等待时长",
+        "required": "请先开启自动隐藏"
       },
       "floating": {
         "title": "悬浮程序坞",
@@ -1036,7 +1095,8 @@
       },
       "scrolling": {
         "title": "启用项目滚动",
-        "desc": "限制可见项目数量，并允许使用鼠标滚轮或触摸板滚动"
+        "desc": "限制可见项目数量，并允许使用鼠标滚轮或触摸板滚动",
+        "required": "请先开启元素滚动"
       },
       "visible_elements": {
         "title": "可见项目数",
@@ -1083,7 +1143,10 @@
         "workspace": "仅当前工作区"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "新建窗口",
+        "pin": "固定到程序坞",
+        "unpin": "从程序坞取消固定"
       },
       "background": {
         "title": "在应用后绘制背景",
@@ -1097,7 +1160,8 @@
         "effects": "效果",
         "autohide": "自动隐藏",
         "behavior": "行为"
-      }
+      },
+      "unavailable": "请先启用程序坞"
     },
     "lyrics_picker": {
       "title": "选择歌词文件",
@@ -1107,7 +1171,8 @@
     "search": {
       "placeholder": "搜索设置...",
       "prompt": "输入以搜索设置...",
-      "no_results": "未找到相关设置"
+      "no_results": "未找到相关设置",
+      "results": "搜索结果"
     },
     "screenshot": {
       "ocr": {
@@ -1127,6 +1192,11 @@
         "title": "截图文件夹",
         "desc": "保存截图的文件夹",
         "select_dir": "选择目录..."
+      },
+      "sections": {
+        "capture": "捕获",
+        "files": "文件",
+        "ocr": "文字识别"
       }
     },
     "desktop": {
@@ -1172,7 +1242,8 @@
         "tiled": "平铺",
         "workspace": "工作区",
         "window": "窗口",
-        "windows": "窗口"
+        "windows": "窗口",
+        "unsupported2": "仅限 Hyprland 和 Sway"
       },
       "actions": {
         "overview": "概览",
@@ -1213,13 +1284,57 @@
         "title": "重置动画",
         "desc": "恢复默认速度、间距和模糊",
         "button": "重置"
-      }
+      },
+      "supported_only": "仅限 Hyprland 和 Sway"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "壁纸",
         "transition": "过渡"
       }
+    },
+    "autostart": {
+      "title": "自动启动",
+      "desc": "管理在会话启动时自动运行的程序、二进制文件和脚本",
+      "master_switch": {
+        "title": "启用自动启动",
+        "desc": "登录时全局运行已配置的自动启动应用列表"
+      },
+      "add_button": "添加应用",
+      "empty_title": "没有自动启动的应用",
+      "empty_desc": "点击“添加应用”以设置命令、二进制文件、延迟和重复次数。",
+      "name_label": "名称",
+      "name_placeholder": "例如 Discord、Telegram、脚本",
+      "exec_label": "要运行的命令",
+      "exec_placeholder": "二进制文件路径或带参数的名称（例如 discord --start-minimized）",
+      "browse_file": "浏览文件",
+      "delay_label": "启动延迟",
+      "delay_desc": "启动前等待的秒数",
+      "delay_unit": "秒",
+      "count_label": "启动次数",
+      "count_desc": "启动时运行的实例数量",
+      "repeat_delay_label": "重复间隔",
+      "repeat_delay_desc": "重复启动之间的延迟",
+      "workspace_label": "工作区",
+      "workspace_default": "默认",
+      "silent_label": "静默启动",
+      "silent_desc": "在后台打开窗口且不抢占焦点",
+      "condition_label": "启动条件",
+      "condition_always": "始终",
+      "condition_ac_only": "仅使用交流电时",
+      "condition_battery_only": "仅使用电池时",
+      "condition_multi_monitor": "仅在有多个显示器时",
+      "restart_crash_label": "崩溃时重启",
+      "restart_crash_desc": "服务崩溃时自动重启",
+      "status_running": "运行中",
+      "status_success": "成功",
+      "status_failed": "失败",
+      "status_idle": "空闲",
+      "view_log": "日志",
+      "no_log": "日志目前为空",
+      "run_now": "立即运行",
+      "delete": "删除",
+      "toggle": "启用 / 禁用"
     }
   },
   "sysnotif": {
@@ -1257,7 +1372,11 @@
     "tab_emojis": "表情符号",
     "placeholder_emojis": "按名称或关键字搜索表情符号...",
     "search_run": "使用 {provider} 搜索",
-    "search_hint": "输入内容以使用 {provider} 搜索"
+    "search_hint": "输入内容以使用 {provider} 搜索",
+    "command_run": "执行命令：{cmd}",
+    "command_hint": "输入要执行的命令",
+    "calc_result": "计算结果（按 Enter 复制）",
+    "no_emojis_found": "未找到表情符号"
   },
   "calendar": {
     "loading": "正在加载...",
@@ -1293,12 +1412,14 @@
       "locked": "已锁定",
       "access_denied": "访问被拒绝",
       "authenticating": "正在验证...",
-      "enter_pin": "输入 PIN 码"
+      "enter_pin": "输入 PIN 码",
+      "too_many_attempts": "尝试次数过多"
     },
     "fingerprint": {
       "ready": "请触摸传感器",
       "not_recognized": "未识别到指纹",
-      "recognized": "指纹已识别"
+      "recognized": "指纹已识别",
+      "blocked": "指纹已禁用"
     },
     "power": {
       "suspend": "睡眠",
@@ -1446,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "天气预报",
-        "fallback_body": "未提供详细数据。"
+        "fallback_body": "未提供详细数据。",
+        "title": "天气"
       },
       "screenshot": {
         "badge": "屏幕截图",
@@ -1689,7 +1811,8 @@
       "blue": "蓝色",
       "purple": "紫色",
       "pink": "粉色",
-      "monochrome": "黑白单色"
+      "monochrome": "黑白单色",
+      "history": "历史记录"
     }
   },
   "weather": {
@@ -1818,17 +1941,21 @@
       "stretched": "Stretched",
       "lumen": "Lumen",
       "lyrics": "歌词",
-      "simpleLyrics": "简易歌词"
+      "simpleLyrics": "简易歌词",
+      "circle": "圆形"
     },
     "presets": {
       "minimal": {
-        "name": "极简"
+        "name": "极简",
+        "desc": "简洁低调的布局，配有极简数字时钟和紧凑天气。"
       },
       "media_station": {
-        "name": "媒体中心"
+        "name": "媒体中心",
+        "desc": "专用媒体布局，配有居中的音频可视化和圆形音乐播放器。"
       },
       "dashboard": {
-        "name": "仪表盘"
+        "name": "仪表盘",
+        "desc": "完整的系统监视器，包含数字时钟、硬件使用情况和电池电量。"
       }
     },
     "github": {
@@ -1845,7 +1972,11 @@
     "settings": {
       "lyricsLines": "行数",
       "lyricsAlignment": "对齐方式",
-      "textContent": "文本"
+      "textContent": "文本",
+      "lineThickness": "粗细",
+      "showNoLyrics": "显示“无歌词”文字",
+      "usageStyle": "样式",
+      "visualizerStyle": "可视化样式"
     },
     "align": {
       "left": "靠左",
@@ -1857,6 +1988,10 @@
     },
     "text": {
       "placeholder": "输入文本"
+    },
+    "style": {
+      "circle": "圆形",
+      "wave": "波形"
     }
   },
   "cli": {
@@ -2042,7 +2177,12 @@
       "installing_title": "正在安装系统软件包与依赖项...",
       "installing_pkg": "正在安装 {pkg}...",
       "install_ok": "成功安装 {pkg}",
-      "install_failed": "安装 {pkg} 失败"
+      "install_failed": "安装 {pkg} 失败",
+      "enabling_copr": "正在启用 COPR 仓库 {repo}...",
+      "enabling_repo": "正在启用仓库 {repo}...",
+      "enabling_terra": "正在启用 Terra 仓库...",
+      "quickshell_outdated": "Quickshell {version} 版本过旧，需要 {minimum} 或更高版本。正在升级...",
+      "quickshell_still_old": "Quickshell 仍低于 {minimum}。请手动更新，否则设置将无法打开。"
     },
     "deploy": {
       "configuring_sddm": "正在配置 SDDM 显示管理器...",
@@ -2052,6 +2192,42 @@
       "sddm_no_xorg": "未找到 Xorg，SDDM 将使用 {compositor}。",
       "sddm_no_backend": "在 /usr/local/bin、/usr/bin 或 /bin 中既未找到 Xorg，也未找到登录界面支持的 Wayland 合成器（kwin_wayland/weston）。",
       "sddm_skipped": "已跳过 SDDM 设置：未找到可用的显示服务器或登录合成器。当前显示管理器保持不变。"
+    },
+    "audio": {
+      "building": "此系统没有预构建的音频引擎，正在从源码构建...",
+      "checksum_failed": "音频引擎下载未通过校验和检查，已跳过。",
+      "download_failed": "无法下载 Serpantinum 音频引擎，已跳过。你可以稍后从 github.com/ilyamiro/serpantinum-audio 安装。",
+      "install_failed": "安装 Serpantinum 音频引擎失败。在从 github.com/ilyamiro/serpantinum-audio 安装之前，均衡器将无法使用。",
+      "installed": "已安装 Serpantinum 音频引擎 {version}",
+      "installing": "正在安装 Serpantinum 音频引擎...",
+      "up_to_date": "-> Serpantinum 音频引擎 {version} 已安装。"
+    },
+    "core": {
+      "checksum_failed": "核心服务下载未通过校验和检查，已跳过。",
+      "download_failed": "无法下载 Serpantinum 核心服务，已跳过。你可以稍后从 github.com/ilyamiro/serpantinum-core 安装。",
+      "install_failed": "安装 Serpantinum 核心服务失败。在从 github.com/ilyamiro/serpantinum-core 安装之前，系统使用情况、键盘锁定指示器和剪贴板将无法使用。",
+      "installed": "已安装 Serpantinum 核心服务 {version}",
+      "installing": "正在安装 Serpantinum 核心服务...",
+      "unsupported_arch": "预构建的核心服务包仅提供 x86_64 版本，已跳过。",
+      "up_to_date": "-> Serpantinum 核心服务 {version} 已安装。"
+    },
+    "gamma": {
+      "checksum_failed": "蓝光过滤器下载未通过校验和检查，已跳过。",
+      "download_failed": "无法下载 Serpantinum 蓝光过滤器，已跳过。你可以稍后从 github.com/ilyamiro/serpantinum-gamma 安装。",
+      "install_failed": "安装 Serpantinum 蓝光过滤器失败。在从 github.com/ilyamiro/serpantinum-gamma 安装之前，它将无法使用。",
+      "installed": "已安装 Serpantinum 蓝光过滤器 {version}",
+      "installing": "正在安装 Serpantinum 蓝光过滤器...",
+      "unsupported_arch": "预构建的蓝光过滤器包仅提供 x86_64 版本，已跳过。",
+      "up_to_date": "-> Serpantinum 蓝光过滤器 {version} 已安装。"
+    },
+    "ski": {
+      "checksum_failed": "Ski 下载未通过校验和检查，已跳过。",
+      "download_failed": "无法下载 Ski，已跳过。你可以稍后从 github.com/ilyamiro/Ski 安装。",
+      "install_failed": "安装 Ski 失败",
+      "installed": "已安装 Ski {version}",
+      "installing": "正在安装文件管理器 Ski...",
+      "unsupported_arch": "预构建的 Ski 包仅提供 x86_64 版本，已跳过。",
+      "up_to_date": "-> Ski {version} 已安装。"
     }
   },
   "translator": {
@@ -2075,6 +2251,12 @@
     "keep_clipboard_sub": "若禁用 — 粘贴后将恢复原有剪贴板内容"
   },
   "datetime": {
-    "full_date": "MMMM d日 dddd"
+    "full_date": "MMMM d日 dddd",
+    "just_now": "刚刚",
+    "minutes_ago": "{mins} 分钟前",
+    "yesterday": "昨天 {time}"
+  },
+  "common": {
+    "select": "选择..."
   }
 }

@@ -20,7 +20,10 @@
         "shell": "Shell",
         "uptime": "Uptime",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "Oorspronkelijke ontwikkelaar: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "Wijzigingslogboek"
     },
     "tabs": {
       "welcome": "Welkom",
@@ -49,7 +52,8 @@
       "theme_wallpapers": "Achtergronden",
       "general_main": "Algemeen",
       "general_presets": "Voorinstellingen",
-      "desktop": "Bureaublad"
+      "desktop": "Bureaublad",
+      "autostart": "Autostart"
     },
     "launcher": {
       "position": {
@@ -81,6 +85,10 @@
       "search": {
         "title": "Webzoekmachine",
         "desc": "Zoekmachine voor zoekopdrachten die met ? beginnen"
+      },
+      "sections": {
+        "layout": "Indeling",
+        "search": "Zoeken"
       }
     },
     "notifications": {
@@ -194,7 +202,10 @@
     "welcome": {
       "about": "Over",
       "hold_for_tutorial": "Ingedrukt houden voor zelfstudie",
-      "start_tutorial": "Zelfstudie starten"
+      "start_tutorial": "Zelfstudie starten",
+      "by_author": "door {author}",
+      "original_dev": "Oorspronkelijke ontwikkelaar: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "Zelfstudie {section}",
@@ -275,6 +286,12 @@
           "apply": "Toepassen",
           "cancel": "Annuleren"
         }
+      },
+      "sections": {
+        "profile": "Profiel",
+        "sound": "Geluid",
+        "behavior": "Gedrag",
+        "location": "Locatie en weer"
       }
     },
     "display": {
@@ -327,8 +344,12 @@
         },
         "mode_canvas": "Oneindig bureaublad",
         "mode_tiled": "Getegeld",
-        "mode_title": "Huidige modus",
-        "mode_hint": "Widgets worden apart opgeslagen voor de tegelmodus en het oneindige bureaublad. Druk op Super+G om tussen beide modi te wisselen."
+        "delete_all": {
+          "title": "Alle widgets verwijderen",
+          "desc": "Verwijdert elke widget van zowel het getegelde als het oneindige bureaublad op alle werkruimtes en schermen",
+          "button": "Alles verwijderen",
+          "confirm": "Klik nogmaals om te bevestigen"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -363,8 +384,7 @@
       "sections": {
         "lockscreen": "Vergrendelscherm",
         "screens": "Schermen",
-        "redactor": "Editor",
-        "mode": "Modus"
+        "redactor": "Editor"
       }
     },
     "bar": {
@@ -377,7 +397,10 @@
               "pills": "Capsules",
               "numbers": "Nummers",
               "pacman": "Pacman"
-            }
+            },
+            "pills": "Minimale pil-indicatoren",
+            "numbers": "Genummerde indexen",
+            "pacman": "Geanimeerde arcadepunten"
           },
           "name": "Werkbladen"
         },
@@ -397,11 +420,17 @@
               "classic": "Klassiek",
               "material": "Material",
               "badge": "Puntmatrix"
-            }
+            },
+            "classic": "Nette gestapelde tijd en datum",
+            "material": "Diagonale vette accentcijfers",
+            "badge": "Gesegmenteerde capsulekaarten"
           }
         },
         "info": "Opname/timer",
-        "weather": "Weer"
+        "weather": "Weer",
+        "notifications": "Meldingen",
+        "usage": "Systeemgebruik",
+        "clock": "Klok"
       },
       "position": {
         "title": "Positie van balk",
@@ -431,6 +460,14 @@
         "style": {
           "title": "Stijl",
           "desc": "Kies de visuele stijl voor werkbladindicatoren"
+        },
+        "per_monitor": {
+          "title": "Nummering per monitor",
+          "desc": "Alleen Hyprland. Nummer werkruimtes vanaf 1 op elke monitor en stel in hoeveel werkruimtes elke monitor heeft",
+          "unavailable": "Alleen beschikbaar op Hyprland"
+        },
+        "monitor_count": {
+          "desc": "Werkruimtes van deze monitor"
         }
       },
       "style": {
@@ -532,11 +569,13 @@
           "name": {
             "classic": "Klassiek",
             "minimal": "Minimaal",
-            "text": "Tekst"
+            "text": "Tekst",
+            "button": "Knop"
           },
           "classic": "Capsule met verloopgolfvulling",
           "minimal": "iOS/Android-capsule met dopje",
-          "text": "Strakke tekst en pictogram zonder achtergrond"
+          "text": "Strakke tekst en pictogram zonder achtergrond",
+          "button": "Interactieve knoppil met achtergrond"
         }
       },
       "wifi": {
@@ -674,6 +713,10 @@
         "behavior": "Gedrag",
         "layout": "Indeling",
         "modules": "Modules"
+      },
+      "height": {
+        "title": "Balkhoogte",
+        "desc": "Stel de hoogte van de balk in als percentage"
       }
     },
     "theme": {
@@ -805,7 +848,8 @@
         "empty": "Nog geen apps met thema. Voeg er een toe uit de lijst"
       },
       "sections": {
-        "presets": "Voorinstellingen"
+        "presets": "Voorinstellingen",
+        "appearance": "Uiterlijk"
       }
     },
     "file_picker": {
@@ -874,7 +918,8 @@
         "pink": "Roze",
         "flamingo": "Flamingo",
         "rosewater": "Rozenwater"
-      }
+      },
+      "edit_title": "Aangepast thema bewerken"
     },
     "wellbeing": {
       "desktop": "Bureaublad",
@@ -927,7 +972,8 @@
         "picker_search": "Apps zoeken...",
         "picker_empty": "Geen overeenkomende apps",
         "picker_apply": "Toepassen",
-        "picker_cancel": "Annuleren"
+        "picker_cancel": "Annuleren",
+        "add_app": "App toevoegen"
       },
       "notify": {
         "title": "Digitaal welzijn",
@@ -937,7 +983,19 @@
       "limit_overlay": {
         "title": "Daglimiet bereikt",
         "hold": "Houd ingedrukt om door te gaan"
-      }
+      },
+      "day": "Dag",
+      "week": "Week",
+      "screen_time": "Schermtijd",
+      "less_than_prev": "{time} minder dan de dag ervoor",
+      "more_than_prev": "{time} meer dan de dag ervoor",
+      "same_as_prev": "Gelijk aan de dag ervoor",
+      "limit_progress": "{used} van de daglimiet van {limit}",
+      "limit_reached": "Daglimiet van {limit} bereikt",
+      "peak_hour": "Piekuur",
+      "week_total": "Weektotaal",
+      "less": "Minder",
+      "more": "Meer"
     },
     "update_available": "Update beschikbaar",
     "osd": {
@@ -1006,7 +1064,8 @@
       },
       "timeout": {
         "title": "Vertraging voor automatisch verbergen",
-        "desc": "Tijdsduur voordat het dock wordt verborgen nadat de muisaanwijzer weggaat"
+        "desc": "Tijdsduur voordat het dock wordt verborgen nadat de muisaanwijzer weggaat",
+        "required": "Schakel eerst automatisch verbergen in"
       },
       "floating": {
         "title": "Zwevend dock",
@@ -1036,7 +1095,8 @@
       },
       "scrolling": {
         "title": "Scrollen door elementen inschakelen",
-        "desc": "Beperk zichtbare elementen en sta scrollen met muiswiel of touchpad toe"
+        "desc": "Beperk zichtbare elementen en sta scrollen met muiswiel of touchpad toe",
+        "required": "Schakel eerst het scrollen van elementen in"
       },
       "visible_elements": {
         "title": "Zichtbare elementen",
@@ -1083,7 +1143,10 @@
         "workspace": "Alleen actief werkblad"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "Nieuw venster",
+        "pin": "Vastmaken aan dock",
+        "unpin": "Losmaken van dock"
       },
       "background": {
         "title": "Achtergrond achter apps tekenen",
@@ -1097,7 +1160,8 @@
         "effects": "Effecten",
         "autohide": "Automatisch verbergen",
         "behavior": "Gedrag"
-      }
+      },
+      "unavailable": "Schakel eerst het dock in"
     },
     "lyrics_picker": {
       "title": "Songtekstbestand selecteren",
@@ -1107,7 +1171,8 @@
     "search": {
       "placeholder": "Instellingen zoeken...",
       "prompt": "Typ om instellingen te zoeken...",
-      "no_results": "Geen instellingen gevonden"
+      "no_results": "Geen instellingen gevonden",
+      "results": "Zoekresultaten"
     },
     "screenshot": {
       "ocr": {
@@ -1127,6 +1192,11 @@
         "title": "Screenshotmap",
         "desc": "Map waarin screenshots worden opgeslagen",
         "select_dir": "Map selecteren..."
+      },
+      "sections": {
+        "capture": "Opname",
+        "files": "Bestanden",
+        "ocr": "Tekstherkenning"
       }
     },
     "desktop": {
@@ -1172,7 +1242,8 @@
         "tiled": "Getegeld",
         "workspace": "Werkruimte",
         "window": "venster",
-        "windows": "vensters"
+        "windows": "vensters",
+        "unsupported2": "Alleen Hyprland en Sway"
       },
       "actions": {
         "overview": "Overzicht",
@@ -1213,13 +1284,57 @@
         "title": "Beweging resetten",
         "desc": "Terug naar standaardsnelheden, -afstand en -vervaging",
         "button": "Resetten"
-      }
+      },
+      "supported_only": "Alleen Hyprland en Sway"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "Achtergrond",
         "transition": "Overgang"
       }
+    },
+    "autostart": {
+      "title": "Autostart",
+      "desc": "Beheer programma's, binaries en scripts die automatisch worden uitgevoerd bij het starten van de sessie",
+      "master_switch": {
+        "title": "Autostart inschakelen",
+        "desc": "De ingestelde lijst met autostart-applicaties globaal uitvoeren bij het inloggen"
+      },
+      "add_button": "Applicatie toevoegen",
+      "empty_title": "Geen autostart-applicaties",
+      "empty_desc": "Klik op 'Applicatie toevoegen' om commando's, binaries, vertragingen en herhalingen in te stellen.",
+      "name_label": "Naam",
+      "name_placeholder": "bijv. Discord, Telegram, script",
+      "exec_label": "Uit te voeren commando",
+      "exec_placeholder": "Pad naar binary of naam met opties (bijv. discord --start-minimized)",
+      "browse_file": "Bestand zoeken",
+      "delay_label": "Startvertraging",
+      "delay_desc": "Wachttijd in seconden voor het starten",
+      "delay_unit": "s",
+      "count_label": "Aantal starts",
+      "count_desc": "Aantal instanties dat bij het opstarten wordt uitgevoerd",
+      "repeat_delay_label": "Herhaalinterval",
+      "repeat_delay_desc": "Vertraging tussen herhaalde starts",
+      "workspace_label": "Werkruimte",
+      "workspace_default": "Standaard",
+      "silent_label": "Stille start",
+      "silent_desc": "Het venster op de achtergrond openen zonder focus te nemen",
+      "condition_label": "Startvoorwaarde",
+      "condition_always": "Altijd",
+      "condition_ac_only": "Alleen op netstroom",
+      "condition_battery_only": "Alleen op batterij",
+      "condition_multi_monitor": "Alleen met meerdere monitoren",
+      "restart_crash_label": "Herstarten bij crash",
+      "restart_crash_desc": "De service automatisch herstarten als hij crasht",
+      "status_running": "Actief",
+      "status_success": "Geslaagd",
+      "status_failed": "Mislukt",
+      "status_idle": "Inactief",
+      "view_log": "Logboek",
+      "no_log": "Het logboek is voorlopig leeg",
+      "run_now": "Nu uitvoeren",
+      "delete": "Verwijderen",
+      "toggle": "In-/uitschakelen"
     }
   },
   "sysnotif": {
@@ -1257,7 +1372,11 @@
     "tab_emojis": "Emoji's",
     "placeholder_emojis": "Zoek emoji's op naam of trefwoord...",
     "search_run": "Zoeken met {provider}",
-    "search_hint": "Typ om te zoeken met {provider}"
+    "search_hint": "Typ om te zoeken met {provider}",
+    "command_run": "Commando uitvoeren: {cmd}",
+    "command_hint": "Typ een commando om uit te voeren",
+    "calc_result": "Rekenresultaat (Enter om te kopiëren)",
+    "no_emojis_found": "Geen emoji's gevonden"
   },
   "calendar": {
     "loading": "Laden...",
@@ -1293,12 +1412,14 @@
       "locked": "Vergrendeld",
       "access_denied": "Toegang geweigerd",
       "authenticating": "Verifiëren...",
-      "enter_pin": "Voer pincode in"
+      "enter_pin": "Voer pincode in",
+      "too_many_attempts": "Te veel pogingen"
     },
     "fingerprint": {
       "ready": "Raak de sensor aan",
       "not_recognized": "Vingerafdruk niet herkend",
-      "recognized": "Vingerafdruk herkend"
+      "recognized": "Vingerafdruk herkend",
+      "blocked": "Vingerafdruk uitgeschakeld"
     },
     "power": {
       "suspend": "Stand-by",
@@ -1446,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "Weerbericht",
-        "fallback_body": "Geen gedetailleerde gegevens opgegeven."
+        "fallback_body": "Geen gedetailleerde gegevens opgegeven.",
+        "title": "Weer"
       },
       "screenshot": {
         "badge": "Schermafbeelding",
@@ -1689,7 +1811,8 @@
       "blue": "Blauw",
       "purple": "Paars",
       "pink": "Roze",
-      "monochrome": "Monochroom"
+      "monochrome": "Monochroom",
+      "history": "Geschiedenis"
     }
   },
   "weather": {
@@ -1818,17 +1941,21 @@
       "stretched": "Stretched",
       "lumen": "Lumen",
       "lyrics": "Songtekst",
-      "simpleLyrics": "Eenvoudige songtekst"
+      "simpleLyrics": "Eenvoudige songtekst",
+      "circle": "Cirkel"
     },
     "presets": {
       "minimal": {
-        "name": "Minimaal"
+        "name": "Minimaal",
+        "desc": "Strakke, subtiele indeling met een minimale digitale klok en compact weer."
       },
       "media_station": {
-        "name": "Mediastation"
+        "name": "Mediastation",
+        "desc": "Speciale mediaopstelling met een gecentreerde audiovisualizer en een ronde muziekspeler."
       },
       "dashboard": {
-        "name": "Dashboard"
+        "name": "Dashboard",
+        "desc": "Volledige systeemmonitor met digitale klok, hardwaregebruik en batterijniveau."
       }
     },
     "github": {
@@ -1845,7 +1972,11 @@
     "settings": {
       "lyricsLines": "Regels",
       "lyricsAlignment": "Uitlijning",
-      "textContent": "Tekst"
+      "textContent": "Tekst",
+      "lineThickness": "Dikte",
+      "showNoLyrics": "Tekst 'geen songtekst' tonen",
+      "usageStyle": "Stijl",
+      "visualizerStyle": "Visualizer-stijl"
     },
     "align": {
       "left": "Links",
@@ -1857,6 +1988,10 @@
     },
     "text": {
       "placeholder": "Voer tekst in"
+    },
+    "style": {
+      "circle": "Cirkel",
+      "wave": "Golf"
     }
   },
   "cli": {
@@ -2042,7 +2177,12 @@
       "installing_title": "Systeempakketten en afhankelijkheden installeren...",
       "installing_pkg": "{pkg} installeren...",
       "install_ok": "{pkg} succesvol geïnstalleerd",
-      "install_failed": "Kan {pkg} niet installeren"
+      "install_failed": "Kan {pkg} niet installeren",
+      "enabling_copr": "COPR-repository {repo} wordt ingeschakeld...",
+      "enabling_repo": "Repository {repo} wordt ingeschakeld...",
+      "enabling_terra": "Terra-repository wordt ingeschakeld...",
+      "quickshell_outdated": "Quickshell {version} is te oud, {minimum} of nieuwer is vereist. Wordt bijgewerkt...",
+      "quickshell_still_old": "Quickshell is nog steeds ouder dan {minimum}. Werk het handmatig bij, anders kunnen de instellingen niet worden geopend."
     },
     "deploy": {
       "configuring_sddm": "SDDM-inlogbeheerder configureren...",
@@ -2052,6 +2192,42 @@
       "sddm_no_xorg": "Xorg niet gevonden, {compositor} wordt gebruikt voor SDDM.",
       "sddm_no_backend": "Noch Xorg noch een ondersteunde Wayland-compositor voor het inlogscherm (kwin_wayland/weston) is gevonden in /usr/local/bin, /usr/bin of /bin.",
       "sddm_skipped": "SDDM-configuratie overgeslagen: geen bruikbare displayserver of inlogcompositor gevonden. De huidige displaymanager blijft ongewijzigd."
+    },
+    "audio": {
+      "building": "Geen vooraf gebouwde audio-engine voor dit systeem, wordt gebouwd vanuit de broncode...",
+      "checksum_failed": "De download van de audio-engine voldeed niet aan de controlesom, overgeslagen.",
+      "download_failed": "Kon de Serpantinum-audio-engine niet downloaden, overgeslagen. Je kunt hem later installeren vanaf github.com/ilyamiro/serpantinum-audio.",
+      "install_failed": "Installatie van de Serpantinum-audio-engine mislukt. De equalizer werkt pas nadat hij is geïnstalleerd vanaf github.com/ilyamiro/serpantinum-audio.",
+      "installed": "Serpantinum-audio-engine {version} geïnstalleerd",
+      "installing": "Serpantinum-audio-engine wordt geïnstalleerd...",
+      "up_to_date": "-> Serpantinum-audio-engine {version} is al geïnstalleerd."
+    },
+    "core": {
+      "checksum_failed": "De download van de kernservices voldeed niet aan de controlesom, overgeslagen.",
+      "download_failed": "Kon de Serpantinum-kernservices niet downloaden, overgeslagen. Je kunt ze later installeren vanaf github.com/ilyamiro/serpantinum-core.",
+      "install_failed": "Installatie van de Serpantinum-kernservices mislukt. Systeemgebruik, toetsenbordvergrendelingsindicatoren en het klembord werken pas nadat ze zijn geïnstalleerd vanaf github.com/ilyamiro/serpantinum-core.",
+      "installed": "Serpantinum-kernservices {version} geïnstalleerd",
+      "installing": "Serpantinum-kernservices worden geïnstalleerd...",
+      "unsupported_arch": "Vooraf gebouwde kernservicepakketten bestaan alleen voor x86_64, overgeslagen.",
+      "up_to_date": "-> Serpantinum-kernservices {version} zijn al geïnstalleerd."
+    },
+    "gamma": {
+      "checksum_failed": "De download van het blauwlichtfilter voldeed niet aan de controlesom, overgeslagen.",
+      "download_failed": "Kon het Serpantinum-blauwlichtfilter niet downloaden, overgeslagen. Je kunt het later installeren vanaf github.com/ilyamiro/serpantinum-gamma.",
+      "install_failed": "Installatie van het Serpantinum-blauwlichtfilter mislukt. Het werkt pas nadat het is geïnstalleerd vanaf github.com/ilyamiro/serpantinum-gamma.",
+      "installed": "Serpantinum-blauwlichtfilter {version} geïnstalleerd",
+      "installing": "Serpantinum-blauwlichtfilter wordt geïnstalleerd...",
+      "unsupported_arch": "Vooraf gebouwde blauwlichtfilterpakketten bestaan alleen voor x86_64, overgeslagen.",
+      "up_to_date": "-> Serpantinum-blauwlichtfilter {version} is al geïnstalleerd."
+    },
+    "ski": {
+      "checksum_failed": "De Ski-download voldeed niet aan de controlesom, overgeslagen.",
+      "download_failed": "Kon Ski niet downloaden, overgeslagen. Je kunt het later installeren vanaf github.com/ilyamiro/Ski.",
+      "install_failed": "Installatie van Ski mislukt",
+      "installed": "Ski {version} geïnstalleerd",
+      "installing": "Bestandsbeheerder Ski wordt geïnstalleerd...",
+      "unsupported_arch": "Vooraf gebouwde Ski-pakketten bestaan alleen voor x86_64, overgeslagen.",
+      "up_to_date": "-> Ski {version} is al geïnstalleerd."
     }
   },
   "translator": {
@@ -2075,6 +2251,12 @@
     "keep_clipboard_sub": "Indien uitgeschakeld — oorspronkelijke klembordinhoud wordt hersteld na plakken"
   },
   "datetime": {
-    "full_date": "dddd, d MMMM"
+    "full_date": "dddd, d MMMM",
+    "just_now": "Zojuist",
+    "minutes_ago": "{mins} min geleden",
+    "yesterday": "Gisteren {time}"
+  },
+  "common": {
+    "select": "Selecteren..."
   }
 }

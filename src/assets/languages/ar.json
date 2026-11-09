@@ -8,7 +8,11 @@
     "tab_emojis": "الرموز التعبيرية",
     "tab_files": "الملفات",
     "search_run": "ابحث في {provider}",
-    "search_hint": "اكتب للبحث في {provider}"
+    "search_hint": "اكتب للبحث في {provider}",
+    "command_run": "تنفيذ الأمر: {cmd}",
+    "command_hint": "اكتب أمرًا لتنفيذه",
+    "calc_result": "نتيجة الحساب (اضغط Enter للنسخ)",
+    "no_emojis_found": "لم يتم العثور على رموز تعبيرية"
   },
   "calendar": {
     "days": {
@@ -144,7 +148,10 @@
     }
   },
   "datetime": {
-    "full_date": "dddd، MMMM dd"
+    "full_date": "dddd، MMMM dd",
+    "just_now": "الآن",
+    "minutes_ago": "قبل {mins} د",
+    "yesterday": "أمس {time}"
   },
   "guide": {
     "about": {
@@ -167,7 +174,10 @@
       },
       "title": "Serpantinum",
       "unknown": "غير معروف",
-      "version_by": "الإصدار {version} بواسطة @{author}"
+      "version_by": "الإصدار {version} بواسطة @{author}",
+      "original_dev": "المطوّر الأصلي: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "سجل التغييرات"
     },
     "autostart": {
       "add_button": "إضافة تطبيق",
@@ -233,10 +243,12 @@
           "name": {
             "classic": "كلاسيكي",
             "minimal": "بسيط",
-            "text": "نص"
+            "text": "نص",
+            "button": "زر"
           },
           "text": "نص وأيقونة نقيان بدون خلفية",
-          "title": "نمط البطارية"
+          "title": "نمط البطارية",
+          "button": "كبسولة زر تفاعلية بخلفية"
         }
       },
       "bt": {
@@ -310,7 +322,10 @@
               "badge": "مصفوفة نقطية (Dot Matrix)",
               "classic": "كلاسيكي",
               "material": "ماتيريال"
-            }
+            },
+            "classic": "وقت وتاريخ نظيفان مكدّسان",
+            "material": "أرقام مائلة بارزة بلون التمييز",
+            "badge": "بطاقات مجزأة على شكل كبسولات"
           }
         },
         "tray": "صينية النظام (Tray)",
@@ -324,9 +339,15 @@
               "numbers": "أرقام",
               "pacman": "باكمان",
               "pills": "حبات"
-            }
+            },
+            "pills": "مؤشرات حبات بسيطة",
+            "numbers": "فهارس مرقّمة",
+            "pacman": "نقاط ألعاب الأركيد المتحركة"
           }
-        }
+        },
+        "notifications": "الإشعارات",
+        "usage": "استخدام النظام",
+        "clock": "الساعة"
       },
       "position": {
         "bottom": "أسفل",
@@ -458,7 +479,15 @@
           "desc": "اختر النمط البصري لمؤشرات مساحات العمل",
           "title": "النمط"
         },
-        "title": "اختر عدد مساحات العمل المعروضة"
+        "title": "اختر عدد مساحات العمل المعروضة",
+        "per_monitor": {
+          "title": "ترقيم لكل شاشة",
+          "desc": "Hyprland فقط. رقّم مساحات العمل من 1 على كل شاشة وحدّد عدد المساحات التي تملكها كل شاشة",
+          "unavailable": "متاح فقط في Hyprland"
+        },
+        "monitor_count": {
+          "desc": "مساحات العمل التي تملكها هذه الشاشة"
+        }
       },
       "media": {
         "info_mode": {
@@ -519,6 +548,10 @@
         "behavior": "السلوك",
         "layout": "التخطيط",
         "modules": "الوحدات"
+      },
+      "height": {
+        "title": "ارتفاع الشريط",
+        "desc": "ضبط ارتفاع الشريط كنسبة مئوية"
       }
     },
     "common": {
@@ -575,8 +608,12 @@
         },
         "mode_canvas": "سطح المكتب اللانهائي",
         "mode_tiled": "مبلّط",
-        "mode_title": "الوضع الحالي",
-        "mode_hint": "يتم حفظ الودجات بشكل منفصل لوضع التبليط وسطح المكتب اللانهائي. اضغط Super+G للتبديل بين الوضعين."
+        "delete_all": {
+          "title": "حذف كل الودجات",
+          "desc": "يزيل كل ودجة من سطح المكتب المقسّم واللانهائي في جميع مساحات العمل والشاشات",
+          "button": "حذف الكل",
+          "confirm": "انقر مرة أخرى للتأكيد"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -611,8 +648,7 @@
       "sections": {
         "lockscreen": "شاشة القفل",
         "screens": "الشاشات",
-        "redactor": "المحرر",
-        "mode": "الوضع"
+        "redactor": "المحرر"
       }
     },
     "dock": {
@@ -676,7 +712,8 @@
       },
       "scrolling": {
         "desc": "تقييد العناصر المعروضة وتمكين التمرير بعجلة الفأرة أو لوحة اللمس",
-        "title": "تمكين تمرير العناصر"
+        "title": "تمكين تمرير العناصر",
+        "required": "فعّل تمرير العناصر أولاً"
       },
       "size": {
         "desc": "أبعاد أزرار التطبيقات الفردية بالبكسل",
@@ -688,7 +725,8 @@
       },
       "timeout": {
         "desc": "المدة الزمنية قبل الاختفاء بعد مغادرة مؤشر الفأرة",
-        "title": "مهلة الإخفاء التلقائي"
+        "title": "مهلة الإخفاء التلقائي",
+        "required": "فعّل الإخفاء التلقائي أولاً"
       },
       "transparency": {
         "desc": "ضبط مستوى شفافية خلفية الرصيف",
@@ -719,7 +757,10 @@
         "workspace": "مساحة العمل النشطة فقط"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "نافذة جديدة",
+        "pin": "تثبيت في الشريط",
+        "unpin": "إلغاء التثبيت من الشريط"
       },
       "background": {
         "title": "رسم خلفية خلف التطبيقات",
@@ -733,7 +774,8 @@
         "effects": "التأثيرات",
         "autohide": "الإخفاء التلقائي",
         "behavior": "السلوك"
-      }
+      },
+      "unavailable": "فعّل الشريط أولاً"
     },
     "file_picker": {
       "input_placeholder": "بحث...",
@@ -829,6 +871,16 @@
           "apply": "تطبيق",
           "cancel": "إلغاء"
         }
+      },
+      "standalone": {
+        "title": "نافذة مستقلة",
+        "desc": "فتح الإعدادات في نافذتها الخاصة بدلاً من اللوحة العائمة"
+      },
+      "sections": {
+        "profile": "الملف الشخصي",
+        "sound": "الصوت",
+        "behavior": "السلوك",
+        "location": "الموقع والطقس"
       }
     },
     "idle": {
@@ -928,6 +980,10 @@
       "search": {
         "title": "مزوّد البحث على الويب",
         "desc": "محرك البحث المستخدم عندما يبدأ الاستعلام بـ ?"
+      },
+      "sections": {
+        "layout": "التخطيط",
+        "search": "البحث"
       }
     },
     "lyrics_picker": {
@@ -1013,7 +1069,8 @@
     "search": {
       "no_results": "لم يتم العثور على إعدادات مطابقة",
       "placeholder": "ابحث في الإعدادات...",
-      "prompt": "اكتب للبحث في جميع الإعدادات..."
+      "prompt": "اكتب للبحث في جميع الإعدادات...",
+      "results": "نتائج البحث"
     },
     "settings": "الإعدادات",
     "sound_picker": {
@@ -1183,7 +1240,8 @@
         "empty": "لا توجد تطبيقات بسمة بعد. أضف واحدًا من القائمة"
       },
       "sections": {
-        "presets": "الإعدادات المسبقة"
+        "presets": "الإعدادات المسبقة",
+        "appearance": "المظهر"
       }
     },
     "theme_editor": {
@@ -1220,7 +1278,8 @@
       "name_placeholder": "اسم السمة...",
       "preview": "معاينة",
       "save": "حفظ",
-      "title": "سمة ألوان جديدة"
+      "title": "سمة ألوان جديدة",
+      "edit_title": "تعديل السمة المخصصة"
     },
     "tutorial": {
       "default_desc": "انقر لبدء الجولة التعليمية",
@@ -1231,7 +1290,10 @@
     "welcome": {
       "about": "حول المشروع",
       "hold_for_tutorial": "اضغط باستمرار لبدء الجولة",
-      "start_tutorial": "بدء الجولة التعليمية"
+      "start_tutorial": "بدء الجولة التعليمية",
+      "by_author": "بواسطة {author}",
+      "original_dev": "المطوّر الأصلي: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "wellbeing": {
       "am": "ص",
@@ -1280,7 +1342,8 @@
         "picker_search": "ابحث عن التطبيقات...",
         "picker_empty": "لا توجد تطبيقات مطابقة",
         "picker_apply": "تطبيق",
-        "picker_cancel": "إلغاء"
+        "picker_cancel": "إلغاء",
+        "add_app": "إضافة تطبيق"
       },
       "time_hm": "{h} س {m} د",
       "time_m": "{m} د",
@@ -1294,7 +1357,19 @@
       "limit_overlay": {
         "title": "تم بلوغ الحد اليومي",
         "hold": "اضغط مطولاً للمتابعة"
-      }
+      },
+      "day": "يوم",
+      "week": "أسبوع",
+      "screen_time": "وقت الشاشة",
+      "less_than_prev": "أقل بمقدار {time} من اليوم السابق",
+      "more_than_prev": "أكثر بمقدار {time} من اليوم السابق",
+      "same_as_prev": "نفس اليوم السابق",
+      "limit_progress": "{used} من الحد اليومي {limit}",
+      "limit_reached": "تم بلوغ الحد اليومي {limit}",
+      "peak_hour": "ساعة الذروة",
+      "week_total": "إجمالي الأسبوع",
+      "less": "أقل",
+      "more": "أكثر"
     },
     "screenshot": {
       "ocr": {
@@ -1314,6 +1389,11 @@
         "title": "مجلد لقطات الشاشة",
         "desc": "المجلد الذي تُحفظ فيه لقطات الشاشة",
         "select_dir": "اختر مجلدًا..."
+      },
+      "sections": {
+        "capture": "الالتقاط",
+        "files": "الملفات",
+        "ocr": "التعرّف على النص"
       }
     },
     "desktop": {
@@ -1359,7 +1439,8 @@
         "tiled": "مبلّط",
         "workspace": "مساحة العمل",
         "window": "نافذة",
-        "windows": "نوافذ"
+        "windows": "نوافذ",
+        "unsupported2": "Hyprland وSway فقط"
       },
       "actions": {
         "overview": "نظرة عامة",
@@ -1400,7 +1481,8 @@
         "title": "إعادة ضبط الحركة",
         "desc": "العودة إلى السرعات والتباعد والتمويه الافتراضية",
         "button": "إعادة ضبط"
-      }
+      },
+      "supported_only": "Hyprland وSway فقط"
     },
     "wallpaper": {
       "sections": {
@@ -1434,7 +1516,12 @@
       "installing_pkg": "جارٍ تثبيت {pkg}...",
       "installing_title": "جارٍ تثبيت حزم النظام والاعتماديات...",
       "missing_count": "مفقود {count} من الاعتماديات",
-      "syncing": "جارٍ مزامنة وتحديث حزم النظام (pacman -Syyu)..."
+      "syncing": "جارٍ مزامنة وتحديث حزم النظام (pacman -Syyu)...",
+      "enabling_copr": "جارٍ تفعيل مستودع COPR ‏{repo}...",
+      "enabling_repo": "جارٍ تفعيل المستودع {repo}...",
+      "enabling_terra": "جارٍ تفعيل مستودع Terra...",
+      "quickshell_outdated": "إصدار Quickshell {version} قديم جدًا، المطلوب {minimum} أو أحدث. جارٍ الترقية...",
+      "quickshell_still_old": "لا يزال Quickshell أقدم من {minimum}. حدّثه يدويًا، وإلا فلن تُفتح الإعدادات."
     },
     "os": {
       "default_os": "نظام لينكس",
@@ -1498,6 +1585,42 @@
       "twitter": "تويتر / X:",
       "unsupported_compositor": "مدير نوافذ غير مدعوم",
       "user": "المستخدم الحالي:"
+    },
+    "audio": {
+      "building": "لا يوجد محرك صوت مبني مسبقًا لهذا النظام، جارٍ بناؤه من الشيفرة المصدرية...",
+      "checksum_failed": "فشل التحقق من المجموع الاختباري لتنزيل محرك الصوت، سيتم التخطي.",
+      "download_failed": "تعذّر تنزيل محرك الصوت الخاص بـ Serpantinum، سيتم التخطي. يمكنك تثبيته لاحقًا من github.com/ilyamiro/serpantinum-audio.",
+      "install_failed": "فشل تثبيت محرك الصوت الخاص بـ Serpantinum. لن يعمل المعادل الصوتي حتى يتم تثبيته من github.com/ilyamiro/serpantinum-audio.",
+      "installed": "تم تثبيت محرك الصوت الخاص بـ Serpantinum {version}",
+      "installing": "جارٍ تثبيت محرك الصوت الخاص بـ Serpantinum...",
+      "up_to_date": "-> محرك الصوت الخاص بـ Serpantinum {version} مثبّت بالفعل."
+    },
+    "core": {
+      "checksum_failed": "فشل التحقق من المجموع الاختباري لتنزيل الخدمات الأساسية، سيتم التخطي.",
+      "download_failed": "تعذّر تنزيل الخدمات الأساسية لـ Serpantinum، سيتم التخطي. يمكنك تثبيتها لاحقًا من github.com/ilyamiro/serpantinum-core.",
+      "install_failed": "فشل تثبيت الخدمات الأساسية لـ Serpantinum. لن يعمل استخدام النظام ومؤشرات أقفال لوحة المفاتيح والحافظة حتى يتم تثبيتها من github.com/ilyamiro/serpantinum-core.",
+      "installed": "تم تثبيت الخدمات الأساسية لـ Serpantinum {version}",
+      "installing": "جارٍ تثبيت الخدمات الأساسية لـ Serpantinum...",
+      "unsupported_arch": "حزم الخدمات الأساسية المبنية مسبقًا متوفرة فقط لمعمارية x86_64، سيتم التخطي.",
+      "up_to_date": "-> الخدمات الأساسية لـ Serpantinum {version} مثبّتة بالفعل."
+    },
+    "gamma": {
+      "checksum_failed": "فشل التحقق من المجموع الاختباري لتنزيل مرشح الضوء الأزرق، سيتم التخطي.",
+      "download_failed": "تعذّر تنزيل مرشح الضوء الأزرق الخاص بـ Serpantinum، سيتم التخطي. يمكنك تثبيته لاحقًا من github.com/ilyamiro/serpantinum-gamma.",
+      "install_failed": "فشل تثبيت مرشح الضوء الأزرق الخاص بـ Serpantinum. لن يعمل حتى يتم تثبيته من github.com/ilyamiro/serpantinum-gamma.",
+      "installed": "تم تثبيت مرشح الضوء الأزرق الخاص بـ Serpantinum {version}",
+      "installing": "جارٍ تثبيت مرشح الضوء الأزرق الخاص بـ Serpantinum...",
+      "unsupported_arch": "حزم مرشح الضوء الأزرق المبنية مسبقًا متوفرة فقط لمعمارية x86_64، سيتم التخطي.",
+      "up_to_date": "-> مرشح الضوء الأزرق الخاص بـ Serpantinum {version} مثبّت بالفعل."
+    },
+    "ski": {
+      "checksum_failed": "فشل التحقق من المجموع الاختباري لتنزيل Ski، سيتم التخطي.",
+      "download_failed": "تعذّر تنزيل Ski، سيتم التخطي. يمكنك تثبيته لاحقًا من github.com/ilyamiro/Ski.",
+      "install_failed": "فشل تثبيت Ski",
+      "installed": "تم تثبيت Ski {version}",
+      "installing": "جارٍ تثبيت مدير الملفات Ski...",
+      "unsupported_arch": "حزم Ski المبنية مسبقًا متوفرة فقط لمعمارية x86_64، سيتم التخطي.",
+      "up_to_date": "-> Ski {version} مثبّت بالفعل."
     }
   },
   "lock": {
@@ -1511,12 +1634,14 @@
       "access_denied": "تم رفض الوصول",
       "authenticating": "جارٍ التحقق...",
       "enter_pin": "أدخل رمز PIN",
-      "locked": "مقفل"
+      "locked": "مقفل",
+      "too_many_attempts": "محاولات كثيرة جدًا"
     },
     "fingerprint": {
       "ready": "المس المستشعر",
       "not_recognized": "لم يتم التعرف على البصمة",
-      "recognized": "تم التعرف على البصمة"
+      "recognized": "تم التعرف على البصمة",
+      "blocked": "بصمة الإصبع معطّلة"
     },
     "unknown": "غير معروف",
     "redactor": {
@@ -1663,7 +1788,8 @@
       },
       "weather": {
         "fallback_body": "لا توجد تفاصيل متاحة.",
-        "fallback_summary": "تقرير الطقس"
+        "fallback_summary": "تقرير الطقس",
+        "title": "الطقس"
       }
     }
   },
@@ -1935,7 +2061,8 @@
       "red": "أحمر",
       "search": "بحث",
       "vid": "فيديو",
-      "yellow": "أصفر"
+      "yellow": "أصفر",
+      "history": "السجل"
     },
     "notifications": {
       "downloading": "جارٍ تنزيل الخلفية...",
@@ -2065,7 +2192,11 @@
     "settings": {
       "lyricsAlignment": "محاذاة الكلمات",
       "lyricsLines": "عدد الأسطر",
-      "textContent": "النص"
+      "textContent": "النص",
+      "lineThickness": "السماكة",
+      "showNoLyrics": "إظهار نص «لا توجد كلمات»",
+      "usageStyle": "النمط",
+      "visualizerStyle": "نمط المرئي الصوتي"
     },
     "system": {
       "desc": "مراقب الأداء ومفاتيح الطاقة والإعدادات السريعة",
@@ -2103,7 +2234,8 @@
       "rect": "مستطيل",
       "round": "دائري",
       "rounded": "حواف مستديرة",
-      "simpleLyrics": "كلمات مبسطة"
+      "simpleLyrics": "كلمات مبسطة",
+      "circle": "دائرة"
     },
     "volume": {
       "desc": "إدارة أجهزة الصوت ومستويات الشدة",
@@ -2118,6 +2250,13 @@
     },
     "text": {
       "placeholder": "أدخل النص"
+    },
+    "style": {
+      "circle": "دائرة",
+      "wave": "موجة"
     }
+  },
+  "common": {
+    "select": "اختيار..."
   }
 }

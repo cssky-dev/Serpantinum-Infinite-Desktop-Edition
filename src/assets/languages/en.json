@@ -23,12 +23,7 @@
       },
       "original_dev": "Original dev: @{author}",
       "edition": "Infinite Desktop Edition",
-      "notice": {
-        "info_title": "Information",
-        "info_body2": "A Wayland desktop shell with an endless, zoomable canvas for your windows and widgets. Built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop supports Hyprland and Sway.",
-        "ai_title": "Vibecoded with Claude",
-        "ai_body": "This project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check the README and the docs instead."
-      }
+      "changelog": "Changelog"
     },
     "tabs": {
       "welcome": "Welcome",
@@ -57,7 +52,8 @@
       "theme_wallpapers": "Wallpapers",
       "general_main": "General",
       "general_presets": "Presets",
-      "desktop": "Desktop"
+      "desktop": "Desktop",
+      "autostart": "Autostart"
     },
     "launcher": {
       "position": {
@@ -348,8 +344,6 @@
           "desc": "Delete every widget of the current layout on all screens in one click",
           "button": "Remove all"
         },
-        "mode_title": "Current mode",
-        "mode_hint": "Widgets are saved separately for Tiled and Infinite desktop mode. Press Super+G to switch between the two modes.",
         "delete_all": {
           "title": "Delete all widgets",
           "desc": "Removes every widget from both Tiled and Infinite desktop on every workspace and screen",
@@ -390,8 +384,7 @@
       "sections": {
         "lockscreen": "Lock screen",
         "screens": "Screens",
-        "redactor": "Redactor",
-        "mode": "Mode"
+        "redactor": "Redactor"
       }
     },
     "bar": {
@@ -404,7 +397,10 @@
               "pills": "Pills",
               "numbers": "Numbers",
               "pacman": "Pacman"
-            }
+            },
+            "pills": "Minimal pill indicators",
+            "numbers": "Numbered indices",
+            "pacman": "Animated arcade dots"
           },
           "name": "Workspaces"
         },
@@ -424,7 +420,10 @@
               "classic": "Classic",
               "material": "Material",
               "badge": "Dot Matrix"
-            }
+            },
+            "classic": "Clean stacked time and date",
+            "material": "Diagonal bold accent numbers",
+            "badge": "Pill-capsule segmented cards"
           }
         },
         "info": "Recording/timer",
@@ -714,6 +713,10 @@
         "behavior": "Behavior",
         "layout": "Layout",
         "modules": "Modules"
+      },
+      "height": {
+        "title": "Bar height",
+        "desc": "Set the height of the bar as a percentage"
       }
     },
     "theme": {
@@ -915,7 +918,8 @@
         "pink": "Pink",
         "flamingo": "Flamingo",
         "rosewater": "Rosewater"
-      }
+      },
+      "edit_title": "Edit custom theme"
     },
     "wellbeing": {
       "desktop": "Desktop",
@@ -1288,6 +1292,49 @@
         "wallpaper": "Wallpaper",
         "transition": "Transition"
       }
+    },
+    "autostart": {
+      "title": "Autostart",
+      "desc": "Manage programs, binaries and scripts that run automatically when the session starts",
+      "master_switch": {
+        "title": "Enable autostart",
+        "desc": "Run the configured autostart application list globally at login"
+      },
+      "add_button": "Add application",
+      "empty_title": "No autostart applications",
+      "empty_desc": "Click 'Add application' to set commands, binaries, delays and repeats.",
+      "name_label": "Name",
+      "name_placeholder": "e.g. Discord, Telegram, script",
+      "exec_label": "Command to run",
+      "exec_placeholder": "Binary path or name with flags (e.g. discord --start-minimized)",
+      "browse_file": "Browse file",
+      "delay_label": "Start delay",
+      "delay_desc": "Time to wait in seconds before launching",
+      "delay_unit": "s",
+      "count_label": "Launch count",
+      "count_desc": "Number of instances to run at startup",
+      "repeat_delay_label": "Repeat interval",
+      "repeat_delay_desc": "Delay between repeated launches",
+      "workspace_label": "Workspace",
+      "workspace_default": "Default",
+      "silent_label": "Silent start",
+      "silent_desc": "Open the window in the background without taking focus",
+      "condition_label": "Start condition",
+      "condition_always": "Always",
+      "condition_ac_only": "On AC power only",
+      "condition_battery_only": "On battery only",
+      "condition_multi_monitor": "Only with multiple monitors",
+      "restart_crash_label": "Restart on crash",
+      "restart_crash_desc": "Automatically restart the service if it crashes",
+      "status_running": "Running",
+      "status_success": "Succeeded",
+      "status_failed": "Failed",
+      "status_idle": "Idle",
+      "view_log": "Log",
+      "no_log": "The log is empty for now",
+      "run_now": "Run now",
+      "delete": "Delete",
+      "toggle": "Enable / disable"
     }
   },
   "sysnotif": {
@@ -1325,7 +1372,11 @@
     "tab_emojis": "Emojis",
     "placeholder_emojis": "Search emojis by name or keyword...",
     "search_run": "Search {provider}",
-    "search_hint": "Type to search with {provider}"
+    "search_hint": "Type to search with {provider}",
+    "command_run": "Execute command: {cmd}",
+    "command_hint": "Type a command to execute",
+    "calc_result": "Calculation result (Enter to copy)",
+    "no_emojis_found": "No emojis found"
   },
   "calendar": {
     "loading": "Loading...",
@@ -1516,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "Weather report",
-        "fallback_body": "No breakdown data provided."
+        "fallback_body": "No breakdown data provided.",
+        "title": "Weather"
       },
       "screenshot": {
         "badge": "Screenshot",
@@ -1759,7 +1811,8 @@
       "blue": "Blue",
       "purple": "Purple",
       "pink": "Pink",
-      "monochrome": "Monochrome"
+      "monochrome": "Monochrome",
+      "history": "History"
     }
   },
   "weather": {
@@ -1893,13 +1946,16 @@
     },
     "presets": {
       "minimal": {
-        "name": "Minimal"
+        "name": "Minimal",
+        "desc": "Clean, subtle layout with a minimal digital clock and compact weather."
       },
       "media_station": {
-        "name": "Media station"
+        "name": "Media station",
+        "desc": "Dedicated media setup with a centered audio visualizer and a round music player."
       },
       "dashboard": {
-        "name": "Dashboard"
+        "name": "Dashboard",
+        "desc": "Full system monitor with a digital clock, hardware usage and battery level."
       }
     },
     "github": {

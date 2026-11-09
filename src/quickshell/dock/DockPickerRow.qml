@@ -75,6 +75,7 @@ Rectangle {
                 anchors.fill: parent
                 anchors.margins: dockWindow.s(3)
                 fillMode: Image.PreserveAspectFit
+                sourceSize: Qt.size(Math.max(32, width * 2), Math.max(32, height * 2))
                 asynchronous: true
                 smooth: true
                 mipmap: true

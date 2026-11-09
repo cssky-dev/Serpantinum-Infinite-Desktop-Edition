@@ -177,6 +177,7 @@ Rectangle {
                 height: presetCard.widgetsLayer ? presetCard.widgetsLayer.h : 0
                 source: presetCard.layerSource(presetCard.widgetsLayer)
                 fillMode: Image.Stretch
+                sourceSize: Qt.size(Math.max(32, width * 2), Math.max(32, height * 2))
                 asynchronous: true
                 smooth: true
                 mipmap: true

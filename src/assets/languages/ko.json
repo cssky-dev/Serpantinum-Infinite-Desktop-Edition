@@ -20,7 +20,10 @@
         "shell": "셸",
         "uptime": "가동 시간",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "원작 개발자: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "변경 내역"
     },
     "tabs": {
       "welcome": "시작",
@@ -49,7 +52,8 @@
       "theme_wallpapers": "배경화면",
       "general_main": "일반",
       "general_presets": "프리셋",
-      "desktop": "데스크톱"
+      "desktop": "데스크톱",
+      "autostart": "자동 시작"
     },
     "launcher": {
       "position": {
@@ -81,6 +85,10 @@
       "search": {
         "title": "웹 검색 제공자",
         "desc": "?로 시작하는 쿼리에 사용할 검색 엔진"
+      },
+      "sections": {
+        "layout": "레이아웃",
+        "search": "검색"
       }
     },
     "notifications": {
@@ -194,7 +202,10 @@
     "welcome": {
       "about": "정보",
       "hold_for_tutorial": "길게 눌러 튜토리얼 보기",
-      "start_tutorial": "튜토리얼 시작"
+      "start_tutorial": "튜토리얼 시작",
+      "by_author": "제작: {author}",
+      "original_dev": "원작 개발자: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "{section} 튜토리얼",
@@ -275,6 +286,12 @@
           "apply": "적용",
           "cancel": "취소"
         }
+      },
+      "sections": {
+        "profile": "프로필",
+        "sound": "소리",
+        "behavior": "동작",
+        "location": "위치 및 날씨"
       }
     },
     "display": {
@@ -327,8 +344,12 @@
         },
         "mode_canvas": "무한 데스크톱",
         "mode_tiled": "타일",
-        "mode_title": "현재 모드",
-        "mode_hint": "위젯은 타일 모드와 무한 데스크톱 모드에 따로 저장됩니다. Super+G를 눌러 두 모드 사이를 전환하세요."
+        "delete_all": {
+          "title": "모든 위젯 삭제",
+          "desc": "모든 워크스페이스와 화면에서 타일형 및 무한 데스크톱의 위젯을 전부 제거합니다",
+          "button": "모두 삭제",
+          "confirm": "확인하려면 다시 클릭하세요"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -363,8 +384,7 @@
       "sections": {
         "lockscreen": "잠금 화면",
         "screens": "화면",
-        "redactor": "편집기",
-        "mode": "모드"
+        "redactor": "편집기"
       }
     },
     "bar": {
@@ -377,7 +397,10 @@
               "pills": "알약",
               "numbers": "숫자",
               "pacman": "팩맨"
-            }
+            },
+            "pills": "미니멀 알약형 표시기",
+            "numbers": "번호 인덱스",
+            "pacman": "애니메이션 아케이드 점"
           },
           "name": "작업 공간"
         },
@@ -397,11 +420,17 @@
               "classic": "클래식",
               "material": "머티리얼",
               "badge": "도트 매트릭스"
-            }
+            },
+            "classic": "깔끔하게 쌓인 시간과 날짜",
+            "material": "대각선 굵은 강조 숫자",
+            "badge": "알약 캡슐 모양의 분할 카드"
           }
         },
         "info": "녹화/타이머",
-        "weather": "날씨"
+        "weather": "날씨",
+        "notifications": "알림",
+        "usage": "시스템 사용량",
+        "clock": "시계"
       },
       "position": {
         "title": "바 위치",
@@ -431,6 +460,14 @@
         "style": {
           "title": "스타일",
           "desc": "워크스페이스 표시기의 시각적 스타일을 선택합니다"
+        },
+        "per_monitor": {
+          "title": "모니터별 번호 매기기",
+          "desc": "Hyprland 전용. 각 모니터에서 워크스페이스를 1부터 번호 매기고 모니터별 워크스페이스 수를 설정합니다",
+          "unavailable": "Hyprland에서만 사용할 수 있습니다"
+        },
+        "monitor_count": {
+          "desc": "이 모니터가 가진 워크스페이스"
         }
       },
       "style": {
@@ -532,11 +569,13 @@
           "name": {
             "classic": "클래식",
             "minimal": "미니멀",
-            "text": "텍스트"
+            "text": "텍스트",
+            "button": "버튼"
           },
           "classic": "그라디언트 웨이브 알약 스타일",
           "minimal": "캡이 있는 iOS/Android 캡슐 스타일",
-          "text": "배경 없는 깔끔한 텍스트 및 아이콘"
+          "text": "배경 없는 깔끔한 텍스트 및 아이콘",
+          "button": "배경이 있는 인터랙티브 버튼 알약"
         }
       },
       "wifi": {
@@ -674,6 +713,10 @@
         "behavior": "동작",
         "layout": "레이아웃",
         "modules": "모듈"
+      },
+      "height": {
+        "title": "바 높이",
+        "desc": "바의 높이를 백분율로 설정합니다"
       }
     },
     "theme": {
@@ -805,7 +848,8 @@
         "empty": "아직 테마가 적용된 앱이 없습니다. 목록에서 추가하세요"
       },
       "sections": {
-        "presets": "프리셋"
+        "presets": "프리셋",
+        "appearance": "모양"
       }
     },
     "file_picker": {
@@ -874,7 +918,8 @@
         "pink": "Pink",
         "flamingo": "Flamingo",
         "rosewater": "Rosewater"
-      }
+      },
+      "edit_title": "사용자 지정 테마 편집"
     },
     "wellbeing": {
       "desktop": "데스크톱",
@@ -927,7 +972,8 @@
         "picker_search": "앱 검색...",
         "picker_empty": "일치하는 앱이 없습니다",
         "picker_apply": "적용",
-        "picker_cancel": "취소"
+        "picker_cancel": "취소",
+        "add_app": "앱 추가"
       },
       "notify": {
         "title": "디지털 웰빙",
@@ -937,7 +983,19 @@
       "limit_overlay": {
         "title": "일일 한도 도달",
         "hold": "길게 눌러 계속"
-      }
+      },
+      "day": "일",
+      "week": "주",
+      "screen_time": "화면 시간",
+      "less_than_prev": "전날보다 {time} 적음",
+      "more_than_prev": "전날보다 {time} 많음",
+      "same_as_prev": "전날과 같음",
+      "limit_progress": "일일 한도 {limit} 중 {used}",
+      "limit_reached": "일일 한도 {limit}에 도달했습니다",
+      "peak_hour": "피크 시간",
+      "week_total": "주간 합계",
+      "less": "적게",
+      "more": "많이"
     },
     "update_available": "업데이트 있음",
     "osd": {
@@ -1006,7 +1064,8 @@
       },
       "timeout": {
         "title": "자동 숨김 지연 시간",
-        "desc": "마우스가 떠난 후 숨겨지기까지의 지연 시간"
+        "desc": "마우스가 떠난 후 숨겨지기까지의 지연 시간",
+        "required": "먼저 자동 숨김을 켜세요"
       },
       "floating": {
         "title": "플로팅 독",
@@ -1036,7 +1095,8 @@
       },
       "scrolling": {
         "title": "요소 스크롤 활성화",
-        "desc": "표시되는 요소를 제한하고 마우스 휠 또는 터치패드 스크롤을 허용합니다"
+        "desc": "표시되는 요소를 제한하고 마우스 휠 또는 터치패드 스크롤을 허용합니다",
+        "required": "먼저 요소 스크롤을 켜세요"
       },
       "visible_elements": {
         "title": "표시할 요소 수",
@@ -1083,7 +1143,10 @@
         "workspace": "활성 작업 공간만"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "새 창",
+        "pin": "독에 고정",
+        "unpin": "독에서 고정 해제"
       },
       "background": {
         "title": "앱 뒤에 배경 그리기",
@@ -1097,7 +1160,8 @@
         "effects": "효과",
         "autohide": "자동 숨김",
         "behavior": "동작"
-      }
+      },
+      "unavailable": "먼저 독을 활성화하세요"
     },
     "lyrics_picker": {
       "title": "가사 파일 선택",
@@ -1107,7 +1171,8 @@
     "search": {
       "placeholder": "설정 검색...",
       "prompt": "설정을 검색하려면 입력하세요...",
-      "no_results": "설정을 찾을 수 없습니다"
+      "no_results": "설정을 찾을 수 없습니다",
+      "results": "검색 결과"
     },
     "screenshot": {
       "ocr": {
@@ -1127,6 +1192,11 @@
         "title": "스크린샷 폴더",
         "desc": "스크린샷이 저장되는 폴더",
         "select_dir": "디렉터리 선택..."
+      },
+      "sections": {
+        "capture": "캡처",
+        "files": "파일",
+        "ocr": "텍스트 인식"
       }
     },
     "desktop": {
@@ -1172,7 +1242,8 @@
         "tiled": "타일",
         "workspace": "작업 공간",
         "window": "창",
-        "windows": "창"
+        "windows": "창",
+        "unsupported2": "Hyprland 및 Sway 전용"
       },
       "actions": {
         "overview": "개요",
@@ -1213,13 +1284,57 @@
         "title": "모션 초기화",
         "desc": "기본 속도, 간격, 블러로 되돌립니다",
         "button": "초기화"
-      }
+      },
+      "supported_only": "Hyprland 및 Sway 전용"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "배경화면",
         "transition": "전환"
       }
+    },
+    "autostart": {
+      "title": "자동 시작",
+      "desc": "세션 시작 시 자동으로 실행되는 프로그램, 바이너리, 스크립트를 관리합니다",
+      "master_switch": {
+        "title": "자동 시작 사용",
+        "desc": "로그인 시 설정된 자동 시작 앱 목록을 전체적으로 실행합니다"
+      },
+      "add_button": "앱 추가",
+      "empty_title": "자동 시작 앱 없음",
+      "empty_desc": "'앱 추가'를 눌러 명령, 바이너리, 지연, 반복을 설정하세요.",
+      "name_label": "이름",
+      "name_placeholder": "예: Discord, Telegram, 스크립트",
+      "exec_label": "실행할 명령",
+      "exec_placeholder": "바이너리 경로 또는 옵션이 포함된 이름 (예: discord --start-minimized)",
+      "browse_file": "파일 찾아보기",
+      "delay_label": "시작 지연",
+      "delay_desc": "실행 전 대기 시간(초)",
+      "delay_unit": "초",
+      "count_label": "실행 횟수",
+      "count_desc": "시작 시 실행할 인스턴스 수",
+      "repeat_delay_label": "반복 간격",
+      "repeat_delay_desc": "반복 실행 사이의 지연",
+      "workspace_label": "작업 공간",
+      "workspace_default": "기본값",
+      "silent_label": "조용히 시작",
+      "silent_desc": "포커스를 가져가지 않고 백그라운드에서 창 열기",
+      "condition_label": "시작 조건",
+      "condition_always": "항상",
+      "condition_ac_only": "AC 전원일 때만",
+      "condition_battery_only": "배터리일 때만",
+      "condition_multi_monitor": "모니터가 여러 개일 때만",
+      "restart_crash_label": "충돌 시 다시 시작",
+      "restart_crash_desc": "충돌하면 서비스를 자동으로 다시 시작",
+      "status_running": "실행 중",
+      "status_success": "성공",
+      "status_failed": "실패",
+      "status_idle": "대기 중",
+      "view_log": "로그",
+      "no_log": "로그가 아직 비어 있습니다",
+      "run_now": "지금 실행",
+      "delete": "삭제",
+      "toggle": "사용 / 사용 안 함"
     }
   },
   "sysnotif": {
@@ -1257,7 +1372,11 @@
     "tab_emojis": "이모지",
     "placeholder_emojis": "이모지 검색 또는 키워드 입력...",
     "search_run": "{provider}에서 검색",
-    "search_hint": "입력하여 {provider}에서 검색"
+    "search_hint": "입력하여 {provider}에서 검색",
+    "command_run": "명령 실행: {cmd}",
+    "command_hint": "실행할 명령을 입력하세요",
+    "calc_result": "계산 결과 (Enter를 눌러 복사)",
+    "no_emojis_found": "이모지를 찾을 수 없습니다"
   },
   "calendar": {
     "loading": "불러오는 중...",
@@ -1293,12 +1412,14 @@
       "locked": "잠김",
       "access_denied": "접근이 거부되었습니다",
       "authenticating": "인증 중...",
-      "enter_pin": "PIN 입력"
+      "enter_pin": "PIN 입력",
+      "too_many_attempts": "시도 횟수가 너무 많습니다"
     },
     "fingerprint": {
       "ready": "센서를 터치하세요",
       "not_recognized": "지문을 인식하지 못했습니다",
-      "recognized": "지문이 인식되었습니다"
+      "recognized": "지문이 인식되었습니다",
+      "blocked": "지문 인식이 비활성화되었습니다"
     },
     "power": {
       "suspend": "절전",
@@ -1446,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "날씨 정보",
-        "fallback_body": "상세 데이터가 없습니다."
+        "fallback_body": "상세 데이터가 없습니다.",
+        "title": "날씨"
       },
       "screenshot": {
         "badge": "스크린샷",
@@ -1506,7 +1628,10 @@
         "copied_body": "Drawing copied to clipboard",
         "failed_title": "Export failed",
         "failed_body": "Could not save drawing"
-      }
+      },
+      "hex": "Hex",
+      "palette": "팔레트",
+      "palette_default": "기본값"
     },
     "notes": {
       "title": "메모",
@@ -1686,7 +1811,8 @@
       "blue": "파랑",
       "purple": "보라",
       "pink": "분홍",
-      "monochrome": "흑백"
+      "monochrome": "흑백",
+      "history": "기록"
     }
   },
   "weather": {
@@ -1815,7 +1941,8 @@
       "stretched": "Stretched",
       "lumen": "루멘",
       "lyrics": "가사",
-      "simpleLyrics": "단순 가사"
+      "simpleLyrics": "단순 가사",
+      "circle": "원"
     },
     "presets": {
       "minimal": {
@@ -1845,7 +1972,11 @@
     "settings": {
       "lyricsLines": "줄 수",
       "lyricsAlignment": "정렬",
-      "textContent": "텍스트"
+      "textContent": "텍스트",
+      "lineThickness": "두께",
+      "showNoLyrics": "\"가사 없음\" 텍스트 표시",
+      "usageStyle": "스타일",
+      "visualizerStyle": "비주얼라이저 스타일"
     },
     "align": {
       "left": "왼쪽",
@@ -1857,6 +1988,10 @@
     },
     "text": {
       "placeholder": "텍스트 입력"
+    },
+    "style": {
+      "circle": "원",
+      "wave": "파형"
     }
   },
   "cli": {
@@ -2042,7 +2177,12 @@
       "installing_title": "시스템 패키지와 의존성을 설치하는 중...",
       "installing_pkg": "{pkg} 설치 중...",
       "install_ok": "{pkg} 설치 완료",
-      "install_failed": "{pkg} 설치 실패"
+      "install_failed": "{pkg} 설치 실패",
+      "enabling_copr": "COPR 저장소 {repo}을(를) 활성화하는 중...",
+      "enabling_repo": "저장소 {repo}을(를) 활성화하는 중...",
+      "enabling_terra": "Terra 저장소를 활성화하는 중...",
+      "quickshell_outdated": "Quickshell {version}은(는) 너무 오래되었습니다. {minimum} 이상이 필요합니다. 업그레이드하는 중...",
+      "quickshell_still_old": "Quickshell이 여전히 {minimum}보다 오래되었습니다. 직접 업데이트하세요. 그렇지 않으면 설정이 열리지 않습니다."
     },
     "deploy": {
       "configuring_sddm": "SDDM 디스플레이 관리자를 설정하는 중...",
@@ -2052,6 +2192,42 @@
       "sddm_no_xorg": "Xorg를 찾을 수 없어 SDDM에 {compositor}을(를) 사용합니다.",
       "sddm_no_backend": "/usr/local/bin, /usr/bin, /bin에서 Xorg와 로그인 화면용으로 지원되는 Wayland 컴포지터(kwin_wayland/weston)를 모두 찾을 수 없습니다.",
       "sddm_skipped": "SDDM 설정을 건너뜁니다. 사용 가능한 디스플레이 서버 또는 로그인 컴포지터를 찾을 수 없습니다. 현재 디스플레이 매니저는 변경되지 않습니다."
+    },
+    "audio": {
+      "building": "이 시스템용 사전 빌드 오디오 엔진이 없어 소스에서 빌드합니다...",
+      "checksum_failed": "오디오 엔진 다운로드가 체크섬 검사를 통과하지 못해 건너뜁니다.",
+      "download_failed": "Serpantinum 오디오 엔진을 다운로드할 수 없어 건너뜁니다. 나중에 github.com/ilyamiro/serpantinum-audio 에서 설치할 수 있습니다.",
+      "install_failed": "Serpantinum 오디오 엔진 설치에 실패했습니다. github.com/ilyamiro/serpantinum-audio 에서 설치하기 전까지 이퀄라이저가 작동하지 않습니다.",
+      "installed": "Serpantinum 오디오 엔진 {version} 설치 완료",
+      "installing": "Serpantinum 오디오 엔진을 설치하는 중...",
+      "up_to_date": "-> Serpantinum 오디오 엔진 {version}이(가) 이미 설치되어 있습니다."
+    },
+    "core": {
+      "checksum_failed": "코어 서비스 다운로드가 체크섬 검사를 통과하지 못해 건너뜁니다.",
+      "download_failed": "Serpantinum 코어 서비스를 다운로드할 수 없어 건너뜁니다. 나중에 github.com/ilyamiro/serpantinum-core 에서 설치할 수 있습니다.",
+      "install_failed": "Serpantinum 코어 서비스 설치에 실패했습니다. github.com/ilyamiro/serpantinum-core 에서 설치하기 전까지 시스템 사용량, 키보드 잠금 표시기, 클립보드가 작동하지 않습니다.",
+      "installed": "Serpantinum 코어 서비스 {version} 설치 완료",
+      "installing": "Serpantinum 코어 서비스를 설치하는 중...",
+      "unsupported_arch": "사전 빌드된 코어 서비스 패키지는 x86_64에만 있어 건너뜁니다.",
+      "up_to_date": "-> Serpantinum 코어 서비스 {version}이(가) 이미 설치되어 있습니다."
+    },
+    "gamma": {
+      "checksum_failed": "블루라이트 필터 다운로드가 체크섬 검사를 통과하지 못해 건너뜁니다.",
+      "download_failed": "Serpantinum 블루라이트 필터를 다운로드할 수 없어 건너뜁니다. 나중에 github.com/ilyamiro/serpantinum-gamma 에서 설치할 수 있습니다.",
+      "install_failed": "Serpantinum 블루라이트 필터 설치에 실패했습니다. github.com/ilyamiro/serpantinum-gamma 에서 설치하기 전까지 작동하지 않습니다.",
+      "installed": "Serpantinum 블루라이트 필터 {version} 설치 완료",
+      "installing": "Serpantinum 블루라이트 필터를 설치하는 중...",
+      "unsupported_arch": "사전 빌드된 블루라이트 필터 패키지는 x86_64에만 있어 건너뜁니다.",
+      "up_to_date": "-> Serpantinum 블루라이트 필터 {version}이(가) 이미 설치되어 있습니다."
+    },
+    "ski": {
+      "checksum_failed": "Ski 다운로드가 체크섬 검사를 통과하지 못해 건너뜁니다.",
+      "download_failed": "Ski를 다운로드할 수 없어 건너뜁니다. 나중에 github.com/ilyamiro/Ski 에서 설치할 수 있습니다.",
+      "install_failed": "Ski 설치 실패",
+      "installed": "Ski {version} 설치 완료",
+      "installing": "파일 관리자 Ski를 설치하는 중...",
+      "unsupported_arch": "사전 빌드된 Ski 패키지는 x86_64에만 있어 건너뜁니다.",
+      "up_to_date": "-> Ski {version}이(가) 이미 설치되어 있습니다."
     }
   },
   "translator": {
@@ -2075,6 +2251,12 @@
     "keep_clipboard_sub": "끄면 붙여넣기 후 원래 클립보드 내용이 복원됩니다"
   },
   "datetime": {
-    "full_date": "MMMM d일 dddd"
+    "full_date": "MMMM d일 dddd",
+    "just_now": "방금",
+    "minutes_ago": "{mins}분 전",
+    "yesterday": "어제 {time}"
+  },
+  "common": {
+    "select": "선택..."
   }
 }

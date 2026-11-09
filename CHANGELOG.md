@@ -6,7 +6,7 @@
 
 All notable changes are listed here, newest first. Versions follow `version.txt`.
 
-[2.4.6](#246) · [2.4.4](#244) · [2.4.x](#24x-ported-onto-upstream-ilyamiro-241) · [2.3.x](#23x)
+[2.4.6](#246) · [2.4.5](#245) · [2.4.4](#244) · [2.4.x](#24x-ported-onto-upstream-ilyamiro-241) · [2.3.x](#23x)
 
 </div>
 
@@ -15,6 +15,25 @@ All notable changes are listed here, newest first. Versions follow `version.txt`
 ---
 
 ## 2.4.6
+
+### ✨ Added
+- **Startup intro for the bar.** The bar glides in from its screen edge and the modules follow one after another.
+- **Staggered entrance for guide settings rows** whenever a tab is shown (`GuideStagger.qml`).
+- New translation strings for the About, Welcome, Dock, Desktop and Digital Wellbeing tabs in all languages.
+
+### 🔧 Changed
+- Removed the "Mode" section from the Widgets tab and the notices block from the About tab.
+- Icons in the dock, music widgets, presets and Digital Wellbeing are decoded at their display size to save RAM.
+- The installer clones and fetches with `--depth 50` so first installs are smaller and faster.
+
+### 🐛 Fixed
+- `Nightfox.json` was an empty file, so the Nightfox theme failed to load. It is restored.
+- **Translations are complete in all 23 languages.** Every language file now has the same keys: the Autostart tab, installer messages, lock screen, widget style names, quick actions palette, and the strings that were missing from `en.json`.
+- Strings that always showed English no matter the language are now translated: app launcher command and calculator hints, bar module style descriptions, bar height (vertical bars), theme editor title, weather notification title, wallpaper history filter, About tab update and changelog buttons, and the location (Auto-detect, Latitude, Longitude, Apply) and wallpaper (Select wallpaper) buttons.
+
+---
+
+## 2.4.5
 
 ### ✨ Added
 - **Sway support for the Infinite desktop.** The canvas engine now drives Sway through its IPC (`swaymsg`), with Super+G, zoom, pan, overview, tidy and marks wired into the default Sway config. The widget redactor snaps to apps on Sway as well.

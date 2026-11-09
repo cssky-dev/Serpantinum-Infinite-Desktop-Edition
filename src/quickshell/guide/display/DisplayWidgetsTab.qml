@@ -83,20 +83,6 @@ DisplayWidgetsState {
                 }
             }
 
-            SectionLabel { rootObj: displayWidgetsRoot.rootObj; key: "guide.display.sections.mode"; fallback: "Mode" }
-
-            // Plain text only: which mode is active and how to switch it
-            Text {
-                Layout.fillWidth: true
-                Layout.leftMargin: rootObj.s(6)
-                Layout.rightMargin: rootObj.s(6)
-                text: displayWidgetsRoot.tr("guide.display.widgets.mode_title", "Current mode") + ": " + displayWidgetsRoot.modeLabelText + "  -  " + displayWidgetsRoot.tr("guide.display.widgets.mode_hint", "Widgets are saved separately for Tiled and Infinite desktop mode. Press Super+G to switch between the two modes.")
-                font.family: ThemeBackend.fontFamily
-                font.pixelSize: rootObj.s(11)
-                color: ThemeBackend.subtext0
-                wrapMode: Text.WordWrap
-            }
-
             SettingsRow {
                 rootObj: displayWidgetsRoot.rootObj
                 settingId: "widgets_delete_all"

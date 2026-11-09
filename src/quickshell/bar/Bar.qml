@@ -359,6 +359,33 @@ Variants {
             property bool isStartupReady: false
             Timer { interval: 10; running: true; onTriggered: barWindowRoot.isStartupReady = true }
 
+            // ---- Startup intro -------------------------------------------------
+            // One clock (0..1) drives everything: first the whole bar glides in from
+            // its screen edge with a soft overshoot, then every module follows from the
+            // start of the bar to its end (see BarModule.introP). It runs once, when the
+            // bar first appears, and is idle afterwards.
+            property real introClock: 0.0
+            readonly property real introWrapP: barWindowRoot.introOutBack(Math.min(1.0, introClock / 0.42), 0.9)
+            readonly property real introFade: 1.0 - Math.pow(1.0 - Math.min(1.0, introClock / 0.28), 3)
+            readonly property real introOffset: barHeight + edgePadding + s(14)
+
+            function introOutBack(t, o) {
+                let u = t - 1.0;
+                return 1.0 + (o + 1.0) * u * u * u + o * u * u;
+            }
+
+            SequentialAnimation {
+                id: introAnim
+                running: false
+                PauseAnimation { duration: 140 }
+                NumberAnimation { target: barWindowRoot; property: "introClock"; from: 0.0; to: 1.0; duration: 1250; easing.type: Easing.Linear }
+            }
+            Timer {
+                interval: 60
+                running: true
+                onTriggered: introAnim.start()
+            }
+
             property bool startupCascadeFinished: false
             Timer { interval: 1050; running: true; onTriggered: barWindowRoot.startupCascadeFinished = true }
 
@@ -372,6 +399,8 @@ Variants {
                 id: verticalLoader
                 anchors.fill: parent
                 active: barWindowRoot.isVertical
+                opacity: barWindowRoot.introFade
+                transform: Translate { x: (barWindowRoot.barPosition === "right" ? 1 : -1) * barWindowRoot.introOffset * (1.0 - barWindowRoot.introWrapP) }
                 sourceComponent: Component {
                     SideBar {
                         id: verticalWrapper
@@ -393,6 +422,8 @@ Variants {
                 id: horizontalLoader
                 anchors.fill: parent
                 active: !barWindowRoot.isVertical
+                opacity: barWindowRoot.introFade
+                transform: Translate { y: (barWindowRoot.barPosition === "bottom" ? 1 : -1) * barWindowRoot.introOffset * (1.0 - barWindowRoot.introWrapP) }
                 sourceComponent: Component {
                     TopBar {
                         barWindow: barWindowRoot

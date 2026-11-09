@@ -14,6 +14,7 @@ Item {
         id: blurA
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
+        sourceSize: Qt.size(Math.max(64, Math.max(width, height)), Math.max(64, Math.max(width, height)))
         opacity: blurCrossfader.showingA && status === Image.Ready && root.hasTargetPlayer ? 0.9 : 0.0
         Behavior on opacity { NumberAnimation { duration: 800; easing.type: Easing.InOutQuad } }
     }
@@ -22,6 +23,7 @@ Item {
         id: blurB
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
+        sourceSize: Qt.size(Math.max(64, Math.max(width, height)), Math.max(64, Math.max(width, height)))
         opacity: !blurCrossfader.showingA && status === Image.Ready && root.hasTargetPlayer ? 0.9 : 0.0
         Behavior on opacity { NumberAnimation { duration: 800; easing.type: Easing.InOutQuad } }
     }

@@ -20,7 +20,10 @@
         "shell": "Оболочка",
         "uptime": "Время работы",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "Оригинальный разработчик: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "Список изменений"
     },
     "tabs": {
       "welcome": "Добро пожаловать",
@@ -82,6 +85,10 @@
       "search": {
         "title": "Веб-поиск",
         "desc": "Поисковая система для запросов, начинающихся с ?"
+      },
+      "sections": {
+        "layout": "Расположение",
+        "search": "Поиск"
       }
     },
     "notifications": {
@@ -195,7 +202,10 @@
     "welcome": {
       "about": "О программе",
       "hold_for_tutorial": "Зажмите для обучения",
-      "start_tutorial": "Начать обучение"
+      "start_tutorial": "Начать обучение",
+      "by_author": "от {author}",
+      "original_dev": "Оригинальный разработчик: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "Обучение: {section}",
@@ -276,6 +286,12 @@
           "apply": "Применить",
           "cancel": "Отмена"
         }
+      },
+      "sections": {
+        "profile": "Профиль",
+        "sound": "Звук",
+        "behavior": "Поведение",
+        "location": "Местоположение и погода"
       }
     },
     "display": {
@@ -328,8 +344,12 @@
         },
         "mode_canvas": "Бесконечный рабочий стол",
         "mode_tiled": "Плитка",
-        "mode_title": "Текущий режим",
-        "mode_hint": "Виджеты сохраняются отдельно для плиточного режима и бесконечного рабочего стола. Нажмите Super+G, чтобы переключаться между режимами."
+        "delete_all": {
+          "title": "Удалить все виджеты",
+          "desc": "Удаляет все виджеты и с тайлового, и с бесконечного рабочего стола на всех рабочих пространствах и экранах",
+          "button": "Удалить все",
+          "confirm": "Нажмите ещё раз для подтверждения"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -364,8 +384,7 @@
       "sections": {
         "lockscreen": "Экран блокировки",
         "screens": "Экраны",
-        "redactor": "Редактор",
-        "mode": "Режим"
+        "redactor": "Редактор"
       }
     },
     "bar": {
@@ -378,7 +397,10 @@
               "pills": "Пилюли",
               "numbers": "Номера",
               "pacman": "Pacman"
-            }
+            },
+            "pills": "Минималистичные индикаторы-таблетки",
+            "numbers": "Нумерованные индексы",
+            "pacman": "Анимированные аркадные точки"
           },
           "name": "Рабочие пространства"
         },
@@ -398,11 +420,17 @@
               "classic": "Классический",
               "material": "Material",
               "badge": "Точечная матрица"
-            }
+            },
+            "classic": "Аккуратные время и дата в столбик",
+            "material": "Диагональные жирные акцентные цифры",
+            "badge": "Сегментированные карточки-капсулы"
           }
         },
         "info": "Запись/таймер",
-        "weather": "Погода"
+        "weather": "Погода",
+        "notifications": "Уведомления",
+        "usage": "Нагрузка системы",
+        "clock": "Часы"
       },
       "position": {
         "title": "Положение панели",
@@ -541,11 +569,13 @@
           "name": {
             "classic": "Классический",
             "minimal": "Минималистичный",
-            "text": "Текст"
+            "text": "Текст",
+            "button": "Кнопка"
           },
           "classic": "Пилл с градиентной волной",
           "minimal": "Капсула с наконечником в стиле iOS/Android",
-          "text": "Минималистичный текст и иконка без фона"
+          "text": "Минималистичный текст и иконка без фона",
+          "button": "Интерактивная кнопка-капсула с фоном"
         }
       },
       "wifi": {
@@ -683,6 +713,10 @@
         "behavior": "Поведение",
         "layout": "Компоновка",
         "modules": "Модули"
+      },
+      "height": {
+        "title": "Высота панели",
+        "desc": "Задать высоту панели в процентах"
       }
     },
     "theme": {
@@ -814,7 +848,8 @@
         "empty": "Пока нет приложений с темой. Добавьте из списка"
       },
       "sections": {
-        "presets": "Пресеты"
+        "presets": "Пресеты",
+        "appearance": "Внешний вид"
       }
     },
     "file_picker": {
@@ -883,7 +918,8 @@
         "pink": "Розовый",
         "flamingo": "Фламинго",
         "rosewater": "Розовая вода"
-      }
+      },
+      "edit_title": "Редактирование своей темы"
     },
     "wellbeing": {
       "desktop": "Рабочий стол",
@@ -936,7 +972,8 @@
         "picker_search": "Поиск приложений...",
         "picker_empty": "Подходящих приложений нет",
         "picker_apply": "Применить",
-        "picker_cancel": "Отмена"
+        "picker_cancel": "Отмена",
+        "add_app": "Добавить приложение"
       },
       "notify": {
         "title": "Цифровое благополучие",
@@ -946,7 +983,19 @@
       "limit_overlay": {
         "title": "Дневной лимит достигнут",
         "hold": "Удерживайте, чтобы продолжить"
-      }
+      },
+      "day": "День",
+      "week": "Неделя",
+      "screen_time": "Экранное время",
+      "less_than_prev": "На {time} меньше, чем днём ранее",
+      "more_than_prev": "На {time} больше, чем днём ранее",
+      "same_as_prev": "Столько же, сколько днём ранее",
+      "limit_progress": "{used} из дневного лимита {limit}",
+      "limit_reached": "Дневной лимит {limit} исчерпан",
+      "peak_hour": "Час пик",
+      "week_total": "Итого за неделю",
+      "less": "Меньше",
+      "more": "Больше"
     },
     "update_available": "Доступны обновления",
     "autostart": {
@@ -1058,7 +1107,8 @@
       },
       "timeout": {
         "title": "Задержка автоскрытия",
-        "desc": "Время до скрытия после ухода курсора"
+        "desc": "Время до скрытия после ухода курсора",
+        "required": "Сначала включите автоскрытие"
       },
       "floating": {
         "title": "Плавающий док",
@@ -1088,7 +1138,8 @@
       },
       "scrolling": {
         "title": "Включить прокрутку элементов",
-        "desc": "Ограничить количество видимых элементов и включить прокрутку колесиком или тачпадом"
+        "desc": "Ограничить количество видимых элементов и включить прокрутку колесиком или тачпадом",
+        "required": "Сначала включите прокрутку элементов"
       },
       "visible_elements": {
         "title": "Видимые элементы",
@@ -1115,7 +1166,10 @@
         "desc": "Скрывать док только при открытых окнах, оставлять на рабочем столе"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "Новое окно",
+        "pin": "Закрепить в доке",
+        "unpin": "Открепить от дока"
       },
       "focus_running": {
         "title": "Фокусировать открытое окно",
@@ -1149,7 +1203,8 @@
         "effects": "Эффекты",
         "autohide": "Автоскрытие",
         "behavior": "Поведение"
-      }
+      },
+      "unavailable": "Сначала включите док"
     },
     "lyrics_picker": {
       "title": "Выбор файла текста песни",
@@ -1159,7 +1214,8 @@
     "search": {
       "placeholder": "Поиск настроек...",
       "prompt": "Введите запрос для поиска...",
-      "no_results": "Настройки не найдены"
+      "no_results": "Настройки не найдены",
+      "results": "Результаты поиска"
     },
     "screenshot": {
       "ocr": {
@@ -1179,6 +1235,11 @@
         "title": "Папка скриншотов",
         "desc": "Папка, в которую сохраняются скриншоты",
         "select_dir": "Выбрать папку..."
+      },
+      "sections": {
+        "capture": "Съёмка",
+        "files": "Файлы",
+        "ocr": "Распознавание текста"
       }
     },
     "desktop": {
@@ -1224,7 +1285,8 @@
         "tiled": "Плитка",
         "workspace": "Рабочее пространство",
         "window": "окно",
-        "windows": "окна"
+        "windows": "окна",
+        "unsupported2": "Только Hyprland и Sway"
       },
       "actions": {
         "overview": "Обзор",
@@ -1265,7 +1327,8 @@
         "title": "Сбросить движение",
         "desc": "Возврат к скоростям, отступам и размытию по умолчанию",
         "button": "Сбросить"
-      }
+      },
+      "supported_only": "Только Hyprland и Sway"
     },
     "wallpaper": {
       "sections": {
@@ -1309,7 +1372,11 @@
     "tab_emojis": "Эмодзи",
     "placeholder_emojis": "Поиск эмодзи по названию или слову...",
     "search_run": "Искать в {provider}",
-    "search_hint": "Введите запрос для поиска в {provider}"
+    "search_hint": "Введите запрос для поиска в {provider}",
+    "command_run": "Выполнить команду: {cmd}",
+    "command_hint": "Введите команду для выполнения",
+    "calc_result": "Результат вычисления (Enter — копировать)",
+    "no_emojis_found": "Эмодзи не найдены"
   },
   "calendar": {
     "loading": "Загрузка...",
@@ -1345,12 +1412,14 @@
       "locked": "Заблокировано",
       "access_denied": "Отказано в доступе",
       "authenticating": "Аутентификация...",
-      "enter_pin": "Введите PIN"
+      "enter_pin": "Введите PIN",
+      "too_many_attempts": "Слишком много попыток"
     },
     "fingerprint": {
       "ready": "Коснитесь сенсора",
       "not_recognized": "Отпечаток не распознан",
-      "recognized": "Отпечаток распознан"
+      "recognized": "Отпечаток распознан",
+      "blocked": "Отпечаток пальца отключён"
     },
     "power": {
       "suspend": "Сон",
@@ -1498,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "Прогноз погоды",
-        "fallback_body": "Подробные данные отсутствуют."
+        "fallback_body": "Подробные данные отсутствуют.",
+        "title": "Погода"
       },
       "screenshot": {
         "badge": "Снимок экрана",
@@ -1741,7 +1811,8 @@
       "blue": "Синий",
       "purple": "Фиолетовый",
       "pink": "Розовый",
-      "monochrome": "Монохром"
+      "monochrome": "Монохром",
+      "history": "История"
     }
   },
   "weather": {
@@ -1870,7 +1941,8 @@
       "stretched": "Растянутый",
       "lumen": "Люмен",
       "lyrics": "Текст песни",
-      "simpleLyrics": "Простой текст песни"
+      "simpleLyrics": "Простой текст песни",
+      "circle": "Круг"
     },
     "presets": {
       "minimal": {
@@ -1901,7 +1973,10 @@
       "lyricsLines": "Строки",
       "lyricsAlignment": "Выравнивание",
       "showNoLyrics": "Показывать текст «нет текста песни»",
-      "textContent": "Текст"
+      "textContent": "Текст",
+      "usageStyle": "Стиль",
+      "lineThickness": "Толщина",
+      "visualizerStyle": "Стиль визуализатора"
     },
     "align": {
       "left": "Слева",
@@ -1913,6 +1988,10 @@
     },
     "text": {
       "placeholder": "Введите текст"
+    },
+    "style": {
+      "wave": "Волна",
+      "circle": "Круг"
     }
   },
   "cli": {
@@ -2100,7 +2179,10 @@
       "install_ok": "Успешно установлен {pkg}",
       "install_failed": "Не удалось установить {pkg}",
       "quickshell_outdated": "Quickshell {version} слишком старый, нужна версия {minimum} или новее. Обновляем...",
-      "quickshell_still_old": "Quickshell всё ещё старше {minimum}. Обновите его вручную, иначе настройки не откроются."
+      "quickshell_still_old": "Quickshell всё ещё старше {minimum}. Обновите его вручную, иначе настройки не откроются.",
+      "enabling_copr": "Подключение репозитория COPR {repo}...",
+      "enabling_terra": "Подключение репозитория Terra...",
+      "enabling_repo": "Подключение репозитория {repo}..."
     },
     "deploy": {
       "configuring_sddm": "Настройка дисплейного менеджера SDDM...",
@@ -2110,6 +2192,42 @@
       "sddm_no_xorg": "Xorg не найден, для SDDM используется {compositor}.",
       "sddm_no_backend": "Ни Xorg, ни поддерживаемый композитор Wayland для экрана входа (kwin_wayland/weston) не найдены в /usr/local/bin, /usr/bin или /bin.",
       "sddm_skipped": "Настройка SDDM пропущена: не найден подходящий дисплейный сервер или композитор экрана входа. Текущий дисплейный менеджер не изменён."
+    },
+    "ski": {
+      "installing": "Установка файлового менеджера Ski...",
+      "up_to_date": "-> Ski {version} уже установлен.",
+      "installed": "Установлен Ski {version}",
+      "install_failed": "Не удалось установить Ski",
+      "download_failed": "Не удалось скачать Ski, пропускаем. Его можно установить позже с github.com/ilyamiro/Ski.",
+      "checksum_failed": "Загрузка Ski не прошла проверку контрольной суммы, пропускаем.",
+      "unsupported_arch": "Готовые пакеты Ski есть только для x86_64, пропускаем."
+    },
+    "audio": {
+      "installing": "Установка аудиодвижка Serpantinum...",
+      "up_to_date": "-> Аудиодвижок Serpantinum {version} уже установлен.",
+      "installed": "Установлен аудиодвижок Serpantinum {version}",
+      "building": "Для этой системы нет готового аудиодвижка, собираем из исходников...",
+      "install_failed": "Не удалось установить аудиодвижок Serpantinum. Эквалайзер не будет работать, пока его не установят с github.com/ilyamiro/serpantinum-audio.",
+      "download_failed": "Не удалось скачать аудиодвижок Serpantinum, пропускаем. Его можно установить позже с github.com/ilyamiro/serpantinum-audio.",
+      "checksum_failed": "Загрузка аудиодвижка не прошла проверку контрольной суммы, пропускаем."
+    },
+    "gamma": {
+      "installing": "Установка фильтра синего света Serpantinum...",
+      "up_to_date": "-> Фильтр синего света Serpantinum {version} уже установлен.",
+      "installed": "Установлен фильтр синего света Serpantinum {version}",
+      "install_failed": "Не удалось установить фильтр синего света Serpantinum. Он не будет работать, пока его не установят с github.com/ilyamiro/serpantinum-gamma.",
+      "download_failed": "Не удалось скачать фильтр синего света Serpantinum, пропускаем. Его можно установить позже с github.com/ilyamiro/serpantinum-gamma.",
+      "checksum_failed": "Загрузка фильтра синего света не прошла проверку контрольной суммы, пропускаем.",
+      "unsupported_arch": "Готовые пакеты фильтра синего света есть только для x86_64, пропускаем."
+    },
+    "core": {
+      "installing": "Установка основных служб Serpantinum...",
+      "up_to_date": "-> Основные службы Serpantinum {version} уже установлены.",
+      "installed": "Установлены основные службы Serpantinum {version}",
+      "install_failed": "Не удалось установить основные службы Serpantinum. Нагрузка системы, индикаторы блокировки клавиатуры и буфер обмена не будут работать, пока их не установят с github.com/ilyamiro/serpantinum-core.",
+      "download_failed": "Не удалось скачать основные службы Serpantinum, пропускаем. Их можно установить позже с github.com/ilyamiro/serpantinum-core.",
+      "checksum_failed": "Загрузка основных служб не прошла проверку контрольной суммы, пропускаем.",
+      "unsupported_arch": "Готовые пакеты основных служб есть только для x86_64, пропускаем."
     }
   },
   "translator": {
@@ -2133,6 +2251,12 @@
     "keep_clipboard_sub": "Если выключено — исходное содержимое буфера восстановится после вставки"
   },
   "datetime": {
-    "full_date": "dddd, d MMMM"
+    "full_date": "dddd, d MMMM",
+    "just_now": "Только что",
+    "minutes_ago": "{mins} мин. назад",
+    "yesterday": "Вчера, {time}"
+  },
+  "common": {
+    "select": "Выбрать..."
   }
 }

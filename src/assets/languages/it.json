@@ -20,7 +20,10 @@
         "shell": "Shell",
         "uptime": "Tempo di attività",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "Sviluppatore originale: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "Registro delle modifiche"
     },
     "tabs": {
       "welcome": "Benvenuto/a",
@@ -49,7 +52,8 @@
       "theme_wallpapers": "Sfondi",
       "general_main": "Generale",
       "general_presets": "Preimpostazioni",
-      "desktop": "Desktop"
+      "desktop": "Desktop",
+      "autostart": "Avvio automatico"
     },
     "launcher": {
       "position": {
@@ -81,6 +85,10 @@
       "search": {
         "title": "Motore di ricerca web",
         "desc": "Motore usato quando la ricerca inizia con ?"
+      },
+      "sections": {
+        "layout": "Disposizione",
+        "search": "Ricerca"
       }
     },
     "notifications": {
@@ -194,7 +202,10 @@
     "welcome": {
       "about": "Informazioni",
       "hold_for_tutorial": "Tieni premuto per il tutorial",
-      "start_tutorial": "Avvia tutorial"
+      "start_tutorial": "Avvia tutorial",
+      "by_author": "di {author}",
+      "original_dev": "Sviluppatore originale: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "{section} tutorial",
@@ -275,6 +286,12 @@
           "apply": "Applica",
           "cancel": "Annulla"
         }
+      },
+      "sections": {
+        "profile": "Profilo",
+        "sound": "Suono",
+        "behavior": "Comportamento",
+        "location": "Posizione e meteo"
       }
     },
     "display": {
@@ -327,8 +344,12 @@
         },
         "mode_canvas": "Desktop infinito",
         "mode_tiled": "Affiancate",
-        "mode_title": "Modalità attuale",
-        "mode_hint": "I widget vengono salvati separatamente per la modalità affiancata e per il desktop infinito. Premi Super+G per passare da una modalità all'altra."
+        "delete_all": {
+          "title": "Elimina tutti i widget",
+          "desc": "Rimuove ogni widget dal desktop a tasselli e dal desktop infinito su tutti gli spazi di lavoro e gli schermi",
+          "button": "Elimina tutto",
+          "confirm": "Fai di nuovo clic per confermare"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -363,8 +384,7 @@
       "sections": {
         "lockscreen": "Schermata di blocco",
         "screens": "Schermi",
-        "redactor": "Editor",
-        "mode": "Modalità"
+        "redactor": "Editor"
       }
     },
     "bar": {
@@ -377,7 +397,10 @@
               "pills": "Pillole",
               "numbers": "Numeri",
               "pacman": "Pacman"
-            }
+            },
+            "pills": "Indicatori a pillola minimali",
+            "numbers": "Indici numerati",
+            "pacman": "Punti arcade animati"
           },
           "name": "Spazi di lavoro"
         },
@@ -397,11 +420,17 @@
               "classic": "Classico",
               "material": "Material",
               "badge": "Matrice di punti"
-            }
+            },
+            "classic": "Ora e data impilate e ordinate",
+            "material": "Numeri diagonali in grassetto con colore di accento",
+            "badge": "Schede segmentate a capsula"
           }
         },
         "info": "Registratore/Timer",
-        "weather": "Meteo"
+        "weather": "Meteo",
+        "notifications": "Notifiche",
+        "usage": "Uso del sistema",
+        "clock": "Orologio"
       },
       "position": {
         "title": "Posizione barra",
@@ -430,7 +459,16 @@
         "style": {
           "title": "Stile",
           "desc": "Scegli lo stile visivo per gli indicatori degli spazi di lavoro"
-        }
+        },
+        "per_monitor": {
+          "title": "Numerazione per monitor",
+          "desc": "Solo Hyprland. Numera gli spazi di lavoro da 1 su ogni monitor e imposta quanti spazi possiede ogni monitor",
+          "unavailable": "Disponibile solo su Hyprland"
+        },
+        "monitor_count": {
+          "desc": "Spazi di lavoro di questo monitor"
+        },
+        "disc": "Nota: non cambia il numero effettivo di spazi di lavoro nel compositor"
       },
       "style": {
         "title": "Stile barra",
@@ -531,11 +569,13 @@
           "name": {
             "classic": "Classico",
             "minimal": "Minimale",
-            "text": "Testo"
+            "text": "Testo",
+            "button": "Pulsante"
           },
           "classic": "Pillola con onda a gradiente",
           "minimal": "Capsula in stile iOS/Android con cappuccio",
-          "text": "Testo e icona puliti senza sfondo"
+          "text": "Testo e icona puliti senza sfondo",
+          "button": "Pillola pulsante interattiva con sfondo"
         }
       },
       "wifi": {
@@ -673,6 +713,10 @@
         "behavior": "Comportamento",
         "layout": "Layout",
         "modules": "Moduli"
+      },
+      "height": {
+        "title": "Altezza della barra",
+        "desc": "Imposta l'altezza della barra in percentuale"
       }
     },
     "theme": {
@@ -804,7 +848,8 @@
         "empty": "Nessuna app con tema per ora. Aggiungine una dall'elenco"
       },
       "sections": {
-        "presets": "Preset"
+        "presets": "Preset",
+        "appearance": "Aspetto"
       }
     },
     "file_picker": {
@@ -873,7 +918,8 @@
         "pink": "Rosa",
         "flamingo": "Fenicottero",
         "rosewater": "Rosa Pallido"
-      }
+      },
+      "edit_title": "Modifica tema personalizzato"
     },
     "wellbeing": {
       "desktop": "Desktop",
@@ -926,7 +972,8 @@
         "picker_search": "Cerca app...",
         "picker_empty": "Nessuna app corrispondente",
         "picker_apply": "Applica",
-        "picker_cancel": "Annulla"
+        "picker_cancel": "Annulla",
+        "add_app": "Aggiungi app"
       },
       "notify": {
         "title": "Benessere digitale",
@@ -936,7 +983,19 @@
       "limit_overlay": {
         "title": "Limite giornaliero raggiunto",
         "hold": "Tieni premuto per continuare"
-      }
+      },
+      "day": "Giorno",
+      "week": "Settimana",
+      "screen_time": "Tempo di utilizzo",
+      "less_than_prev": "{time} in meno rispetto al giorno prima",
+      "more_than_prev": "{time} in più rispetto al giorno prima",
+      "same_as_prev": "Come il giorno prima",
+      "limit_progress": "{used} su {limit} di limite giornaliero",
+      "limit_reached": "Limite giornaliero di {limit} raggiunto",
+      "peak_hour": "Ora di punta",
+      "week_total": "Totale settimana",
+      "less": "Meno",
+      "more": "Più"
     },
     "update_available": "Aggiornamento disponibile",
     "osd": {
@@ -1005,7 +1064,8 @@
       },
       "timeout": {
         "title": "Ritardo scomparsa automatica",
-        "desc": "Durata prima di nascondere dopo l'uscita del cursore"
+        "desc": "Durata prima di nascondere dopo l'uscita del cursore",
+        "required": "Attiva prima il nascondimento automatico"
       },
       "floating": {
         "title": "Dock fluttuante",
@@ -1035,7 +1095,8 @@
       },
       "scrolling": {
         "title": "Abilita scorrimento elementi",
-        "desc": "Limita elementi visibili e consenti lo scorrimento tramite rotellina o touchpad"
+        "desc": "Limita elementi visibili e consenti lo scorrimento tramite rotellina o touchpad",
+        "required": "Attiva prima lo scorrimento degli elementi"
       },
       "visible_elements": {
         "title": "Elementi visibili",
@@ -1082,7 +1143,10 @@
         "workspace": "Solo spazio di lavoro attivo"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "Nuova finestra",
+        "pin": "Fissa nel dock",
+        "unpin": "Rimuovi dal dock"
       },
       "background": {
         "title": "Disegna uno sfondo dietro le app",
@@ -1096,7 +1160,8 @@
         "effects": "Effetti",
         "autohide": "Nascondi automaticamente",
         "behavior": "Comportamento"
-      }
+      },
+      "unavailable": "Attiva prima il dock"
     },
     "lyrics_picker": {
       "title": "Seleziona file dei testi",
@@ -1106,7 +1171,8 @@
     "search": {
       "placeholder": "Cerca impostazioni...",
       "prompt": "Digita per cercare impostazioni...",
-      "no_results": "Nessuna impostazione trovata"
+      "no_results": "Nessuna impostazione trovata",
+      "results": "Risultati della ricerca"
     },
     "screenshot": {
       "ocr": {
@@ -1126,6 +1192,11 @@
         "title": "Cartella degli screenshot",
         "desc": "Cartella in cui vengono salvati gli screenshot",
         "select_dir": "Seleziona cartella..."
+      },
+      "sections": {
+        "capture": "Cattura",
+        "files": "File",
+        "ocr": "Riconoscimento del testo"
       }
     },
     "desktop": {
@@ -1171,7 +1242,8 @@
         "tiled": "Affiancate",
         "workspace": "Spazio di lavoro",
         "window": "finestra",
-        "windows": "finestre"
+        "windows": "finestre",
+        "unsupported2": "Solo Hyprland e Sway"
       },
       "actions": {
         "overview": "Panoramica",
@@ -1212,13 +1284,57 @@
         "title": "Reimposta movimento",
         "desc": "Torna a velocità, spaziatura e sfocatura predefinite",
         "button": "Reimposta"
-      }
+      },
+      "supported_only": "Solo Hyprland e Sway"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "Sfondo",
         "transition": "Transizione"
       }
+    },
+    "autostart": {
+      "title": "Avvio automatico",
+      "desc": "Gestisci programmi, binari e script che vengono eseguiti automaticamente all'avvio della sessione",
+      "master_switch": {
+        "title": "Abilita avvio automatico",
+        "desc": "Esegui globalmente l'elenco di applicazioni configurato all'accesso"
+      },
+      "add_button": "Aggiungi applicazione",
+      "empty_title": "Nessuna applicazione in avvio automatico",
+      "empty_desc": "Fai clic su «Aggiungi applicazione» per impostare comandi, binari, ritardi e ripetizioni.",
+      "name_label": "Nome",
+      "name_placeholder": "es. Discord, Telegram, script",
+      "exec_label": "Comando da eseguire",
+      "exec_placeholder": "Percorso del binario o nome con opzioni (es. discord --start-minimized)",
+      "browse_file": "Sfoglia file",
+      "delay_label": "Ritardo di avvio",
+      "delay_desc": "Tempo di attesa in secondi prima dell'avvio",
+      "delay_unit": "s",
+      "count_label": "Numero di avvii",
+      "count_desc": "Numero di istanze da eseguire all'avvio",
+      "repeat_delay_label": "Intervallo di ripetizione",
+      "repeat_delay_desc": "Ritardo tra gli avvii ripetuti",
+      "workspace_label": "Spazio di lavoro",
+      "workspace_default": "Predefinito",
+      "silent_label": "Avvio silenzioso",
+      "silent_desc": "Apri la finestra in background senza prendere il focus",
+      "condition_label": "Condizione di avvio",
+      "condition_always": "Sempre",
+      "condition_ac_only": "Solo con alimentazione di rete",
+      "condition_battery_only": "Solo a batteria",
+      "condition_multi_monitor": "Solo con più monitor",
+      "restart_crash_label": "Riavvia in caso di crash",
+      "restart_crash_desc": "Riavvia automaticamente il servizio in caso di crash",
+      "status_running": "In esecuzione",
+      "status_success": "Riuscito",
+      "status_failed": "Non riuscito",
+      "status_idle": "Inattivo",
+      "view_log": "Log",
+      "no_log": "Il log è vuoto per ora",
+      "run_now": "Esegui ora",
+      "delete": "Elimina",
+      "toggle": "Abilita / disabilita"
     }
   },
   "sysnotif": {
@@ -1256,7 +1372,11 @@
     "tab_emojis": "Emoji",
     "placeholder_emojis": "Cerca emoji o inserisci parola chiave...",
     "search_run": "Cerca con {provider}",
-    "search_hint": "Digita per cercare con {provider}"
+    "search_hint": "Digita per cercare con {provider}",
+    "command_run": "Esegui comando: {cmd}",
+    "command_hint": "Digita un comando da eseguire",
+    "calc_result": "Risultato del calcolo (Invio per copiare)",
+    "no_emojis_found": "Nessuna emoji trovata"
   },
   "calendar": {
     "loading": "Caricamento...",
@@ -1292,12 +1412,14 @@
       "locked": "Bloccato",
       "access_denied": "Accesso negato",
       "authenticating": "Autenticazione...",
-      "enter_pin": "Inserisci il PIN"
+      "enter_pin": "Inserisci il PIN",
+      "too_many_attempts": "Troppi tentativi"
     },
     "fingerprint": {
       "ready": "Tocca il sensore",
       "not_recognized": "Impronta non riconosciuta",
-      "recognized": "Impronta riconosciuta"
+      "recognized": "Impronta riconosciuta",
+      "blocked": "Impronta digitale disattivata"
     },
     "power": {
       "suspend": "Sospendi",
@@ -1445,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "Report meteo",
-        "fallback_body": "Nessun dettaglio fornito."
+        "fallback_body": "Nessun dettaglio fornito.",
+        "title": "Meteo"
       },
       "screenshot": {
         "badge": "Screenshot",
@@ -1505,7 +1628,10 @@
         "copied_body": "Disegno copiato negli appunti",
         "failed_title": "Esportazione non riuscita",
         "failed_body": "Impossibile salvare il disegno"
-      }
+      },
+      "hex": "Hex",
+      "palette": "Tavolozza",
+      "palette_default": "Predefinita"
     },
     "notes": {
       "title": "Note",
@@ -1685,7 +1811,8 @@
       "blue": "Blu",
       "purple": "Viola",
       "pink": "Rosa",
-      "monochrome": "Monocromatico"
+      "monochrome": "Monocromatico",
+      "history": "Cronologia"
     }
   },
   "weather": {
@@ -1814,7 +1941,8 @@
       "stretched": "Stretched",
       "lumen": "Lumen",
       "lyrics": "Testo",
-      "simpleLyrics": "Testo semplice"
+      "simpleLyrics": "Testo semplice",
+      "circle": "Cerchio"
     },
     "presets": {
       "minimal": {
@@ -1844,7 +1972,11 @@
     "settings": {
       "lyricsLines": "Righe",
       "lyricsAlignment": "Allineamento",
-      "textContent": "Testo"
+      "textContent": "Testo",
+      "lineThickness": "Spessore",
+      "showNoLyrics": "Mostra il testo «nessun testo»",
+      "usageStyle": "Stile",
+      "visualizerStyle": "Stile del visualizzatore"
     },
     "align": {
       "left": "Sinistra",
@@ -1856,6 +1988,10 @@
     },
     "text": {
       "placeholder": "Inserisci testo"
+    },
+    "style": {
+      "circle": "Cerchio",
+      "wave": "Onda"
     }
   },
   "cli": {
@@ -2041,7 +2177,12 @@
       "installing_title": "Installazione dei pacchetti di sistema e delle dipendenze...",
       "installing_pkg": "Installazione di {pkg}...",
       "install_ok": "Installazione di {pkg} riuscita",
-      "install_failed": "Impossibile installare {pkg}"
+      "install_failed": "Impossibile installare {pkg}",
+      "enabling_copr": "Abilitazione del repository COPR {repo}...",
+      "enabling_repo": "Abilitazione del repository {repo}...",
+      "enabling_terra": "Abilitazione del repository Terra...",
+      "quickshell_outdated": "Quickshell {version} è troppo vecchio, è richiesto {minimum} o successivo. Aggiornamento...",
+      "quickshell_still_old": "Quickshell è ancora precedente a {minimum}. Aggiornalo manualmente, altrimenti le impostazioni non si apriranno."
     },
     "deploy": {
       "configuring_sddm": "Configurazione del display manager SDDM...",
@@ -2051,6 +2192,42 @@
       "sddm_no_xorg": "Xorg non trovato, uso di {compositor} per SDDM.",
       "sddm_no_backend": "Né Xorg né un compositor Wayland supportato per la schermata di accesso (kwin_wayland/weston) sono stati trovati in /usr/local/bin, /usr/bin o /bin.",
       "sddm_skipped": "Configurazione di SDDM saltata: nessun server grafico o compositor di accesso utilizzabile trovato. Il display manager attuale resta invariato."
+    },
+    "audio": {
+      "building": "Nessun motore audio precompilato per questo sistema, compilazione dai sorgenti...",
+      "checksum_failed": "Il download del motore audio non ha superato il controllo del checksum, saltato.",
+      "download_failed": "Impossibile scaricare il motore audio di Serpantinum, saltato. Puoi installarlo più tardi da github.com/ilyamiro/serpantinum-audio.",
+      "install_failed": "Installazione del motore audio di Serpantinum non riuscita. L'equalizzatore non funzionerà finché non viene installato da github.com/ilyamiro/serpantinum-audio.",
+      "installed": "Motore audio di Serpantinum {version} installato",
+      "installing": "Installazione del motore audio di Serpantinum...",
+      "up_to_date": "-> Il motore audio di Serpantinum {version} è già installato."
+    },
+    "core": {
+      "checksum_failed": "Il download dei servizi di base non ha superato il controllo del checksum, saltato.",
+      "download_failed": "Impossibile scaricare i servizi di base di Serpantinum, saltati. Puoi installarli più tardi da github.com/ilyamiro/serpantinum-core.",
+      "install_failed": "Installazione dei servizi di base di Serpantinum non riuscita. L'uso del sistema, gli indicatori di blocco della tastiera e gli appunti non funzioneranno finché non vengono installati da github.com/ilyamiro/serpantinum-core.",
+      "installed": "Servizi di base di Serpantinum {version} installati",
+      "installing": "Installazione dei servizi di base di Serpantinum...",
+      "unsupported_arch": "I pacchetti precompilati dei servizi di base esistono solo per x86_64, saltato.",
+      "up_to_date": "-> I servizi di base di Serpantinum {version} sono già installati."
+    },
+    "gamma": {
+      "checksum_failed": "Il download del filtro luce blu non ha superato il controllo del checksum, saltato.",
+      "download_failed": "Impossibile scaricare il filtro luce blu di Serpantinum, saltato. Puoi installarlo più tardi da github.com/ilyamiro/serpantinum-gamma.",
+      "install_failed": "Installazione del filtro luce blu di Serpantinum non riuscita. Non funzionerà finché non viene installato da github.com/ilyamiro/serpantinum-gamma.",
+      "installed": "Filtro luce blu di Serpantinum {version} installato",
+      "installing": "Installazione del filtro luce blu di Serpantinum...",
+      "unsupported_arch": "I pacchetti precompilati del filtro luce blu esistono solo per x86_64, saltato.",
+      "up_to_date": "-> Il filtro luce blu di Serpantinum {version} è già installato."
+    },
+    "ski": {
+      "checksum_failed": "Il download di Ski non ha superato il controllo del checksum, saltato.",
+      "download_failed": "Impossibile scaricare Ski, saltato. Puoi installarlo più tardi da github.com/ilyamiro/Ski.",
+      "install_failed": "Installazione di Ski non riuscita",
+      "installed": "Ski {version} installato",
+      "installing": "Installazione del file manager Ski...",
+      "unsupported_arch": "I pacchetti Ski precompilati esistono solo per x86_64, saltato.",
+      "up_to_date": "-> Ski {version} è già installato."
     }
   },
   "translator": {
@@ -2074,6 +2251,12 @@
     "keep_clipboard_sub": "Se disattivato — il contenuto originale degli appunti viene ripristinato dopo l'incolla"
   },
   "datetime": {
-    "full_date": "dddd, d MMMM"
+    "full_date": "dddd, d MMMM",
+    "just_now": "Adesso",
+    "minutes_ago": "{mins} min fa",
+    "yesterday": "Ieri {time}"
+  },
+  "common": {
+    "select": "Seleziona..."
   }
 }

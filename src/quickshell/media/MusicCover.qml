@@ -200,6 +200,7 @@ Item {
                                 id: artImgA
                                 anchors.fill: parent
                                 fillMode: Image.PreserveAspectCrop
+                                sourceSize: Qt.size(Math.max(64, Math.max(width, height) * 2), Math.max(64, Math.max(width, height) * 2))
                                 opacity: artCrossfader.showingA && status === Image.Ready ? 1.0 : 0.0
                                 Behavior on opacity { NumberAnimation { duration: 650; easing.type: Easing.InOutQuad } }
                             }
@@ -208,6 +209,7 @@ Item {
                                 id: artImgB
                                 anchors.fill: parent
                                 fillMode: Image.PreserveAspectCrop
+                                sourceSize: Qt.size(Math.max(64, Math.max(width, height) * 2), Math.max(64, Math.max(width, height) * 2))
                                 opacity: !artCrossfader.showingA && status === Image.Ready ? 1.0 : 0.0
                                 Behavior on opacity { NumberAnimation { duration: 650; easing.type: Easing.InOutQuad } }
                             }

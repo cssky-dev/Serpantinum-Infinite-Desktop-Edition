@@ -1,6 +1,9 @@
 {
   "datetime": {
-    "full_date": "dddd, d MMMM"
+    "full_date": "dddd, d MMMM",
+    "just_now": "Przed chwilą",
+    "minutes_ago": "{mins} min temu",
+    "yesterday": "Wczoraj {time}"
   },
   "sysnotif": {
     "battery": {
@@ -37,7 +40,11 @@
     "tab_emojis": "Emoji",
     "placeholder_emojis": "Szukaj emoji według nazwy lub słowa kluczowego...",
     "search_run": "Szukaj w {provider}",
-    "search_hint": "Wpisz, aby szukać w {provider}"
+    "search_hint": "Wpisz, aby szukać w {provider}",
+    "command_run": "Wykonaj polecenie: {cmd}",
+    "command_hint": "Wpisz polecenie do wykonania",
+    "calc_result": "Wynik obliczenia (Enter, aby skopiować)",
+    "no_emojis_found": "Nie znaleziono emoji"
   },
   "calendar": {
     "loading": "Ładowanie...",
@@ -73,12 +80,14 @@
       "locked": "Zablokowano",
       "access_denied": "Odmowa dostępu",
       "authenticating": "Uwierzytelnianie...",
-      "enter_pin": "Wprowadź PIN"
+      "enter_pin": "Wprowadź PIN",
+      "too_many_attempts": "Zbyt wiele prób"
     },
     "fingerprint": {
       "ready": "Dotknij czujnika",
       "not_recognized": "Nie rozpoznano odcisku palca",
-      "recognized": "Rozpoznano odcisk palca"
+      "recognized": "Rozpoznano odcisk palca",
+      "blocked": "Odcisk palca wyłączony"
     },
     "power": {
       "suspend": "Uśpij",
@@ -226,7 +235,8 @@
       },
       "weather": {
         "fallback_summary": "Raport pogodowy",
-        "fallback_body": "Brak szczegółowych danych."
+        "fallback_body": "Brak szczegółowych danych.",
+        "title": "Pogoda"
       },
       "screenshot": {
         "badge": "Zrzut ekranu",
@@ -469,7 +479,8 @@
       "blue": "Niebieski",
       "purple": "Fioletowy",
       "pink": "Różowy",
-      "monochrome": "Monochromatyczny"
+      "monochrome": "Monochromatyczny",
+      "history": "Historia"
     }
   },
   "weather": {
@@ -598,17 +609,21 @@
       "stretched": "Stretched",
       "lumen": "Lumen",
       "lyrics": "Tekst utworu",
-      "simpleLyrics": "Prosty tekst utworu"
+      "simpleLyrics": "Prosty tekst utworu",
+      "circle": "Okrąg"
     },
     "presets": {
       "minimal": {
-        "name": "Minimalistyczny"
+        "name": "Minimalistyczny",
+        "desc": "Czysty, dyskretny układ z minimalnym zegarem cyfrowym i kompaktową pogodą."
       },
       "media_station": {
-        "name": "Stacja multimedialna"
+        "name": "Stacja multimedialna",
+        "desc": "Dedykowany zestaw multimedialny z wyśrodkowanym wizualizerem audio i okrągłym odtwarzaczem muzyki."
       },
       "dashboard": {
-        "name": "Pulpit nawigacyjny"
+        "name": "Pulpit nawigacyjny",
+        "desc": "Pełny monitor systemu z zegarem cyfrowym, użyciem sprzętu i poziomem baterii."
       }
     },
     "github": {
@@ -625,7 +640,11 @@
     "settings": {
       "lyricsLines": "Linie",
       "lyricsAlignment": "Wyrównanie",
-      "textContent": "Tekst"
+      "textContent": "Tekst",
+      "lineThickness": "Grubość",
+      "showNoLyrics": "Pokaż tekst „brak tekstu piosenki”",
+      "usageStyle": "Styl",
+      "visualizerStyle": "Styl wizualizera"
     },
     "align": {
       "left": "Do lewej",
@@ -637,6 +656,10 @@
     },
     "text": {
       "placeholder": "Wpisz tekst"
+    },
+    "style": {
+      "circle": "Okrąg",
+      "wave": "Fala"
     }
   },
   "cli": {
@@ -822,7 +845,12 @@
       "installing_title": "Instalowanie pakietów systemowych i zależności...",
       "installing_pkg": "Instalowanie {pkg}...",
       "install_ok": "Pomyślnie zainstalowano {pkg}",
-      "install_failed": "Nie udało się zainstalować {pkg}"
+      "install_failed": "Nie udało się zainstalować {pkg}",
+      "enabling_copr": "Włączanie repozytorium COPR {repo}...",
+      "enabling_repo": "Włączanie repozytorium {repo}...",
+      "enabling_terra": "Włączanie repozytorium Terra...",
+      "quickshell_outdated": "Quickshell {version} jest zbyt stary, wymagana jest wersja {minimum} lub nowsza. Aktualizowanie...",
+      "quickshell_still_old": "Quickshell nadal jest starszy niż {minimum}. Zaktualizuj go ręcznie, w przeciwnym razie ustawienia się nie otworzą."
     },
     "deploy": {
       "configuring_sddm": "Konfigurowanie menedżera logowania SDDM...",
@@ -832,6 +860,42 @@
       "sddm_no_xorg": "Nie znaleziono Xorg, SDDM używa {compositor}.",
       "sddm_no_backend": "Nie znaleziono ani Xorg, ani obsługiwanego kompozytora Wayland dla ekranu logowania (kwin_wayland/weston) w /usr/local/bin, /usr/bin ani /bin.",
       "sddm_skipped": "Pominięto konfigurację SDDM: nie znaleziono użytecznego serwera wyświetlania ani kompozytora ekranu logowania. Obecny menedżer logowania pozostaje bez zmian."
+    },
+    "audio": {
+      "building": "Brak gotowego silnika audio dla tego systemu, kompilowanie ze źródeł...",
+      "checksum_failed": "Pobrany silnik audio nie przeszedł weryfikacji sumy kontrolnej, pominięto.",
+      "download_failed": "Nie udało się pobrać silnika audio Serpantinum, pominięto. Możesz zainstalować go później z github.com/ilyamiro/serpantinum-audio.",
+      "install_failed": "Nie udało się zainstalować silnika audio Serpantinum. Korektor nie będzie działać, dopóki nie zostanie zainstalowany z github.com/ilyamiro/serpantinum-audio.",
+      "installed": "Zainstalowano silnik audio Serpantinum {version}",
+      "installing": "Instalowanie silnika audio Serpantinum...",
+      "up_to_date": "-> Silnik audio Serpantinum {version} jest już zainstalowany."
+    },
+    "core": {
+      "checksum_failed": "Pobrane usługi podstawowe nie przeszły weryfikacji sumy kontrolnej, pominięto.",
+      "download_failed": "Nie udało się pobrać usług podstawowych Serpantinum, pominięto. Możesz zainstalować je później z github.com/ilyamiro/serpantinum-core.",
+      "install_failed": "Nie udało się zainstalować usług podstawowych Serpantinum. Użycie systemu, wskaźniki blokad klawiatury i schowek nie będą działać, dopóki nie zostaną zainstalowane z github.com/ilyamiro/serpantinum-core.",
+      "installed": "Zainstalowano usługi podstawowe Serpantinum {version}",
+      "installing": "Instalowanie usług podstawowych Serpantinum...",
+      "unsupported_arch": "Gotowe pakiety usług podstawowych istnieją tylko dla x86_64, pominięto.",
+      "up_to_date": "-> Usługi podstawowe Serpantinum {version} są już zainstalowane."
+    },
+    "gamma": {
+      "checksum_failed": "Pobrany filtr światła niebieskiego nie przeszedł weryfikacji sumy kontrolnej, pominięto.",
+      "download_failed": "Nie udało się pobrać filtra światła niebieskiego Serpantinum, pominięto. Możesz zainstalować go później z github.com/ilyamiro/serpantinum-gamma.",
+      "install_failed": "Nie udało się zainstalować filtra światła niebieskiego Serpantinum. Nie będzie działać, dopóki nie zostanie zainstalowany z github.com/ilyamiro/serpantinum-gamma.",
+      "installed": "Zainstalowano filtr światła niebieskiego Serpantinum {version}",
+      "installing": "Instalowanie filtra światła niebieskiego Serpantinum...",
+      "unsupported_arch": "Gotowe pakiety filtra światła niebieskiego istnieją tylko dla x86_64, pominięto.",
+      "up_to_date": "-> Filtr światła niebieskiego Serpantinum {version} jest już zainstalowany."
+    },
+    "ski": {
+      "checksum_failed": "Pobrany Ski nie przeszedł weryfikacji sumy kontrolnej, pominięto.",
+      "download_failed": "Nie udało się pobrać Ski, pominięto. Możesz zainstalować go później z github.com/ilyamiro/Ski.",
+      "install_failed": "Nie udało się zainstalować Ski",
+      "installed": "Zainstalowano Ski {version}",
+      "installing": "Instalowanie menedżera plików Ski...",
+      "unsupported_arch": "Gotowe pakiety Ski istnieją tylko dla x86_64, pominięto.",
+      "up_to_date": "-> Ski {version} jest już zainstalowany."
     }
   },
   "translator": {
@@ -875,7 +939,10 @@
         "shell": "Powłoka",
         "uptime": "Czas pracy",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "Pierwotny autor: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "Lista zmian"
     },
     "tabs": {
       "welcome": "Witaj",
@@ -904,7 +971,8 @@
       "theme_wallpapers": "Tapety",
       "general_main": "Ogólne",
       "general_presets": "Presety",
-      "desktop": "Pulpit"
+      "desktop": "Pulpit",
+      "autostart": "Autostart"
     },
     "launcher": {
       "position": {
@@ -936,6 +1004,10 @@
       "search": {
         "title": "Wyszukiwarka internetowa",
         "desc": "Wyszukiwarka używana, gdy zapytanie zaczyna się od ?"
+      },
+      "sections": {
+        "layout": "Układ",
+        "search": "Wyszukiwanie"
       }
     },
     "notifications": {
@@ -1049,7 +1121,10 @@
     "welcome": {
       "about": "O programie",
       "hold_for_tutorial": "Przytrzymaj, aby uruchomić samouczek",
-      "start_tutorial": "Rozpocznij samouczek"
+      "start_tutorial": "Rozpocznij samouczek",
+      "by_author": "autor: {author}",
+      "original_dev": "Pierwotny autor: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "Samouczek: {section}",
@@ -1130,6 +1205,12 @@
           "apply": "Zastosuj",
           "cancel": "Anuluj"
         }
+      },
+      "sections": {
+        "profile": "Profil",
+        "sound": "Dźwięk",
+        "behavior": "Zachowanie",
+        "location": "Lokalizacja i pogoda"
       }
     },
     "display": {
@@ -1182,8 +1263,12 @@
         },
         "mode_canvas": "Nieskończony pulpit",
         "mode_tiled": "Kafelkowy",
-        "mode_title": "Aktualny tryb",
-        "mode_hint": "Widżety są zapisywane osobno dla trybu kafelkowego i nieskończonego pulpitu. Naciśnij Super+G, aby przełączać się między trybami."
+        "delete_all": {
+          "title": "Usuń wszystkie widżety",
+          "desc": "Usuwa każdy widżet zarówno z pulpitu kafelkowego, jak i nieskończonego, na wszystkich przestrzeniach roboczych i ekranach",
+          "button": "Usuń wszystkie",
+          "confirm": "Kliknij ponownie, aby potwierdzić"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -1218,8 +1303,7 @@
       "sections": {
         "lockscreen": "Ekran blokady",
         "screens": "Ekrany",
-        "redactor": "Edytor",
-        "mode": "Tryb"
+        "redactor": "Edytor"
       }
     },
     "bar": {
@@ -1232,7 +1316,10 @@
               "pills": "Pigułki",
               "numbers": "Numery",
               "pacman": "Pacman"
-            }
+            },
+            "pills": "Minimalne wskaźniki w kształcie pigułek",
+            "numbers": "Numerowane indeksy",
+            "pacman": "Animowane kropki w stylu arcade"
           },
           "name": "Obszary robocze"
         },
@@ -1252,11 +1339,17 @@
               "classic": "Klasyczny",
               "material": "Material",
               "badge": "Matryca punktowa"
-            }
+            },
+            "classic": "Czytelnie ułożone godzina i data",
+            "material": "Ukośne pogrubione cyfry akcentowe",
+            "badge": "Segmentowane karty w kształcie kapsuł"
           }
         },
         "info": "Nagrywanie/minutnik",
-        "weather": "Pogoda"
+        "weather": "Pogoda",
+        "notifications": "Powiadomienia",
+        "usage": "Użycie systemu",
+        "clock": "Zegar"
       },
       "position": {
         "title": "Pozycja paska",
@@ -1286,6 +1379,14 @@
         "style": {
           "title": "Styl",
           "desc": "Wybierz styl wizualny wskaźników obszarów roboczych"
+        },
+        "per_monitor": {
+          "title": "Numeracja dla każdego monitora",
+          "desc": "Tylko Hyprland. Numeruj przestrzenie robocze od 1 na każdym monitorze i ustal, ile przestrzeni ma każdy monitor",
+          "unavailable": "Dostępne tylko w Hyprland"
+        },
+        "monitor_count": {
+          "desc": "Przestrzenie robocze tego monitora"
         }
       },
       "style": {
@@ -1387,11 +1488,13 @@
           "name": {
             "classic": "Klasyczny",
             "minimal": "Minimalistyczny",
-            "text": "Tekst"
+            "text": "Tekst",
+            "button": "Przycisk"
           },
           "classic": "Pigułka z gradientowym wypełnieniem fali",
           "minimal": "Kapsułka w stylu iOS/Android",
-          "text": "Czysty tekst i ikona bez tła"
+          "text": "Czysty tekst i ikona bez tła",
+          "button": "Interaktywna pigułka przycisku z tłem"
         }
       },
       "wifi": {
@@ -1529,6 +1632,10 @@
         "behavior": "Zachowanie",
         "layout": "Układ",
         "modules": "Moduły"
+      },
+      "height": {
+        "title": "Wysokość paska",
+        "desc": "Ustaw wysokość paska w procentach"
       }
     },
     "theme": {
@@ -1660,7 +1767,8 @@
         "empty": "Brak aplikacji z motywem. Dodaj jedną z listy"
       },
       "sections": {
-        "presets": "Ustawienia wstępne"
+        "presets": "Ustawienia wstępne",
+        "appearance": "Wygląd"
       }
     },
     "file_picker": {
@@ -1729,7 +1837,8 @@
         "pink": "Różowy",
         "flamingo": "Flaming",
         "rosewater": "Różana woda"
-      }
+      },
+      "edit_title": "Edytuj własny motyw"
     },
     "wellbeing": {
       "desktop": "Pulpit",
@@ -1782,7 +1891,8 @@
         "picker_search": "Szukaj aplikacji...",
         "picker_empty": "Brak pasujących aplikacji",
         "picker_apply": "Zastosuj",
-        "picker_cancel": "Anuluj"
+        "picker_cancel": "Anuluj",
+        "add_app": "Dodaj aplikację"
       },
       "notify": {
         "title": "Cyfrowa równowaga",
@@ -1792,7 +1902,19 @@
       "limit_overlay": {
         "title": "Osiągnięto dzienny limit",
         "hold": "Przytrzymaj, aby kontynuować"
-      }
+      },
+      "day": "Dzień",
+      "week": "Tydzień",
+      "screen_time": "Czas przed ekranem",
+      "less_than_prev": "O {time} mniej niż dzień wcześniej",
+      "more_than_prev": "O {time} więcej niż dzień wcześniej",
+      "same_as_prev": "Tyle samo co dzień wcześniej",
+      "limit_progress": "{used} z dziennego limitu {limit}",
+      "limit_reached": "Osiągnięto dzienny limit {limit}",
+      "peak_hour": "Godzina szczytu",
+      "week_total": "Suma tygodnia",
+      "less": "Mniej",
+      "more": "Więcej"
     },
     "update_available": "Dostępna aktualizacja",
     "osd": {
@@ -1861,7 +1983,8 @@
       },
       "timeout": {
         "title": "Opóźnienie ukrywania",
-        "desc": "Czas przed ukryciem po opuszczeniu wskaźnika"
+        "desc": "Czas przed ukryciem po opuszczeniu wskaźnika",
+        "required": "Najpierw włącz automatyczne ukrywanie"
       },
       "floating": {
         "title": "Pływający dok",
@@ -1891,7 +2014,8 @@
       },
       "scrolling": {
         "title": "Włącz przewijanie elementów",
-        "desc": "Ogranicz liczbę widocznych elementów i umożliw przewijanie kółkiem myszy lub touchpadem"
+        "desc": "Ogranicz liczbę widocznych elementów i umożliw przewijanie kółkiem myszy lub touchpadem",
+        "required": "Najpierw włącz przewijanie elementów"
       },
       "visible_elements": {
         "title": "Widoczne elementy",
@@ -1938,7 +2062,10 @@
         "workspace": "Tylko aktywny obszar roboczy"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "Nowe okno",
+        "pin": "Przypnij do docka",
+        "unpin": "Odepnij od docka"
       },
       "background": {
         "title": "Rysuj tło za aplikacjami",
@@ -1952,7 +2079,8 @@
         "effects": "Efekty",
         "autohide": "Automatyczne ukrywanie",
         "behavior": "Zachowanie"
-      }
+      },
+      "unavailable": "Najpierw włącz docka"
     },
     "lyrics_picker": {
       "title": "Wybierz plik z tekstem utworu",
@@ -1962,7 +2090,8 @@
     "search": {
       "placeholder": "Szukaj w ustawieniach...",
       "prompt": "Wpisz, aby wyszukać w ustawieniach...",
-      "no_results": "Nie znaleziono ustawień"
+      "no_results": "Nie znaleziono ustawień",
+      "results": "Wyniki wyszukiwania"
     },
     "screenshot": {
       "ocr": {
@@ -1982,6 +2111,11 @@
         "title": "Folder zrzutów ekranu",
         "desc": "Folder, w którym zapisywane są zrzuty ekranu",
         "select_dir": "Wybierz katalog..."
+      },
+      "sections": {
+        "capture": "Przechwytywanie",
+        "files": "Pliki",
+        "ocr": "Rozpoznawanie tekstu"
       }
     },
     "desktop": {
@@ -2027,7 +2161,8 @@
         "tiled": "Kafelkowy",
         "workspace": "Obszar roboczy",
         "window": "okno",
-        "windows": "okna"
+        "windows": "okna",
+        "unsupported2": "Tylko Hyprland i Sway"
       },
       "actions": {
         "overview": "Przegląd",
@@ -2068,13 +2203,60 @@
         "title": "Resetuj ruch",
         "desc": "Powrót do domyślnych prędkości, odstępów i rozmycia",
         "button": "Resetuj"
-      }
+      },
+      "supported_only": "Tylko Hyprland i Sway"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "Tapeta",
         "transition": "Przejście"
       }
+    },
+    "autostart": {
+      "title": "Autostart",
+      "desc": "Zarządzaj programami, plikami binarnymi i skryptami uruchamianymi automatycznie przy starcie sesji",
+      "master_switch": {
+        "title": "Włącz autostart",
+        "desc": "Globalnie uruchamiaj skonfigurowaną listę aplikacji autostartu po zalogowaniu"
+      },
+      "add_button": "Dodaj aplikację",
+      "empty_title": "Brak aplikacji autostartu",
+      "empty_desc": "Kliknij „Dodaj aplikację”, aby ustawić polecenia, pliki binarne, opóźnienia i powtórzenia.",
+      "name_label": "Nazwa",
+      "name_placeholder": "np. Discord, Telegram, skrypt",
+      "exec_label": "Polecenie do uruchomienia",
+      "exec_placeholder": "Ścieżka do pliku binarnego lub nazwa z flagami (np. discord --start-minimized)",
+      "browse_file": "Wybierz plik",
+      "delay_label": "Opóźnienie startu",
+      "delay_desc": "Czas oczekiwania w sekundach przed uruchomieniem",
+      "delay_unit": "s",
+      "count_label": "Liczba uruchomień",
+      "count_desc": "Liczba instancji uruchamianych przy starcie",
+      "repeat_delay_label": "Interwał powtarzania",
+      "repeat_delay_desc": "Opóźnienie między kolejnymi uruchomieniami",
+      "workspace_label": "Przestrzeń robocza",
+      "workspace_default": "Domyślna",
+      "silent_label": "Ciche uruchomienie",
+      "silent_desc": "Otwórz okno w tle bez przejmowania fokusu",
+      "condition_label": "Warunek uruchomienia",
+      "condition_always": "Zawsze",
+      "condition_ac_only": "Tylko przy zasilaniu sieciowym",
+      "condition_battery_only": "Tylko na baterii",
+      "condition_multi_monitor": "Tylko przy wielu monitorach",
+      "restart_crash_label": "Uruchom ponownie po awarii",
+      "restart_crash_desc": "Automatycznie uruchom usługę ponownie po awarii",
+      "status_running": "Działa",
+      "status_success": "Zakończono pomyślnie",
+      "status_failed": "Niepowodzenie",
+      "status_idle": "Bezczynne",
+      "view_log": "Dziennik",
+      "no_log": "Dziennik jest na razie pusty",
+      "run_now": "Uruchom teraz",
+      "delete": "Usuń",
+      "toggle": "Włącz / wyłącz"
     }
+  },
+  "common": {
+    "select": "Wybierz..."
   }
 }

@@ -170,7 +170,7 @@ GuideTab {
                         Text {
                             Layout.alignment: Qt.AlignLeft
                             Layout.bottomMargin: rootObj.s(4)
-                            text: "Update available v" + Updater.remoteVersion
+                            text: I18n.t("guide.update_available", "Update available") + " v" + Updater.remoteVersion
                             font.family: ThemeBackend.fontFamily
                             font.weight: Font.Bold
                             font.pixelSize: rootObj.s(18)
@@ -182,7 +182,7 @@ GuideTab {
                             Layout.preferredHeight: rootObj.s(36)
                             horizontalPadding: rootObj.s(14)
                             cornerRadius: ThemeBackend.borderRadius
-                            buttonText: "Changelog"
+                            buttonText: I18n.t("guide.about.changelog", "Changelog")
                             textFontSize: rootObj.s(12)
                             buttonIcon: "󰈙"
                             iconFontSize: rootObj.s(16)
@@ -195,7 +195,7 @@ GuideTab {
                         FillButton {
                             Layout.fillWidth: true
                             Layout.preferredHeight: rootObj.s(38)
-                            buttonText: "Update"
+                            buttonText: I18n.t("guide.tabs.update", "Update")
                             buttonIcon: "󰚰"
                             accentColor: ThemeBackend.green
                             baseColor: ThemeBackend.surface0
@@ -412,51 +412,6 @@ GuideTab {
                     textColor: ThemeBackend.text
 
                     onTriggered: Quickshell.execDetached(["xdg-open", "https://github.com/" + aboutTabRoot.upstreamRepo])
-                }
-            }
-
-            // Notices: README information + AI disclosure (plain text, no icons)
-            Repeater {
-                model: [
-                    { title: I18n.t("guide.about.notice.info_title", "Information"), body: I18n.t("guide.about.notice.info_body2", "A Wayland desktop shell with an endless, zoomable canvas for your windows and widgets. Built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop supports Hyprland and Sway.") },
-                    { title: I18n.t("guide.about.notice.ai_title", "Vibecoded with Claude"), body: I18n.t("guide.about.notice.ai_body", "This project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check the README and the docs instead.") }
-                ]
-
-                Rectangle {
-                    required property var modelData
-
-                    Layout.fillWidth: true
-                    Layout.topMargin: rootObj.s(-8)
-                    implicitHeight: noticeCol.implicitHeight + rootObj.s(24)
-                    radius: ThemeBackend.borderRadius
-                    color: Qt.alpha(ThemeBackend.surface0, 0.4)
-
-                    ColumnLayout {
-                        id: noticeCol
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.leftMargin: rootObj.s(14)
-                        anchors.rightMargin: rootObj.s(14)
-                        spacing: rootObj.s(4)
-
-                        Text {
-                            text: modelData.title
-                            font.family: ThemeBackend.fontFamily
-                            font.weight: Font.Bold
-                            font.pixelSize: rootObj.s(13)
-                            color: ThemeBackend.text
-                        }
-
-                        Text {
-                            Layout.fillWidth: true
-                            text: modelData.body
-                            wrapMode: Text.WordWrap
-                            font.family: ThemeBackend.fontFamily
-                            font.pixelSize: rootObj.s(12)
-                            color: ThemeBackend.subtext0
-                        }
-                    }
                 }
             }
         }

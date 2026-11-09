@@ -20,7 +20,10 @@
         "shell": "Shell",
         "uptime": "Waktu aktif",
         "default_os": "Linux"
-      }
+      },
+      "original_dev": "Pengembang asli: @{author}",
+      "edition": "Infinite Desktop Edition",
+      "changelog": "Catatan perubahan"
     },
     "tabs": {
       "welcome": "Selamat Datang",
@@ -49,7 +52,8 @@
       "theme_wallpapers": "Wallpaper",
       "general_main": "Umum",
       "general_presets": "Preset",
-      "desktop": "Desktop"
+      "desktop": "Desktop",
+      "autostart": "Mulai otomatis"
     },
     "launcher": {
       "position": {
@@ -81,6 +85,10 @@
       "search": {
         "title": "Penyedia pencarian web",
         "desc": "Mesin pencari yang digunakan saat kueri diawali ?"
+      },
+      "sections": {
+        "layout": "Tata letak",
+        "search": "Pencarian"
       }
     },
     "notifications": {
@@ -194,7 +202,10 @@
     "welcome": {
       "about": "Tentang",
       "hold_for_tutorial": "Tahan untuk tutorial",
-      "start_tutorial": "Mulai tutorial"
+      "start_tutorial": "Mulai tutorial",
+      "by_author": "oleh {author}",
+      "original_dev": "Pengembang asli: @{author}",
+      "edition": "Infinite Desktop Edition"
     },
     "tutorial": {
       "section_title": "Tutorial {section}",
@@ -275,6 +286,12 @@
           "apply": "Terapkan",
           "cancel": "Batal"
         }
+      },
+      "sections": {
+        "profile": "Profil",
+        "sound": "Suara",
+        "behavior": "Perilaku",
+        "location": "Lokasi dan cuaca"
       }
     },
     "display": {
@@ -327,8 +344,12 @@
         },
         "mode_canvas": "Desktop tak terbatas",
         "mode_tiled": "Tiled",
-        "mode_title": "Mode saat ini",
-        "mode_hint": "Widget disimpan terpisah untuk mode Tiled dan Desktop tak terbatas. Tekan Super+G untuk beralih di antara kedua mode."
+        "delete_all": {
+          "title": "Hapus semua widget",
+          "desc": "Menghapus setiap widget dari desktop tiled maupun desktop tak terbatas di semua ruang kerja dan layar",
+          "button": "Hapus semua",
+          "confirm": "Klik lagi untuk mengonfirmasi"
+        }
       },
       "lockscreen": {
         "edit": {
@@ -363,8 +384,7 @@
       "sections": {
         "lockscreen": "Layar kunci",
         "screens": "Layar",
-        "redactor": "Editor",
-        "mode": "Mode"
+        "redactor": "Editor"
       }
     },
     "bar": {
@@ -377,7 +397,10 @@
               "pills": "Kapsul",
               "numbers": "Angka",
               "pacman": "Pacman"
-            }
+            },
+            "pills": "Indikator pil minimal",
+            "numbers": "Indeks bernomor",
+            "pacman": "Titik arkade beranimasi"
           },
           "name": "Ruang kerja"
         },
@@ -397,11 +420,17 @@
               "classic": "Klasik",
               "material": "Material",
               "badge": "Dot Matrix"
-            }
+            },
+            "classic": "Waktu dan tanggal bertumpuk yang rapi",
+            "material": "Angka aksen tebal diagonal",
+            "badge": "Kartu tersegmentasi berbentuk kapsul"
           }
         },
         "info": "Perekaman/timer",
-        "weather": "Cuaca"
+        "weather": "Cuaca",
+        "notifications": "Notifikasi",
+        "usage": "Penggunaan sistem",
+        "clock": "Jam"
       },
       "position": {
         "title": "Posisi bilah",
@@ -431,6 +460,14 @@
         "style": {
           "title": "Gaya",
           "desc": "Pilih gaya visual untuk indikator ruang kerja"
+        },
+        "per_monitor": {
+          "title": "Penomoran per monitor",
+          "desc": "Hanya Hyprland. Nomori ruang kerja mulai dari 1 di setiap monitor dan atur jumlah ruang kerja milik setiap monitor",
+          "unavailable": "Hanya tersedia di Hyprland"
+        },
+        "monitor_count": {
+          "desc": "Ruang kerja milik monitor ini"
         }
       },
       "style": {
@@ -532,11 +569,13 @@
           "name": {
             "classic": "Klasik",
             "minimal": "Minimalis",
-            "text": "Teks"
+            "text": "Teks",
+            "button": "Tombol"
           },
           "classic": "Kapsul dengan isian gelombang gradien",
           "minimal": "Kapsul gaya iOS/Android dengan tutup",
-          "text": "Teks dan ikon bersih tanpa latar belakang"
+          "text": "Teks dan ikon bersih tanpa latar belakang",
+          "button": "Pil tombol interaktif dengan latar belakang"
         }
       },
       "wifi": {
@@ -674,6 +713,10 @@
         "behavior": "Perilaku",
         "layout": "Tata letak",
         "modules": "Modul"
+      },
+      "height": {
+        "title": "Tinggi bar",
+        "desc": "Atur tinggi bar dalam persentase"
       }
     },
     "theme": {
@@ -805,7 +848,8 @@
         "empty": "Belum ada aplikasi bertema. Tambahkan dari daftar"
       },
       "sections": {
-        "presets": "Preset"
+        "presets": "Preset",
+        "appearance": "Tampilan"
       }
     },
     "file_picker": {
@@ -874,7 +918,8 @@
         "pink": "Merah Muda",
         "flamingo": "Flamingo",
         "rosewater": "Air Mawar"
-      }
+      },
+      "edit_title": "Edit tema kustom"
     },
     "wellbeing": {
       "desktop": "Desktop",
@@ -927,7 +972,8 @@
         "picker_search": "Cari aplikasi...",
         "picker_empty": "Tidak ada aplikasi yang cocok",
         "picker_apply": "Terapkan",
-        "picker_cancel": "Batal"
+        "picker_cancel": "Batal",
+        "add_app": "Tambah aplikasi"
       },
       "notify": {
         "title": "Kesejahteraan digital",
@@ -937,7 +983,19 @@
       "limit_overlay": {
         "title": "Batas harian tercapai",
         "hold": "Tahan untuk melanjutkan"
-      }
+      },
+      "day": "Hari",
+      "week": "Minggu",
+      "screen_time": "Waktu layar",
+      "less_than_prev": "{time} lebih sedikit dari hari sebelumnya",
+      "more_than_prev": "{time} lebih banyak dari hari sebelumnya",
+      "same_as_prev": "Sama seperti hari sebelumnya",
+      "limit_progress": "{used} dari batas harian {limit}",
+      "limit_reached": "Batas harian {limit} tercapai",
+      "peak_hour": "Jam tersibuk",
+      "week_total": "Total minggu ini",
+      "less": "Lebih sedikit",
+      "more": "Lebih banyak"
     },
     "update_available": "Pembaruan tersedia",
     "osd": {
@@ -1006,7 +1064,8 @@
       },
       "timeout": {
         "title": "Jeda sembunyikan otomatis",
-        "desc": "Durasi sebelum bersembunyi setelah penunjuk menjauh"
+        "desc": "Durasi sebelum bersembunyi setelah penunjuk menjauh",
+        "required": "Aktifkan sembunyi otomatis terlebih dahulu"
       },
       "floating": {
         "title": "Dok mengambang",
@@ -1036,7 +1095,8 @@
       },
       "scrolling": {
         "title": "Aktifkan pengguliran elemen",
-        "desc": "Batasi elemen yang terlihat dan izinkan pengguliran menggunakan roda tetikus atau bantalan sentuh"
+        "desc": "Batasi elemen yang terlihat dan izinkan pengguliran menggunakan roda tetikus atau bantalan sentuh",
+        "required": "Aktifkan pengguliran elemen terlebih dahulu"
       },
       "visible_elements": {
         "title": "Elemen terlihat",
@@ -1083,7 +1143,10 @@
         "workspace": "Hanya ruang kerja aktif"
       },
       "window_menu": {
-        "untitled": "Untitled"
+        "untitled": "Untitled",
+        "new_window": "Jendela baru",
+        "pin": "Sematkan ke dock",
+        "unpin": "Lepas dari dock"
       },
       "background": {
         "title": "Gambar latar di belakang aplikasi",
@@ -1097,7 +1160,8 @@
         "effects": "Efek",
         "autohide": "Sembunyi otomatis",
         "behavior": "Perilaku"
-      }
+      },
+      "unavailable": "Aktifkan dock terlebih dahulu"
     },
     "lyrics_picker": {
       "title": "Pilih berkas lirik",
@@ -1107,7 +1171,8 @@
     "search": {
       "placeholder": "Cari pengaturan...",
       "prompt": "Ketik untuk mencari pengaturan...",
-      "no_results": "Pengaturan tidak ditemukan"
+      "no_results": "Pengaturan tidak ditemukan",
+      "results": "Hasil pencarian"
     },
     "screenshot": {
       "ocr": {
@@ -1127,6 +1192,11 @@
         "title": "Folder tangkapan layar",
         "desc": "Folder tempat tangkapan layar disimpan",
         "select_dir": "Pilih direktori..."
+      },
+      "sections": {
+        "capture": "Tangkapan",
+        "files": "Berkas",
+        "ocr": "Pengenalan teks"
       }
     },
     "desktop": {
@@ -1172,7 +1242,8 @@
         "tiled": "Tiled",
         "workspace": "Workspace",
         "window": "jendela",
-        "windows": "jendela"
+        "windows": "jendela",
+        "unsupported2": "Hanya Hyprland dan Sway"
       },
       "actions": {
         "overview": "Ringkasan",
@@ -1213,13 +1284,57 @@
         "title": "Reset gerakan",
         "desc": "Kembali ke kecepatan, jarak, dan blur bawaan",
         "button": "Reset"
-      }
+      },
+      "supported_only": "Hanya Hyprland dan Sway"
     },
     "wallpaper": {
       "sections": {
         "wallpaper": "Wallpaper",
         "transition": "Transisi"
       }
+    },
+    "autostart": {
+      "title": "Mulai otomatis",
+      "desc": "Kelola program, biner, dan skrip yang berjalan otomatis saat sesi dimulai",
+      "master_switch": {
+        "title": "Aktifkan mulai otomatis",
+        "desc": "Jalankan daftar aplikasi mulai otomatis yang dikonfigurasi secara global saat masuk"
+      },
+      "add_button": "Tambah aplikasi",
+      "empty_title": "Tidak ada aplikasi mulai otomatis",
+      "empty_desc": "Klik 'Tambah aplikasi' untuk mengatur perintah, biner, jeda, dan pengulangan.",
+      "name_label": "Nama",
+      "name_placeholder": "mis. Discord, Telegram, skrip",
+      "exec_label": "Perintah yang dijalankan",
+      "exec_placeholder": "Jalur biner atau nama dengan opsi (mis. discord --start-minimized)",
+      "browse_file": "Telusuri berkas",
+      "delay_label": "Jeda mulai",
+      "delay_desc": "Waktu tunggu dalam detik sebelum dijalankan",
+      "delay_unit": "d",
+      "count_label": "Jumlah peluncuran",
+      "count_desc": "Jumlah instans yang dijalankan saat memulai",
+      "repeat_delay_label": "Interval pengulangan",
+      "repeat_delay_desc": "Jeda antar peluncuran berulang",
+      "workspace_label": "Ruang kerja",
+      "workspace_default": "Bawaan",
+      "silent_label": "Mulai senyap",
+      "silent_desc": "Buka jendela di latar belakang tanpa mengambil fokus",
+      "condition_label": "Kondisi mulai",
+      "condition_always": "Selalu",
+      "condition_ac_only": "Hanya saat terhubung ke listrik",
+      "condition_battery_only": "Hanya saat memakai baterai",
+      "condition_multi_monitor": "Hanya dengan beberapa monitor",
+      "restart_crash_label": "Mulai ulang saat crash",
+      "restart_crash_desc": "Mulai ulang layanan secara otomatis jika crash",
+      "status_running": "Berjalan",
+      "status_success": "Berhasil",
+      "status_failed": "Gagal",
+      "status_idle": "Siaga",
+      "view_log": "Log",
+      "no_log": "Log masih kosong",
+      "run_now": "Jalankan sekarang",
+      "delete": "Hapus",
+      "toggle": "Aktifkan / nonaktifkan"
     }
   },
   "sysnotif": {
@@ -1257,7 +1372,11 @@
     "tab_emojis": "Emoji",
     "placeholder_emojis": "Cari emoji berdasarkan nama atau kata kunci...",
     "search_run": "Cari dengan {provider}",
-    "search_hint": "Ketik untuk mencari dengan {provider}"
+    "search_hint": "Ketik untuk mencari dengan {provider}",
+    "command_run": "Jalankan perintah: {cmd}",
+    "command_hint": "Ketik perintah untuk dijalankan",
+    "calc_result": "Hasil perhitungan (Enter untuk menyalin)",
+    "no_emojis_found": "Emoji tidak ditemukan"
   },
   "calendar": {
     "loading": "Memuat...",
@@ -1293,12 +1412,14 @@
       "locked": "Terkunci",
       "access_denied": "Akses ditolak",
       "authenticating": "Mengautentikasi...",
-      "enter_pin": "Masukkan PIN"
+      "enter_pin": "Masukkan PIN",
+      "too_many_attempts": "Terlalu banyak percobaan"
     },
     "fingerprint": {
       "ready": "Sentuh sensor",
       "not_recognized": "Sidik jari tidak dikenali",
-      "recognized": "Sidik jari dikenali"
+      "recognized": "Sidik jari dikenali",
+      "blocked": "Sidik jari dinonaktifkan"
     },
     "power": {
       "suspend": "Suspensi",
@@ -1446,7 +1567,8 @@
       },
       "weather": {
         "fallback_summary": "Laporan cuaca",
-        "fallback_body": "Tidak ada rincian data yang disediakan."
+        "fallback_body": "Tidak ada rincian data yang disediakan.",
+        "title": "Cuaca"
       },
       "screenshot": {
         "badge": "Tangkapan Layar",
@@ -1689,7 +1811,8 @@
       "blue": "Biru",
       "purple": "Ungu",
       "pink": "Merah Muda",
-      "monochrome": "Monokrom"
+      "monochrome": "Monokrom",
+      "history": "Riwayat"
     }
   },
   "weather": {
@@ -1818,17 +1941,21 @@
       "stretched": "Stretched",
       "lumen": "Lumen",
       "lyrics": "Lirik",
-      "simpleLyrics": "Lirik Sederhana"
+      "simpleLyrics": "Lirik Sederhana",
+      "circle": "Lingkaran"
     },
     "presets": {
       "minimal": {
-        "name": "Minimalis"
+        "name": "Minimalis",
+        "desc": "Tata letak bersih dan halus dengan jam digital minimal dan cuaca ringkas."
       },
       "media_station": {
-        "name": "Stasiun media"
+        "name": "Stasiun media",
+        "desc": "Pengaturan media khusus dengan visualizer audio di tengah dan pemutar musik bundar."
       },
       "dashboard": {
-        "name": "Dasbor"
+        "name": "Dasbor",
+        "desc": "Pemantau sistem lengkap dengan jam digital, penggunaan perangkat keras, dan level baterai."
       }
     },
     "github": {
@@ -1845,7 +1972,11 @@
     "settings": {
       "lyricsLines": "Baris",
       "lyricsAlignment": "Perataan",
-      "textContent": "Teks"
+      "textContent": "Teks",
+      "lineThickness": "Ketebalan",
+      "showNoLyrics": "Tampilkan teks \"tidak ada lirik\"",
+      "usageStyle": "Gaya",
+      "visualizerStyle": "Gaya visualizer"
     },
     "align": {
       "left": "Kiri",
@@ -1857,6 +1988,10 @@
     },
     "text": {
       "placeholder": "Masukkan teks"
+    },
+    "style": {
+      "circle": "Lingkaran",
+      "wave": "Gelombang"
     }
   },
   "cli": {
@@ -2042,7 +2177,12 @@
       "installing_title": "Menginstal paket sistem dan dependensi...",
       "installing_pkg": "Menginstal {pkg}...",
       "install_ok": "Berhasil menginstal {pkg}",
-      "install_failed": "Gagal menginstal {pkg}"
+      "install_failed": "Gagal menginstal {pkg}",
+      "enabling_copr": "Mengaktifkan repositori COPR {repo}...",
+      "enabling_repo": "Mengaktifkan repositori {repo}...",
+      "enabling_terra": "Mengaktifkan repositori Terra...",
+      "quickshell_outdated": "Quickshell {version} terlalu lama, diperlukan {minimum} atau lebih baru. Meningkatkan versi...",
+      "quickshell_still_old": "Quickshell masih lebih lama dari {minimum}. Perbarui secara manual, jika tidak pengaturan tidak akan terbuka."
     },
     "deploy": {
       "configuring_sddm": "Mengonfigurasi manajer tampilan SDDM...",
@@ -2052,6 +2192,42 @@
       "sddm_no_xorg": "Xorg tidak ditemukan, SDDM menggunakan {compositor}.",
       "sddm_no_backend": "Xorg maupun compositor Wayland yang didukung untuk layar login (kwin_wayland/weston) tidak ditemukan di /usr/local/bin, /usr/bin atau /bin.",
       "sddm_skipped": "Pengaturan SDDM dilewati: tidak ada server tampilan atau compositor login yang dapat digunakan. Display manager saat ini tidak diubah."
+    },
+    "audio": {
+      "building": "Tidak ada mesin audio bawaan untuk sistem ini, membangunnya dari sumber...",
+      "checksum_failed": "Unduhan mesin audio gagal pemeriksaan checksum, dilewati.",
+      "download_failed": "Tidak dapat mengunduh mesin audio Serpantinum, dilewati. Anda dapat memasangnya nanti dari github.com/ilyamiro/serpantinum-audio.",
+      "install_failed": "Gagal memasang mesin audio Serpantinum. Equalizer tidak akan berfungsi sampai dipasang dari github.com/ilyamiro/serpantinum-audio.",
+      "installed": "Mesin audio Serpantinum {version} terpasang",
+      "installing": "Memasang mesin audio Serpantinum...",
+      "up_to_date": "-> Mesin audio Serpantinum {version} sudah terpasang."
+    },
+    "core": {
+      "checksum_failed": "Unduhan layanan inti gagal pemeriksaan checksum, dilewati.",
+      "download_failed": "Tidak dapat mengunduh layanan inti Serpantinum, dilewati. Anda dapat memasangnya nanti dari github.com/ilyamiro/serpantinum-core.",
+      "install_failed": "Gagal memasang layanan inti Serpantinum. Penggunaan sistem, indikator kunci keyboard, dan papan klip tidak akan berfungsi sampai dipasang dari github.com/ilyamiro/serpantinum-core.",
+      "installed": "Layanan inti Serpantinum {version} terpasang",
+      "installing": "Memasang layanan inti Serpantinum...",
+      "unsupported_arch": "Paket layanan inti bawaan hanya tersedia untuk x86_64, dilewati.",
+      "up_to_date": "-> Layanan inti Serpantinum {version} sudah terpasang."
+    },
+    "gamma": {
+      "checksum_failed": "Unduhan filter cahaya biru gagal pemeriksaan checksum, dilewati.",
+      "download_failed": "Tidak dapat mengunduh filter cahaya biru Serpantinum, dilewati. Anda dapat memasangnya nanti dari github.com/ilyamiro/serpantinum-gamma.",
+      "install_failed": "Gagal memasang filter cahaya biru Serpantinum. Filter tidak akan berfungsi sampai dipasang dari github.com/ilyamiro/serpantinum-gamma.",
+      "installed": "Filter cahaya biru Serpantinum {version} terpasang",
+      "installing": "Memasang filter cahaya biru Serpantinum...",
+      "unsupported_arch": "Paket filter cahaya biru bawaan hanya tersedia untuk x86_64, dilewati.",
+      "up_to_date": "-> Filter cahaya biru Serpantinum {version} sudah terpasang."
+    },
+    "ski": {
+      "checksum_failed": "Unduhan Ski gagal pemeriksaan checksum, dilewati.",
+      "download_failed": "Tidak dapat mengunduh Ski, dilewati. Anda dapat memasangnya nanti dari github.com/ilyamiro/Ski.",
+      "install_failed": "Gagal memasang Ski",
+      "installed": "Ski {version} terpasang",
+      "installing": "Memasang pengelola berkas Ski...",
+      "unsupported_arch": "Paket Ski bawaan hanya tersedia untuk x86_64, dilewati.",
+      "up_to_date": "-> Ski {version} sudah terpasang."
     }
   },
   "translator": {
@@ -2075,6 +2251,12 @@
     "keep_clipboard_sub": "Jika dinonaktifkan — konten papan klip asli dipulihkan setelah menempel"
   },
   "datetime": {
-    "full_date": "dddd, d MMMM"
+    "full_date": "dddd, d MMMM",
+    "just_now": "Baru saja",
+    "minutes_ago": "{mins} mnt lalu",
+    "yesterday": "Kemarin {time}"
+  },
+  "common": {
+    "select": "Pilih..."
   }
 }
