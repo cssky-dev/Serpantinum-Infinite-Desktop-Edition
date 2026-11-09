@@ -263,8 +263,6 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 ## 💜 Credits
 
 * Based on [ilyamiro's Serpantinum](https://github.com/ilyamiro/serpantinum) for Wayland compositors, forked and extended by [cssky-dev](https://github.com/cssky-dev).
-* Special thanks to Darkall44/Qylock for providing a gorgeous material SDDM theme!
-* Thanks to all [contributors of the original project](https://github.com/ilyamiro/serpantinum/graphs/contributors).
 
 ---
 
