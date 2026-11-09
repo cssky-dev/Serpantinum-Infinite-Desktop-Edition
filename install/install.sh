@@ -7,7 +7,7 @@ printf '\033[9;0]' 2>/dev/null || true
 
 for _arg in "$@"; do [ "$_arg" = "--plain" ] && export SERPANTINUM_PLAIN=1; done
 
-RAW_SLUG="${REPO_SLUG:-CSSKY/serpantinum-infinite-desktop}"
+RAW_SLUG="${REPO_SLUG:-cssky-dev/Serpantinum-Infinite-Desktop-Edition}"
 REPO_SLUG="$(printf '%s' "$RAW_SLUG" | tr -d '\r\n\t ' | sed 's/[^a-zA-Z0-9_\/-]//g')"
 CACHE_BASE="${XDG_CACHE_HOME:-$HOME/.cache}/serpantinum-installer"
 export REPO_SLUG

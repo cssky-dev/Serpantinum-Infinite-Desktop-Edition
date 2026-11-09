@@ -54,18 +54,24 @@ Built on [Quickshell](https://quickshell.org) · Based on ilyamiro's Serpantinum
 - **Theming** from the wallpaper palette, plus [app theming](./docs/configure/AppTheming.md) for GTK, Qt, terminals and editors
 - **Compositor configs** for Hyprland, Niri, Sway and Mango
 
+## Notice
+
+> **Information:** Serpantinum Infinite Desktop Edition is a Wayland desktop shell built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop currently supports Hyprland only.
+
+> **Vibecoded with Claude:** this project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check this README and the docs instead.
+
 ## Installation
 
 To install, run:
 
 ```bash
-curl -fsSL install.serpantinum-infinite.dev | bash
+curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/get.sh | bash
 ```
 
 If that does not work, try:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.github.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/install/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/install.sh)"
 ```
 
 The installer supports Arch Linux, Fedora, Void Linux and their derivatives. It detects your distribution and uses `pacman`, `dnf` or `xbps`. On NixOS, use the flake in [`flake.nix`](./flake.nix) and the [NixOS guide](./docs/installation/nixos/flake.md).
@@ -186,12 +192,6 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 - [Client CLI](./docs/cli/client.md) · [Daemon CLI](./docs/cli/daemon.md)
 - [Changelog](./CHANGELOG.md)
 
-## Notice
-
-> **Information:** Serpantinum Infinite Desktop Edition is a Wayland desktop shell built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop currently supports Hyprland only.
-
-> **Vibecoded with Claude:** this project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check this README and the docs instead.
-
 ## Credits
 
-Based on [ilyamiro's](https://github.com/ilyamiro) Serpantinum. Lockscreen and clock ideas come from Caelestia shell.
+Based on [ilyamiro's](https://github.com/ilyamiro/serpantinum) Serpantinum for Wayland compositors and Forked by cssky-dev

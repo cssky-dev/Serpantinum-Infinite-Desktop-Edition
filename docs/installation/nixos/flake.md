@@ -17,7 +17,7 @@ Add Serpantinum to your `flake.nix`:
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    serpantinum.url = "github:CSSKY/serpantinum-infinite-desktop";
+    serpantinum.url = "github:cssky-dev/Serpantinum-Infinite-Desktop-Edition";
   };
 
   outputs = { self, nixpkgs, serpantinum, ... }: {

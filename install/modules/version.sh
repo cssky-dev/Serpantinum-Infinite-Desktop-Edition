@@ -105,7 +105,7 @@ get_installed_commit() {
 
 get_target_version() {
     local repo_root="$1"
-    local repo_slug="${2:-"${REPO_SLUG:-"CSSKY/serpantinum-infinite-desktop"}"}"
+    local repo_slug="${2:-"${REPO_SLUG:-"cssky-dev/Serpantinum-Infinite-Desktop-Edition"}"}"
     local target_ver=""
 
     if [ -f "$repo_root/version.txt" ]; then
@@ -127,7 +127,7 @@ get_target_version() {
 
 get_target_commit() {
     local repo_root="$1"
-    local repo_slug="${2:-"${REPO_SLUG:-"CSSKY/serpantinum-infinite-desktop"}"}"
+    local repo_slug="${2:-"${REPO_SLUG:-"cssky-dev/Serpantinum-Infinite-Desktop-Edition"}"}"
     local target_commit=""
 
     if [ -d "$repo_root/.git" ] && command -v git &>/dev/null; then

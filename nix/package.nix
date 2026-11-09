@@ -121,7 +121,7 @@ stdenv.mkDerivation (finalAttrs: {
   passthru = { inherit pathDeps qtDeps serpantinum-audio serpantinum-gamma serpantinum-core; };
   meta = with lib; {
     description = "A desktop shell built for YOU";
-    homepage = "https://github.com/CSSKY/serpantinum-infinite-desktop";
+    homepage = "https://github.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition";
     license = licenses.mit;
     platforms = platforms.linux;
     mainProgram = "serpantinum";

@@ -2,8 +2,8 @@
 set -e
 
 main() {
-    local slug="${REPO_SLUG:-CSSKY/serpantinum-infinite-desktop}"
-    local branch="${SERPANTINUM_BRANCH:-master}"
+    local slug="${REPO_SLUG:-cssky-dev/Serpantinum-Infinite-Desktop-Edition}"
+    local branch="${SERPANTINUM_BRANCH:-main}"
     local dir
     dir="$(mktemp -d)"
     trap 'rm -rf "$dir"' EXIT

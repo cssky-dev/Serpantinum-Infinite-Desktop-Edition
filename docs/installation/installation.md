@@ -16,13 +16,13 @@ Serpantinum installs through an automated script on Arch Linux, Fedora, Void Lin
 Use this installer:
 
 ```bash
-curl -fsSL install.serpantinum.dev | bash
+curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/get.sh | bash
 ```
 
 If this doesn't work, use:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/CSSKY/serpantinum-infinite-desktop/master/install/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/install.sh)"
 ```
 
 :::info[NOTE]
@@ -57,7 +57,7 @@ The repository contains two PKGBUILDs in `packaging/aur`, and they conflict with
 | Package | Builds |
 | --- | --- |
 | `serpantinum` | The latest tagged release |
-| `serpantinum-git` | The latest commit on `master` |
+| `serpantinum-git` | The latest commit on `main` |
 
 Install the build tools:
 
@@ -68,7 +68,7 @@ sudo pacman -S --needed base-devel git
 Then clone the repository and build the package:
 
 ```bash
-git clone --depth 1 https://github.com/CSSKY/serpantinum-infinite-desktop.git
+git clone --depth 1 https://github.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition.git
 cd serpantinum/packaging/aur/serpantinum
 makepkg -si
 ```

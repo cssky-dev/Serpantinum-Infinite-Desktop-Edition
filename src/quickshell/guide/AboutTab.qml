@@ -11,7 +11,7 @@ GuideTab {
     id: aboutTabRoot
 
     // GitHub "owner/repo" slugs for the two website buttons (Infinite Desktop edition + upstream)
-    readonly property string cskyRepo: "CSSKY/serpantinum-infinite-desktop"
+    readonly property string cskyRepo: "cssky-dev/Serpantinum-Infinite-Desktop-Edition"
     readonly property string upstreamRepo: "ilyamiro/serpantinum"
 
     property real updateTransitionProgress: Updater.updateAvailable ? 1.0 : 0.0
@@ -189,7 +189,7 @@ GuideTab {
                             accentColor: ThemeBackend.surface0
                             textColor: ThemeBackend.text
 
-                            onTriggered: Quickshell.execDetached(["xdg-open", "https://github.com/CSSKY/serpantinum-infinite-desktop/blob/master/CHANGELOG.md"])
+                            onTriggered: Quickshell.execDetached(["xdg-open", "https://github.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/blob/main/CHANGELOG.md"])
                         }
 
                         FillButton {
@@ -208,7 +208,7 @@ GuideTab {
                             fillDuration: 1200
 
                             onTriggered: {
-                                let cmd = "if command -v kitty >/dev/null 2>&1; then kitty --hold bash -c 'eval \"$(curl -fsSL https://raw.githubusercontent.com/CSSKY/serpantinum-infinite-desktop/master/install/install.sh)\"'; else ${TERM:-xterm} -hold -e bash -c 'eval \"$(curl -fsSL https://raw.githubusercontent.com/CSSKY/serpantinum-infinite-desktop/master/install/install.sh)\"'; fi";
+                                let cmd = "if command -v kitty >/dev/null 2>&1; then kitty --hold bash -c 'eval \"$(curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/install.sh)\"'; else ${TERM:-xterm} -hold -e bash -c 'eval \"$(curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/install.sh)\"'; fi";
                                 Quickshell.execDetached(["bash", "-c", cmd]);
                                 rootObj.dismissHost();
                             }

@@ -5,7 +5,7 @@ import sys
 import time
 import urllib.request
 
-REPO = "CSSKY/serpantinum-infinite-desktop"
+REPO = "cssky-dev/Serpantinum-Infinite-Desktop-Edition"
 DEFAULT_VER = "2.0.0"
 
 state_dir = os.path.expanduser("~/.local/state/serpantinum")
@@ -91,7 +91,7 @@ remote_ver = local_ver
 if not package_managed:
     try:
         req = urllib.request.Request(
-            f"https://raw.githubusercontent.com/{REPO}/master/version.txt",
+            f"https://raw.githubusercontent.com/{REPO}/main/version.txt",
             headers={"User-Agent": "updater-script"}
         )
         res = urllib.request.urlopen(req, timeout=5)
