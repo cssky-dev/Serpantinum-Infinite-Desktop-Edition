@@ -6,7 +6,7 @@
 
 All notable changes are listed here, newest first. Versions follow `version.txt`.
 
-[2.4.5](#245) · [2.4.4](#244) · [2.4.x](#24x-ported-onto-upstream-ilyamiro-241) · [2.3.x](#23x)
+[2.4.6](#246) · [2.4.4](#244) · [2.4.x](#24x-ported-onto-upstream-ilyamiro-241) · [2.3.x](#23x)
 
 </div>
 
