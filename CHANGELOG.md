@@ -14,7 +14,7 @@ All notable changes are listed here, newest first. Versions follow `version.txt`
 
 ---
 
-## 2.4.5
+## 2.4.6
 
 ### ✨ Added
 - **Sway support for the Infinite desktop.** The canvas engine now drives Sway through its IPC (`swaymsg`), with Super+G, zoom, pan, overview, tidy and marks wired into the default Sway config. The widget redactor snaps to apps on Sway as well.
