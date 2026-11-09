@@ -6,11 +6,23 @@
 
 All notable changes are listed here, newest first. Versions follow `version.txt`.
 
-[2.4.6](#246) · [2.4.5](#245) · [2.4.4](#244) · [2.4.x](#24x-ported-onto-upstream-ilyamiro-241) · [2.3.x](#23x)
+[2.4.8](#248) · [2.4.6](#246) · [2.4.5](#245) · [2.4.4](#244) · [2.4.x](#24x-ported-onto-upstream-ilyamiro-241) · [2.3.x](#23x)
 
 </div>
 
 > **Legend:** ✨ Added · 🔧 Changed · 🐛 Fixed · 🪶 Performance · 📝 Notes
+
+---
+
+## 2.4.8
+
+### 🔧 Changed
+- **Bar intro:** modules now unfold from the middle of the bar outwards with a gentler settle, and the bar starts slightly after the wallpaper reveal.
+- **Wallpaper:** a soft fade and slow zoom-out reveals the wallpaper each time Serpantinum starts.
+
+### 🐛 Fixed
+- **Screenshot tab animation:** when the OCR language list finishes loading, the rows now enter with the same slide, fade and soft-settle as every other guide settings tab, and the "Loading languages..." line fades and collapses instead of popping away. The entrance helper no longer mistakes the language list for the scrolling area, so the tab's sections animate on open too.
+- **Bar intro timing:** layout animations switch on only once the intro has really finished (before, they switched on about 400 ms too early).
 
 ---
 
@@ -27,9 +39,6 @@ All notable changes are listed here, newest first. Versions follow `version.txt`
 - The installer clones and fetches with `--depth 50` so first installs are smaller and faster.
 
 ### 🐛 Fixed
-- **Screenshot tab:** when the OCR language list finishes loading, the rows now enter with the same slide, fade and soft-settle as every other guide settings tab, and the "Loading languages..." line fades and collapses instead of popping away. The entrance helper no longer mistakes the language list for the scrolling area, so the tab's sections animate on open too.
-- **Bar intro:** modules unfold from the middle of the bar outwards with a gentler settle, the bar starts slightly after the wallpaper reveal, and layout animations switch on only once the intro has really finished (before, they switched on about 400 ms too early).
-- **Wallpaper:** a soft fade and slow zoom-out reveals the wallpaper each time Serpantinum starts.
 - `Nightfox.json` was an empty file, so the Nightfox theme failed to load. It is restored.
 - **Translations are complete in all 23 languages.** Every language file now has the same keys: the Autostart tab, installer messages, lock screen, widget style names, quick actions palette, and the strings that were missing from `en.json`.
 - Strings that always showed English no matter the language are now translated: app launcher command and calculator hints, bar module style descriptions, bar height (vertical bars), theme editor title, weather notification title, wallpaper history filter, About tab update and changelog buttons, and the location (Auto-detect, Latitude, Longitude, Apply) and wallpaper (Select wallpaper) buttons.
