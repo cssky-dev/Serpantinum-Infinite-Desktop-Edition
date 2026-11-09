@@ -25,7 +25,7 @@
       "edition": "Infinite Desktop Edition",
       "notice": {
         "info_title": "Information",
-        "info_body": "A Wayland desktop shell with an endless, zoomable canvas for your windows and widgets. Built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop currently supports Hyprland only.",
+        "info_body2": "A Wayland desktop shell with an endless, zoomable canvas for your windows and widgets. Built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop supports Hyprland and Sway.",
         "ai_title": "Vibecoded with Claude",
         "ai_body": "This project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check the README and the docs instead."
       }
@@ -1225,6 +1225,7 @@
         "desc": "Widgets sit behind apps and move with the canvas"
       },
       "hyprlandonly": "Hyprland only",
+      "supported_only": "Hyprland and Sway only",
       "sections": {
         "canvas": "Canvas",
         "behavior": "Behavior",
@@ -1233,6 +1234,7 @@
       },
       "status": {
         "unsupported": "Hyprland only",
+        "unsupported2": "Hyprland and Sway only",
         "off": "Infinite desktop is off",
         "canvas": "Infinite desktop",
         "tiled": "Tiled",

@@ -58,3 +58,9 @@ Quick utility actions:
 - Screenshots: `Print exec serpantinum screenshot` (add `--edit` or `--full`)
 - Brightness: `XF86MonBrightnessDown` and `XF86MonBrightnessUp`
 - Volume: `XF86AudioLowerVolume`, `XF86AudioRaiseVolume`, and `XF86AudioMute`
+
+## Infinite desktop
+
+Sway supports the Infinite desktop. The default `configDir/keybinds` binds `$mod+G` to toggle it, plus zoom, pan, overview, tidy and marks. Arrow keys call `serpantinum canvas focus <dir>`, which falls back to the normal Sway focus when the canvas is off; workspaces move to `$mod+Alt+Up` / `$mod+Alt+Down`.
+
+The canvas is driven through `swaymsg` by `src/scripts/canvas/sway.py`, which needs `python3`. Sway cannot report the pointer position, so zoom anchors to the centre of the focused output. Floating windows whose centre leaves their output are handed to the neighbouring output by Sway, so one canvas monitor works best.

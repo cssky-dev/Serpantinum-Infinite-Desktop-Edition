@@ -315,6 +315,9 @@ PanelWindow {
 
     readonly property bool isBarEffectivelyHidden: barAutohide || isFullscreenActive
     readonly property bool screenReady: masterWindow.width >= 100 && masterWindow.height >= 100
+    // The settings panel is dragged by its header; its dragged position must survive layout
+    // recalculations (tab size changes, Infinite desktop camera moves, monitor changes).
+    readonly property bool keepsUserPosition: isCurrentDraggable || currentActive === "guide"
     readonly property bool isCurrentDraggable: {
         let t = getLayout(masterWindow.currentActive);
         return Boolean(t && t.draggable);
@@ -610,7 +613,7 @@ PanelWindow {
 
     onTargetLayoutChanged: {
         if (!targetLayout || masterWindow.currentActive === "hidden" || !masterWindow.isVisible) return;
-        if (!masterWindow.userMoved || !masterWindow.isCurrentDraggable) {
+        if (!masterWindow.userMoved || !masterWindow.keepsUserPosition) {
             masterWindow._animX = targetLayout.x;
             masterWindow._animY = targetLayout.y;
         }
@@ -837,7 +840,7 @@ PanelWindow {
         let finalX = (finalW !== t.w) ? recenterX(t, finalW) : t.rx;
         let finalY = t.ry;
 
-        if (!masterWindow.userMoved || !masterWindow.isCurrentDraggable) {
+        if (!masterWindow.userMoved || !masterWindow.keepsUserPosition) {
             masterWindow._animX = finalX;
             masterWindow._animY = finalY;
         }

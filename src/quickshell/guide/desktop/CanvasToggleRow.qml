@@ -13,8 +13,8 @@ SettingsRow {
 
     rootObj: row.tab.rootObj
     verticalPadding: row.s(11)
-    hiddenByConfig: !CanvasEngine.isHyprland || (row.needsDesktop && !CanvasEngine.masterEnabled)
-    unavailableReason: !CanvasEngine.isHyprland ? row.tab.tr("guide.desktop.hyprlandonly", "Hyprland only") : ""
+    hiddenByConfig: !CanvasEngine.supported || (row.needsDesktop && !CanvasEngine.masterEnabled)
+    unavailableReason: !CanvasEngine.supported ? row.tab.tr("guide.desktop.supported_only", "Hyprland and Sway only") : ""
 
     Toggle {
         checked: row.value

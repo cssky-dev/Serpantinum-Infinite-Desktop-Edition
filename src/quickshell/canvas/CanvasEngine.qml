@@ -10,6 +10,12 @@ Item {
     visible: false
 
     readonly property bool isHyprland: Compositor.name === "hyprland"
+    readonly property bool isSway: Compositor.name === "sway"
+    // Any compositor the Infinite desktop can drive (Hyprland natively, Sway through its IPC)
+    readonly property bool supported: isHyprland || isSway
+    readonly property string backend: isHyprland ? "hyprland" : (isSway ? "sway" : "none")
+    readonly property string swayScript: Caching.serpantinumDir + "/scripts/canvas/sway.py"
+    readonly property var cursorCmd: isSway ? ["python3", swayScript, "cursor"] : ["hyprctl", "-j", "cursorpos"]
     readonly property bool masterEnabled: root.setting("enabled", true) !== false
     readonly property bool allWorkspaces: root.setting("allWorkspaces", false) === true
     readonly property bool followFocus: root.setting("followFocus", true) !== false
@@ -29,7 +35,7 @@ Item {
     readonly property real zoomStep: Math.max(1.05, Number(root.setting("zoomStep", 1.15)))
     readonly property bool blurFix: true
     readonly property bool hideQuickactionsSetting: root.setting("hideQuickactions", true) !== false
-    readonly property bool hidesQuickactions: isHyprland && masterEnabled && anyActive && hideQuickactionsSetting
+    readonly property bool hidesQuickactions: supported && masterEnabled && anyActive && hideQuickactionsSetting
     readonly property int hlMs: 550
     readonly property var hlCurve: [0.3, 0.31, 0.17, 1.33, 1, 1]
     readonly property bool liquidSetting: root.setting("liquidGlass", true) !== false
@@ -353,7 +359,7 @@ Item {
     property var _zoomAnchor: null
 
     function zoomBy(factor) {
-        if (!isHyprland || !masterEnabled || !curActive || cameraLocked) return;
+        if (!supported || !masterEnabled || !curActive || cameraLocked) return;
         _zoomAcc *= factor;
         let now = Date.now();
         if (_zoomAnchor && now - _zoomAnchor.t < 500) { _zoomAnchor.t = now; zoomTimer.restart(); return; }
@@ -362,7 +368,7 @@ Item {
     }
 
     function zoomWheel(delta, px, py) {
-        if (!isHyprland || !masterEnabled || !curActive || cameraLocked) return;
+        if (!supported || !masterEnabled || !curActive || cameraLocked) return;
         _zoomAcc *= Math.exp(delta / 600);
         _zoomAnchor = { px: px, py: py, t: Date.now() };
         zoomTimer.restart();
@@ -388,7 +394,7 @@ Item {
     Timer { id: zoomTimer; interval: 24; repeat: false; onTriggered: root._zoomApply() }
 
     function toggleFit() {
-        if (!isHyprland || !masterEnabled) return;
+        if (!supported || !masterEnabled) return;
         _whenFresh(function() {
             if (!curActive) _activate(curWs);
             let w = worlds[curWs]; let mon = monFor(curWs);
@@ -413,7 +419,13 @@ Item {
         });
     }
 
+    function _swayId(addr) { return parseInt(String(addr).replace(/^0x/, ""), 16); }
+
     function focusAddr(addr) {
+        if (isSway) {
+            Quickshell.execDetached(["swaymsg", "[con_id=" + _swayId(addr) + "] focus"]);
+            return;
+        }
         Hyprland.dispatch("hl.dsp.focus({ window = \"" + _selector(addr) + "\" })");
     }
 
@@ -430,13 +442,14 @@ Item {
     property double _navUntil: 0
 
     function focusDir(dir) {
-        if (!isHyprland) return;
+        if (!supported) return;
         let d = String(dir).toLowerCase();
         let hl = { left: "left", l: "left", right: "right", r: "right", up: "up", u: "up", down: "down", d: "down" }[d];
         if (!hl) return;
         let w = worlds[curWs]; let mon = monFor(curWs);
         if (!masterEnabled || !w || !w.active || !mon) {
-            Hyprland.dispatch("hl.dsp.focus({ direction = \"" + hl + "\" })");
+            if (isSway) Quickshell.execDetached(["swaymsg", "focus " + hl]);
+            else Hyprland.dispatch("hl.dsp.focus({ direction = \"" + hl + "\" })");
             return;
         }
         let z = w.z || 1;
@@ -616,14 +629,14 @@ Item {
 
     property var _queue: []
 
-    function _enqueue(lua) {
-        _queue.push(lua);
+    function _enqueue(cmd) {
+        _queue.push(cmd);
         _pump();
     }
 
     function _pump() {
         if (mover.running || _queue.length === 0) return;
-        mover.command = ["hyprctl", "eval", _queue.shift()];
+        mover.command = _queue.shift();
         mover.running = true;
     }
 
@@ -638,7 +651,7 @@ Item {
     function _noteSent(w) { _sentCam = { x: w.cx, y: w.cy, z: w.z || 1, ws: curWs }; _flushSeq++; }
 
     function _needAbsorb() {
-        if (!isHyprland) return false;
+        if (!supported) return false;
         if (absorber.running) return !_absorbReplied;
         let now = Date.now();
         if (now < _settleUntil) return false;
@@ -657,7 +670,7 @@ Item {
     }
 
     function prepare() {
-        if (!isHyprland || !masterEnabled || !curActive) return;
+        if (!supported || !masterEnabled || !curActive) return;
         if (_needAbsorb()) _absorbThen(null);
         _preparedAt = Date.now();
     }
@@ -698,18 +711,66 @@ Item {
 
     Process {
         id: absorber
-        command: ["hyprctl", "-j", "clients"]
+        command: root.isSway ? ["python3", root.swayScript, "snapshot"] : ["hyprctl", "-j", "clients"]
         stdout: StdioCollector {
-            onStreamFinished: root._absorbDone(this.text)
+            onStreamFinished: root._absorbDone(root.isSway ? root._secondLine(this.text) : this.text)
         }
     }
 
+    function _secondLine(text) {
+        let lines = String(text).split("\n").filter(function(l) { return l.trim().length > 0; });
+        return lines.length > 1 ? lines[1] : "[]";
+    }
+
+    // One move descriptor; the backend turns a list of them into a single compositor command.
     function _sendItem(a, e, w, mon, withSize) {
         let p = _screenPos(w, e, mon);
-        if (!withSize) return "{\"" + a + "\"," + p[0] + "," + p[1] + "}";
-        let k = _k(w);
-        return "{\"" + a + "\"," + p[0] + "," + p[1] + "," + Math.max(60, Math.round(e.w * k)) + "," + Math.max(40, Math.round(e.h * k)) + "}";
+        let d = { a: a, x: p[0], y: p[1], fl: 0 };
+        if (withSize) {
+            let k = _k(w);
+            d.w = Math.max(60, Math.round(e.w * k));
+            d.h = Math.max(40, Math.round(e.h * k));
+        }
+        return d;
     }
+
+    function _swayMoveCmd(items) {
+        let cmds = [];
+        for (let i = 0; i < items.length; i++) {
+            let d = items[i];
+            let sel = "[con_id=" + _swayId(d.a) + "]";
+            if (d.fl === 1) cmds.push(sel + " floating enable");
+            if (d.w !== undefined) cmds.push(sel + " resize set width " + d.w + " px height " + d.h + " px");
+            cmds.push(sel + " move absolute position " + d.x + " px " + d.y + " px");
+        }
+        return ["swaymsg", cmds.join("; ")];
+    }
+
+    function _hyprMoveCmd(items) {
+        let parts = [];
+        for (let i = 0; i < items.length; i++) {
+            let d = items[i];
+            parts.push(d.w !== undefined ? "{\"" + d.a + "\"," + d.x + "," + d.y + "," + d.w + "," + d.h + "}"
+                                         : "{\"" + d.a + "\"," + d.x + "," + d.y + "}");
+        }
+        return ["hyprctl", "eval", "for _,v in ipairs({" + parts.join(",") + "}) do " + _sendLua + " end"];
+    }
+
+    function _hyprGeomCmd(items) {
+        let parts = [];
+        for (let i = 0; i < items.length; i++) {
+            let d = items[i];
+            parts.push("{\"" + d.a + "\"," + d.x + "," + d.y + "," + d.w + "," + d.h + "," + d.fl + "}");
+        }
+        let lua = "for _,v in ipairs({" + parts.join(",") + "}) do local s=\"address:\"..v[1] " +
+                  "if v[6]==1 then hl.dispatch(hl.dsp.window.float({action=\"toggle\",window=s})) end " +
+                  "hl.dispatch(hl.dsp.window.resize({x=v[4],y=v[5],window=s})) " +
+                  "hl.dispatch(hl.dsp.window.move({x=v[2],y=v[3],window=s})) end";
+        return ["hyprctl", "eval", lua];
+    }
+
+    function _moveCmd(items) { return isSway ? _swayMoveCmd(items) : _hyprMoveCmd(items); }
+    function _geomCmd(items) { return isSway ? _swayMoveCmd(items) : _hyprGeomCmd(items); }
     readonly property string _sendLua: "local s=\"address:\"..v[1] if v[4] then hl.dispatch(hl.dsp.window.resize({x=v[4],y=v[5],window=s})) end hl.dispatch(hl.dsp.window.move({x=v[2],y=v[3],window=s}))"
 
     function _flush() {
@@ -740,8 +801,7 @@ Item {
         _settleUntil = Date.now() + settleMs + 200;
         _focusGateUntil = Date.now() + settleMs + 300;
         _dirty = false;
-        let lua = "for _,v in ipairs({" + items.join(",") + "}) do " + _sendLua + " end";
-        mover.command = ["hyprctl", "eval", lua];
+        mover.command = _moveCmd(items);
         mover.running = true;
     }
 
@@ -765,8 +825,7 @@ Item {
             items.push(_sendItem(a, e, w, mon, withSize));
         }
         if (items.length === 0) return;
-        let lua = "for _,v in ipairs({" + items.join(",") + "}) do " + _sendLua + " end";
-        _enqueue(lua);
+        _enqueue(_moveCmd(items));
     }
 
     function _applyGeometry(addrs, ws) {
@@ -781,16 +840,12 @@ Item {
             let p = _screenPos(w, e, mon);
             let fl = e.needFloat ? 1 : 0;
             if (e.needFloat) { e.needFloat = false; e.floatUntil = now + 1500; }
-            items.push("{\"" + addrs[i] + "\"," + p[0] + "," + p[1] + "," + Math.max(60, Math.round(e.w * _k(w))) + "," + Math.max(40, Math.round(e.h * _k(w))) + "," + fl + "}");
+            items.push({ a: addrs[i], x: p[0], y: p[1], w: Math.max(60, Math.round(e.w * _k(w))), h: Math.max(40, Math.round(e.h * _k(w))), fl: fl });
         }
         if (items.length === 0) return;
         if (id === curWs) { _noteSent(w); _lastAbsorb = now; } else _flushSeq++;
         _settleUntil = now + settleMs + 400;
-        let lua = "for _,v in ipairs({" + items.join(",") + "}) do local s=\"address:\"..v[1] " +
-                  "if v[6]==1 then hl.dispatch(hl.dsp.window.float({action=\"toggle\",window=s})) end " +
-                  "hl.dispatch(hl.dsp.window.resize({x=v[4],y=v[5],window=s})) " +
-                  "hl.dispatch(hl.dsp.window.move({x=v[2],y=v[3],window=s})) end";
-        _enqueue(lua);
+        _enqueue(_geomCmd(items));
     }
 
     property bool _debugOn: false
@@ -874,7 +929,7 @@ Item {
 
     Process {
         id: snapProbe
-        command: ["hyprctl", "-j", "cursorpos"]
+        command: root.cursorCmd
         stdout: StdioCollector {
             onStreamFinished: root._snapProbeDone(this.text)
         }
@@ -939,6 +994,10 @@ Item {
     }
 
     function _toggleFloat(addr) {
+        if (isSway) {
+            Quickshell.execDetached(["swaymsg", "[con_id=" + _swayId(addr) + "] floating toggle"]);
+            return;
+        }
         Hyprland.dispatch("hl.dsp.window.float({ action = \"toggle\", window = \"" + _selector(addr) + "\" })");
     }
 
@@ -1154,14 +1213,14 @@ Item {
     }
 
     function refresh() {
-        if (!isHyprland || !masterEnabled) return;
+        if (!supported || !masterEnabled) return;
         if (reader.running) { _again = true; return; }
         reader.running = true;
     }
     property bool _again: false
 
     function _whenFresh(fn) {
-        if (!isHyprland || !masterEnabled) return;
+        if (!supported || !masterEnabled) return;
         _pendingFn = fn;
         refresh();
     }
@@ -1197,6 +1256,7 @@ Item {
                       ws: m.activeWorkspace ? m.activeWorkspace.id : -1, focused: !!m.focused });
         }
         monitors = ml;
+        if (isSway) { globalMoveCoords = true; _verified = true; }
         _clients = cls.filter(function(c) {
             return c.mapped !== false && !c.hidden && c.workspace && c.workspace.id > 0;
         });
@@ -1238,7 +1298,7 @@ Item {
     }
 
     onAllWorkspacesChanged: {
-        if (!isHyprland || !masterEnabled) return;
+        if (!supported || !masterEnabled) return;
         if (allWorkspaces) {
             _userOff = ({});
             _whenFresh(function() { _autoActivate(); });
@@ -1400,7 +1460,7 @@ Item {
 
     Process {
         id: focusCursorProc
-        command: ["hyprctl", "-j", "cursorpos"]
+        command: root.cursorCmd
         stdout: StdioCollector {
             onStreamFinished: root._focusCursorDone(this.text)
         }
@@ -1457,7 +1517,7 @@ Item {
 
     Process {
         id: cursorProc
-        command: ["hyprctl", "-j", "cursorpos"]
+        command: root.cursorCmd
         stdout: StdioCollector {
             onStreamFinished: root._applyCursor(this.text)
         }
@@ -1500,7 +1560,7 @@ Item {
     Timer {
         interval: 15000
         repeat: true
-        running: root.isHyprland && root.masterEnabled && root.anyActive
+        running: root.supported && root.masterEnabled && root.anyActive
         onTriggered: if (!root._fast && !root.animating && !root._compAnim && !mover.running) root.refresh()
     }
 
@@ -1514,7 +1574,8 @@ Item {
 
     Process {
         id: reader
-        command: ["bash", "-c", "hyprctl -j monitors | tr -d '\\n'; echo; hyprctl -j clients | tr -d '\\n'; echo"]
+        command: root.isSway ? ["python3", root.swayScript, "snapshot"]
+                             : ["bash", "-c", "hyprctl -j monitors | tr -d '\\n'; echo; hyprctl -j clients | tr -d '\\n'; echo"]
         stdout: StdioCollector {
             onStreamFinished: root._onSnapshot(this.text)
         }
@@ -1558,6 +1619,39 @@ Item {
         }
     }
 
+    // Sway: one subscription replaces Hyprland's raw event stream.
+    function _onSwayEvent(line) {
+        if (!masterEnabled) return;
+        let ev = null;
+        try { ev = JSON.parse(line); } catch (e) { return; }
+        if (!ev) return;
+        if (ev.container !== undefined && ev.container !== null) {
+            let ch = ev.change;
+            if (ch === "focus") {
+                _onActiveWindow("0x" + Number(ev.container.id).toString(16));
+                return;
+            }
+            if (!_loaded) return;
+            if (ch === "move" && Date.now() < _settleUntil) return;
+            if (ch === "new" || ch === "close" || ch === "move" || ch === "floating" || ch === "fullscreen_mode")
+                eventTimer.restart();
+            return;
+        }
+        if (_loaded) eventTimer.restart();
+    }
+
+    Process {
+        id: swayEvents
+        running: root.isSway && root.masterEnabled
+        command: ["swaymsg", "-t", "subscribe", "-m", "[\"window\",\"workspace\",\"output\"]"]
+        stdout: SplitParser {
+            onRead: data => root._onSwayEvent(data)
+        }
+        onExited: if (root.isSway && root.masterEnabled) swayRestart.restart()
+    }
+
+    Timer { id: swayRestart; interval: 1500; repeat: false; onTriggered: { swayEvents.running = false; swayEvents.running = true; } }
+
     IpcHandler {
         target: "canvas"
 
@@ -1584,6 +1678,7 @@ Item {
         function status(): string {
             let w = root.curWorld;
             return JSON.stringify({
+                backend: root.backend,
                 workspace: root.curWs,
                 monitor: root.curMon,
                 active: root.curActive,

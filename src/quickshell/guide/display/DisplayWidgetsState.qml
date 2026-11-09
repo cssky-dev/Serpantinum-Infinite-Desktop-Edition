@@ -374,26 +374,6 @@ GuideTab {
     // One click: every widget of BOTH layouts (Tiled and Infinite desktop) on every screen.
     // The live loaders are cleared first, then every saved layout file of every screen is
     // emptied, so nothing comes back after Super+G or a workspace switch.
-    property bool confirmDeleteAll: false
-
-    Timer {
-        id: confirmDeleteAllTimer
-        interval: 3000
-        repeat: false
-        onTriggered: displayWidgetsRoot.confirmDeleteAll = false
-    }
-
-    function requestDeleteAll() {
-        if (!displayWidgetsRoot.confirmDeleteAll) {
-            displayWidgetsRoot.confirmDeleteAll = true;
-            confirmDeleteAllTimer.restart();
-            return;
-        }
-        confirmDeleteAllTimer.stop();
-        displayWidgetsRoot.confirmDeleteAll = false;
-        displayWidgetsRoot.removeAllWidgets();
-    }
-
     function removeAllWidgets() {
         let m = {};
         for (let i = 0; i < monitorsList.length; i++) {

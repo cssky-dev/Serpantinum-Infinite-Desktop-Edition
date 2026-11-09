@@ -4,7 +4,7 @@ import "../"
 
 Scope {
     Loader {
-        active: CanvasEngine.isHyprland && CanvasEngine.masterEnabled
+        active: CanvasEngine.supported && CanvasEngine.masterEnabled
         sourceComponent: Scope {
             CanvasBackdrop {}
         }

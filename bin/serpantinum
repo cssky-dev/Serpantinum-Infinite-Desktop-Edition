@@ -94,7 +94,7 @@ show_help() {
     echo "  launch <target> [args...]   $(t "cli.launch_desc")"
     echo "  settings [tab]               $(t "cli.settings_desc")"
     echo "  msg <action|workspace> ...  $(t "cli.msg_desc")"
-    echo "  canvas <action> [args]       Infinite desktop (Hyprland): toggle, overview, zoomIn, zoomOut, panBy, panPage, home, tidy, markSet, markGo, status"
+    echo "  canvas <action> [args]       Infinite desktop (Hyprland, Sway): toggle, overview, zoomIn, zoomOut, panBy, panPage, home, tidy, markSet, markGo, status"
     echo "  ipc ...                      $(t "cli.ipc_desc")"
     echo "  kill                         $(t "cli.kill_desc")"
     echo "  restart                      $(t "cli.restart_desc")"

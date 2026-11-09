@@ -418,7 +418,7 @@ GuideTab {
             // Notices: README information + AI disclosure (plain text, no icons)
             Repeater {
                 model: [
-                    { title: I18n.t("guide.about.notice.info_title", "Information"), body: I18n.t("guide.about.notice.info_body", "A Wayland desktop shell with an endless, zoomable canvas for your windows and widgets. Built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop currently supports Hyprland only.") },
+                    { title: I18n.t("guide.about.notice.info_title", "Information"), body: I18n.t("guide.about.notice.info_body2", "A Wayland desktop shell with an endless, zoomable canvas for your windows and widgets. Built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop supports Hyprland and Sway.") },
                     { title: I18n.t("guide.about.notice.ai_title", "Vibecoded with Claude"), body: I18n.t("guide.about.notice.ai_body", "This project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check the README and the docs instead.") }
                 ]
 

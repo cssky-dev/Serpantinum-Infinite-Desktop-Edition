@@ -7,18 +7,18 @@ Rectangle {
     id: strip
 
     required property var tab
-    visible: strip.on || !CanvasEngine.isHyprland
+    visible: strip.on || !CanvasEngine.supported
     function s(v) { return strip.tab.rootObj ? strip.tab.rootObj.s(v) : v; }
 
-    readonly property bool available: CanvasEngine.isHyprland && CanvasEngine.masterEnabled
+    readonly property bool available: CanvasEngine.supported && CanvasEngine.masterEnabled
     readonly property bool on: strip.available && CanvasEngine.curActive
     readonly property int windows: {
         let r = CanvasEngine.rev;
         let w = CanvasEngine.curWorld;
         return (w && w.wins) ? Object.keys(w.wins).length : 0;
     }
-    readonly property string headline: !CanvasEngine.isHyprland
-        ? strip.tab.tr("guide.desktop.status.unsupported", "Hyprland only")
+    readonly property string headline: !CanvasEngine.supported
+        ? strip.tab.tr("guide.desktop.status.unsupported2", "Hyprland and Sway only")
         : (!CanvasEngine.masterEnabled
             ? strip.tab.tr("guide.desktop.status.off", "Infinite desktop is off")
             : (strip.on ? strip.tab.tr("guide.desktop.status.canvas", "Infinite desktop") : strip.tab.tr("guide.desktop.status.tiled", "Tiled")))

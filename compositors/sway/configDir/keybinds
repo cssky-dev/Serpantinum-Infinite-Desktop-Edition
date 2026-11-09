@@ -38,10 +38,14 @@ bindsym $mod+V exec serpantinum msg toggle volume
 bindsym $mod+H exec serpantinum msg toggle settings
 bindsym $mod+A exec serpantinum msg bar autohide
 
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
-bindsym $mod+Up workspace prev
-bindsym $mod+Down workspace next
+# Arrow keys move focus. With the Infinite desktop on, the camera follows; otherwise they
+# fall back to the normal Sway focus. Workspaces: $mod+Alt+Up / Down.
+bindsym $mod+Left exec serpantinum canvas focus left
+bindsym $mod+Right exec serpantinum canvas focus right
+bindsym $mod+Up exec serpantinum canvas focus up
+bindsym $mod+Down exec serpantinum canvas focus down
+bindsym $mod+Alt+Up workspace prev
+bindsym $mod+Alt+Down workspace next
 
 bindsym $mod+Ctrl+Left move left
 bindsym $mod+Ctrl+Right move right
@@ -74,3 +78,43 @@ bindsym $mod+Shift+7 exec serpantinum msg workspace 7 move
 bindsym $mod+Shift+8 exec serpantinum msg workspace 8 move
 bindsym $mod+Shift+9 exec serpantinum msg workspace 9 move
 bindsym $mod+Shift+0 exec serpantinum msg workspace 10 move
+
+# Infinite desktop
+bindsym $mod+G exec serpantinum canvas toggle
+bindsym $mod+Tab exec serpantinum canvas overview
+bindsym $mod+Home exec serpantinum canvas home
+bindsym $mod+Shift+T exec serpantinum canvas tidy
+bindsym $mod+equal exec serpantinum canvas zoomIn
+bindsym $mod+minus exec serpantinum canvas zoomOut
+bindsym $mod+Shift+BackSpace exec serpantinum canvas zoomReset
+bindsym --whole-window $mod+button4 exec serpantinum canvas zoomIn
+bindsym --whole-window $mod+button5 exec serpantinum canvas zoomOut
+
+bindsym $mod+Prior exec serpantinum canvas panPage 0 -1
+bindsym $mod+Next exec serpantinum canvas panPage 0 1
+bindsym $mod+Alt+Left exec serpantinum canvas panPage -1 0
+bindsym $mod+Alt+Right exec serpantinum canvas panPage 1 0
+
+bindsym --whole-window $mod+Ctrl+button5 exec serpantinum canvas panBy 0 160
+bindsym --whole-window $mod+Ctrl+button4 exec serpantinum canvas panBy 0 -160
+bindsym --whole-window $mod+Ctrl+Shift+button5 exec serpantinum canvas panBy 160 0
+bindsym --whole-window $mod+Ctrl+Shift+button4 exec serpantinum canvas panBy -160 0
+
+bindsym $mod+Alt+1 exec serpantinum canvas markGo 1
+bindsym $mod+Alt+Shift+1 exec serpantinum canvas markSet 1
+bindsym $mod+Alt+2 exec serpantinum canvas markGo 2
+bindsym $mod+Alt+Shift+2 exec serpantinum canvas markSet 2
+bindsym $mod+Alt+3 exec serpantinum canvas markGo 3
+bindsym $mod+Alt+Shift+3 exec serpantinum canvas markSet 3
+bindsym $mod+Alt+4 exec serpantinum canvas markGo 4
+bindsym $mod+Alt+Shift+4 exec serpantinum canvas markSet 4
+bindsym $mod+Alt+5 exec serpantinum canvas markGo 5
+bindsym $mod+Alt+Shift+5 exec serpantinum canvas markSet 5
+bindsym $mod+Alt+6 exec serpantinum canvas markGo 6
+bindsym $mod+Alt+Shift+6 exec serpantinum canvas markSet 6
+bindsym $mod+Alt+7 exec serpantinum canvas markGo 7
+bindsym $mod+Alt+Shift+7 exec serpantinum canvas markSet 7
+bindsym $mod+Alt+8 exec serpantinum canvas markGo 8
+bindsym $mod+Alt+Shift+8 exec serpantinum canvas markSet 8
+bindsym $mod+Alt+9 exec serpantinum canvas markGo 9
+bindsym $mod+Alt+Shift+9 exec serpantinum canvas markSet 9

@@ -3,6 +3,21 @@
 All notable changes to Serpantinum Infinite Desktop are listed here.
 Newest first. Versions follow `version.txt`.
 
+## 2.4.5
+
+### Added
+- **Sway support for the Infinite desktop.** The canvas engine now drives Sway through its IPC (`swaymsg`), with Super+G, zoom, pan, overview, tidy and marks wired into the default Sway config. The widget redactor snaps to apps on Sway as well.
+- `src/scripts/canvas/sway.py`: small helper that translates Sway's tree and outputs for the canvas engine.
+
+### Changed
+- **Delete all widgets** is now a single click: the "Click again to confirm" step and the trash icon were removed from the row.
+- The guide settings panel keeps its dragged position when the layout recalculates, so it stays where you put it while the Infinite desktop moves.
+- "Hyprland only" labels in the Desktop tab now read "Hyprland and Sway only".
+
+### Notes
+- Sway has no cursor-position query, so zoom on Sway is anchored to the centre of the focused output.
+- On multi-monitor Sway setups, floating windows that leave their output are handed to the neighbouring output by Sway itself; the Infinite desktop works best with one canvas monitor.
+
 ## 2.4.4
 
 ### Added

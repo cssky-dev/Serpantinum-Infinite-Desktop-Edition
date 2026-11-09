@@ -341,16 +341,16 @@ Scope {
 
                     Process {
                         id: liveClientsProc
-                        command: ["hyprctl", "-j", "clients"]
+                        command: (typeof CanvasEngine !== "undefined" && CanvasEngine.isSway) ? ["python3", CanvasEngine.swayScript, "snapshot"] : ["hyprctl", "-j", "clients"]
                         stdout: StdioCollector {
-                            onStreamFinished: redactorMode.applyLiveClients(this.text)
+                            onStreamFinished: redactorMode.applyLiveClients((typeof CanvasEngine !== "undefined" && CanvasEngine.isSway) ? CanvasEngine._secondLine(this.text) : this.text)
                         }
                     }
 
                     Timer {
                         id: liveClientsTimer
                         repeat: true
-                        running: redactorMode.canvasMode && redactorMode.appSnap && typeof CanvasEngine !== "undefined" && CanvasEngine.isHyprland
+                        running: redactorMode.canvasMode && redactorMode.appSnap && typeof CanvasEngine !== "undefined" && CanvasEngine.supported
                         interval: 45
                         onTriggered: {
                             liveClientsTimer.interval = (Date.now() - redactorMode.liveMovedAt < 900) ? 45 : 350;
@@ -448,7 +448,15 @@ Scope {
                         function onAnyActiveChanged() { redactorMode.syncCanvasMode(); }
                     }
 
-                    readonly property var wsMonitor: (typeof CanvasEngine !== "undefined" && CanvasEngine.isHyprland && redactorWindow.targetScreen) ? Hyprland.monitorFor(redactorWindow.targetScreen) : null
+                    readonly property var wsMonitor: {
+                        if (typeof CanvasEngine === "undefined" || !redactorWindow.targetScreen) return null;
+                        if (CanvasEngine.isSway) {
+                            let sm = CanvasEngine.monitors;
+                            let m = CanvasEngine.monByName(redactorWindow.targetScreen.name);
+                            return (m && sm) ? { activeWorkspace: { id: m.ws } } : null;
+                        }
+                        return CanvasEngine.isHyprland ? Hyprland.monitorFor(redactorWindow.targetScreen) : null;
+                    }
                     readonly property int liveWs: {
                         let m = redactorMode.wsMonitor;
                         if (m && m.activeWorkspace) return m.activeWorkspace.id;
@@ -491,7 +499,7 @@ Scope {
                     }
 
                     function wsEngineReady() {
-                        if (typeof CanvasEngine === "undefined" || !CanvasEngine.isHyprland) return true;
+                        if (typeof CanvasEngine === "undefined" || !CanvasEngine.supported) return true;
                         let m = CanvasEngine.monByName(redactorWindow.monitorName);
                         return !!m && m.ws === redactorMode.wsTarget;
                     }

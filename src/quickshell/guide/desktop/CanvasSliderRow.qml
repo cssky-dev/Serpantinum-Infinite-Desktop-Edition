@@ -20,8 +20,8 @@ SettingsRow {
 
     rootObj: row.tab.rootObj
     verticalPadding: row.s(11)
-    hiddenByConfig: !CanvasEngine.isHyprland || !CanvasEngine.masterEnabled || row.hideWhen
-    unavailableReason: !CanvasEngine.isHyprland ? row.tab.tr("guide.desktop.hyprlandonly", "Hyprland only") : ""
+    hiddenByConfig: !CanvasEngine.supported || !CanvasEngine.masterEnabled || row.hideWhen
+    unavailableReason: !CanvasEngine.supported ? row.tab.tr("guide.desktop.supported_only", "Hyprland and Sway only") : ""
 
     Draggable {
         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter

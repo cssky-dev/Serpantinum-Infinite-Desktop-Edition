@@ -27,8 +27,8 @@ GuideTab {
         desktopTabRoot.setCanvasMany(v);
     }
 
-    readonly property bool hypr: CanvasEngine.isHyprland
-    readonly property bool desktopOn: CanvasEngine.isHyprland && CanvasEngine.masterEnabled
+    readonly property bool hypr: CanvasEngine.supported
+    readonly property bool desktopOn: CanvasEngine.supported && CanvasEngine.masterEnabled
 
     Flickable {
         id: desktopFlick

@@ -100,7 +100,6 @@ DisplayWidgetsState {
             SettingsRow {
                 rootObj: displayWidgetsRoot.rootObj
                 settingId: "widgets_delete_all"
-                icon: "󰆴"
                 title: displayWidgetsRoot.tr("guide.display.widgets.delete_all.title", "Delete all widgets")
                 description: displayWidgetsRoot.tr("guide.display.widgets.delete_all.desc", "Removes every widget from both Tiled and Infinite desktop on every workspace and screen")
                 searchKeywords: "widgets delete remove clear all reset tiled infinite desktop"
@@ -111,13 +110,11 @@ DisplayWidgetsState {
                     implicitHeight: rootObj.s(32)
                     horizontalPadding: rootObj.s(14)
                     cornerRadius: ThemeBackend.borderRadius
-                    buttonText: displayWidgetsRoot.confirmDeleteAll
-                        ? displayWidgetsRoot.tr("guide.display.widgets.delete_all.confirm", "Click again to confirm")
-                        : displayWidgetsRoot.tr("guide.display.widgets.delete_all.button", "Delete all")
+                    buttonText: displayWidgetsRoot.tr("guide.display.widgets.delete_all.button", "Delete all")
                     textFontSize: rootObj.s(12)
-                    accentColor: displayWidgetsRoot.confirmDeleteAll ? ThemeBackend.red : ThemeBackend.surface0
-                    textColor: displayWidgetsRoot.confirmDeleteAll ? ThemeBackend.crust : ThemeBackend.text
-                    onClicked: displayWidgetsRoot.requestDeleteAll()
+                    accentColor: ThemeBackend.surface0
+                    textColor: ThemeBackend.text
+                    onClicked: displayWidgetsRoot.removeAllWidgets()
                 }
             }
 
