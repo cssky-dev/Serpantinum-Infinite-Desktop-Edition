@@ -402,6 +402,29 @@ PanelWindow {
 
     property var widgetCache: ({})
     property var componentCache: ({})
+    property var cacheLastUsed: ({})
+
+    function evictIdleWidgets(maxIdleMs) {
+        let now = Date.now();
+        for (let name in widgetCache) {
+            let item = widgetCache[name];
+            if (!item) { delete widgetCache[name]; continue; }
+            if (item.visible || name === currentActive) continue;
+            if ((now - (cacheLastUsed[name] || 0)) < maxIdleMs) continue;
+            if (widgetStack.currentItem === item) widgetStack.clear(StackView.Immediate);
+            delete widgetCache[name];
+            delete cacheLastUsed[name];
+            item.destroy();
+        }
+    }
+
+    Timer {
+        id: cacheEvictTimer
+        interval: 30000
+        repeat: true
+        running: !masterWindow.isVisible && masterWindow.currentActive === "hidden" && !masterWindow.standaloneOpen
+        onTriggered: masterWindow.evictIdleWidgets(45000)
+    }
 
     function widgetNameForItem(item) {
         for (let name in widgetCache) {
@@ -455,14 +478,6 @@ PanelWindow {
     Component.onCompleted: {
         applyConfigSettings();
         reportWidgetState();
-        Qt.callLater(function() {
-            if (masterWindow.currentActive === "hidden") {
-                let t = masterWindow.getLayout("guide");
-                if (t) masterWindow.ensureWidgetItem("guide", t);
-                let w = masterWindow.getLayout("wallpaper");
-                if (w) masterWindow.ensureWidgetItem("wallpaper", w);
-            }
-        });
     }
 
     Component.onDestruction: {
@@ -872,6 +887,7 @@ PanelWindow {
             }
         }
         cachedItem.visible = true;
+        cacheLastUsed[newWidget] = Date.now();
 
         masterWindow.isVisible = true;
 

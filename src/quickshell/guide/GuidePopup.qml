@@ -806,7 +806,7 @@ Item {
 
     Timer {
         id: tabReleaseTimer
-        interval: 600000
+        interval: 20000
         repeat: false
         onTriggered: {
             if (root.visible) return;
@@ -819,7 +819,6 @@ Item {
     onVisibleChanged: {
         if (visible) {
             tabReleaseTimer.stop();
-            searchIndexStartTimer.restart();
         } else {
             tabReleaseTimer.restart();
             searchIndexStartTimer.stop();
@@ -851,7 +850,6 @@ Item {
 
     Component.onCompleted: {
         if (visible) {
-            searchIndexStartTimer.restart();
             forceActiveFocus();
             focusTimer.restart();
             resetAndPlayIntro();

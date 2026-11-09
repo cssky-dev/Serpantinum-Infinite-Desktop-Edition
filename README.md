@@ -1,31 +1,57 @@
 <div align="center">
   <img src="docs/assets/banner.png" alt="Serpantinum Infinite Desktop Edition" width="850" />
 
-  <p><b>Your favourite desktop is way customized for YOU.</b></p>
+  <h3>Your favourite desktop, customized for <i>you</i>.</h3>
 
   <p>
     A Wayland shell built on <a href="https://quickshell.org">Quickshell</a>, based on ilyamiro's
-    <a href="https://github.com/ilyamiro/serpantinum">Serpantinum</a>,
-    with an endless zoomable desktop for <b>Hyprland</b> and <b>Sway</b>.
+    <a href="https://github.com/ilyamiro/serpantinum">Serpantinum</a>,<br />
+    with an endless, zoomable desktop for <b>Hyprland</b> and <b>Sway</b>.
   </p>
 
   <p>
-    <a href="#installation">Install</a> ·
-    <a href="#infinite-desktop">Infinite desktop</a> ·
-    <a href="#supported-compositors">Compositors</a> ·
-    <a href="#running">Running</a> ·
-    <a href="#cli">CLI</a> ·
-    <a href="./CHANGELOG.md">Changelog</a>
+    <img alt="version" src="https://img.shields.io/badge/version-2.4.5-7c5cff?style=for-the-badge" />
+    <img alt="quickshell" src="https://img.shields.io/badge/Quickshell-Qt%20Quick-1f6feb?style=for-the-badge" />
+    <img alt="license" src="https://img.shields.io/badge/license-GPLv3-2ea043?style=for-the-badge" />
+  </p>
+
+  <p>
+    <img alt="Hyprland" src="docs/assets/logos/hyprland.png" height="26" />&nbsp;&nbsp;
+    <img alt="Sway" src="docs/assets/logos/sway.png" height="26" />&nbsp;&nbsp;
+    <img alt="Niri" src="docs/assets/logos/niri.png" height="26" />&nbsp;&nbsp;
+    <img alt="Arch" src="docs/assets/logos/arch.png" height="26" />&nbsp;&nbsp;
+    <img alt="NixOS" src="docs/assets/logos/nixos.png" height="26" />
+  </p>
+
+  <p>
+    <a href="#-installation"><b>Install</b></a> &nbsp;•&nbsp;
+    <a href="#-infinite-desktop"><b>Infinite desktop</b></a> &nbsp;•&nbsp;
+    <a href="#-supported-compositors"><b>Compositors</b></a> &nbsp;•&nbsp;
+    <a href="#-running"><b>Running</b></a> &nbsp;•&nbsp;
+    <a href="#-cli"><b>CLI</b></a> &nbsp;•&nbsp;
+    <a href="./CHANGELOG.md"><b>Changelog</b></a>
   </p>
 </div>
 
 > [!NOTE]
-> **Information:** Serpantinum Infinite Desktop Edition is a Wayland desktop shell built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop supports Hyprland and Sway.
+> Serpantinum Infinite Desktop Edition is a Wayland desktop shell built on Quickshell and based on ilyamiro's Serpantinum. The infinite desktop supports Hyprland and Sway.
 
 > [!WARNING]
-> **Vibecoded with Claude:** this project is vibecoded with Claude. Don't trust the AI slop you see on social media about it - check this README and the docs instead.
+> **Vibecoded with Claude.** Don't trust the AI slop you see on social media about this project. Check this README and the docs instead.
 
-## Previews
+## ✨ At a glance
+
+| | |
+| :-- | :-- |
+| 🌌 **Infinite desktop** | One large canvas per workspace with animated pan, zoom, marks, tidy and overview |
+| 🧩 **Widget redactor** | Many widget styles, including Iridium variants and a Reminder widget |
+| 🪟 **Full shell** | Bar, dock, launcher, clipboard, notifications, system panel, calendar, media, network and volume |
+| 🔒 **Lockscreen** | Selectable animations and clock styles |
+| ⚙️ **Guide settings** | A panel or a standalone window, with a Desktop tab for infinite desktop options |
+| 🎨 **Theming** | Colors from your wallpaper, plus [app theming](./docs/configure/AppTheming.md) for GTK, Qt, terminals and editors |
+| 🪶 **Light on memory** | Settings tabs and panels are created on demand and released when idle |
+
+## 🖼️ Previews
 
 | | |
 |---|---|
@@ -34,7 +60,7 @@
 
 ---
 
-## Installation
+## 📦 Installation
 
 > [!TIP]
 > Full installation and configuration instructions live in the [docs](./docs/Overview.md).
@@ -71,13 +97,13 @@ See the [NixOS installation guide](./docs/installation/nixos/flake.md) for flake
 
 ---
 
-## Audio engine
+## 🔊 Audio engine
 
 The equalizer, balance, mono, channel swap, dynamic range modes and the dynamic EQ run on [serpantinum-audio](https://github.com/ilyamiro/serpantinum-audio), a small PipeWire processor that replaces EasyEffects. The installer and the packages install it, and on the first start after updating, Serpantinum hands your audio over from EasyEffects.
 
 ---
 
-## Supported compositors
+## 🧭 Supported compositors
 
 Hyprland, Niri, Sway and Mango. The installer detects the running compositor and deploys its configuration. On Fedora, Mango is installed from the Terra repository. On Void Linux, Hyprland is installed from the third-party black-hole.dev repository.
 
@@ -90,7 +116,7 @@ Hyprland, Niri, Sway and Mango. The installer detects the running compositor and
 
 ---
 
-## Running
+## 🚀 Running
 
 To run the shell, launch `serpantinumd start`
 
@@ -107,7 +133,7 @@ For configuration, see the [configuration guide](./docs/configure/Configure.md).
 
 ---
 
-## Infinite desktop
+## 🌌 Infinite desktop
 
 Windows and widgets sit on one large canvas per workspace instead of a fixed screen. Pan, zoom, jump to marks, tidy everything up or fit it all into view.
 
@@ -153,7 +179,7 @@ Things to know on Sway:
 
 ---
 
-## Widgets
+## 🧩 Widgets
 
 Open the widget redactor from the Widgets tab in guide settings, or with `serpantinum redactor`.
 
@@ -161,7 +187,7 @@ Open the widget redactor from the Widgets tab in guide settings, or with `serpan
 - **Delete all widgets** (Settings > Widgets) clears every widget from both modes on every workspace and screen with a single click.
 - Layouts live in `~/.local/state/serpantinum/widgets/`.
 
-## Settings
+## ⚙️ Settings
 
 ```bash
 serpantinum settings           # open settings
@@ -170,7 +196,11 @@ serpantinum settings theme     # open a specific tab
 
 In Settings > General, **Standalone Window** opens settings as its own window instead of the panel. In panel mode, drag the settings panel by its header (the "Settings" title) to move it anywhere on the screen. It keeps its position while the infinite desktop moves.
 
-## CLI
+### Memory use
+
+Guide settings tabs and cached panels (settings, wallpaper picker, system panel) are created when you open them. Settings tabs are released 20 seconds after you close settings, and idle panels are released after about 45 seconds. The first open after that takes a moment longer, and search in settings loads all tabs the first time you use it.
+
+## 💻 CLI
 
 ```bash
 serpantinum canvas toggle          # Tiled <-> Infinite desktop
@@ -188,17 +218,10 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 
 ---
 
-## Features
+## 🗂️ Repository layout
 
-- **Infinite desktop** on Hyprland and Sway with animated pan and zoom, marks, tidy and overview
-- **Widget redactor** with many widget styles, including Iridium variants and a Reminder widget
-- **Full shell**: bar, dock, launcher, clipboard, notifications, system panel, calendar, media, network and volume popouts
-- **Lockscreen** with selectable animations and clock styles
-- **Guide settings** as a panel or a standalone window, with a Desktop tab for infinite desktop options
-- **Theming** from the wallpaper palette, plus [app theming](./docs/configure/AppTheming.md) for GTK, Qt, terminals and editors
-- **Compositor configs** for Hyprland, Niri, Sway and Mango
-
-## Repository layout
+<details>
+<summary><b>Where things live</b></summary>
 
 | Path | Contents |
 | --- | --- |
@@ -211,7 +234,12 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 | `packaging/` | AUR PKGBUILDs |
 | `docs/` | Documentation |
 
-## Troubleshooting
+</details>
+
+## 🛠️ Troubleshooting
+
+<details>
+<summary><b>Common problems and fixes</b></summary>
 
 - **Installer command fails:** try the second install command, or download and run `install/install.sh` from this repository.
 - **Shell not running:** start it with `serpantinumd start`, or restart with `serpantinum restart`.
@@ -219,7 +247,9 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 - **Infinite desktop on Sway feels slow:** every camera step is one `swaymsg` call. Lower the animation time in Settings > Desktop.
 - **Widgets missing after a mode switch:** each mode has its own layout. Press `Super + G` to return to the mode where you made them.
 
-## Documentation
+</details>
+
+## 📚 Documentation
 
 - [Overview](./docs/Overview.md)
 - [Installation](./docs/installation/installation.md)
@@ -230,7 +260,7 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 
 ---
 
-## Credits
+## 💜 Credits
 
 * Based on [ilyamiro's Serpantinum](https://github.com/ilyamiro/serpantinum) for Wayland compositors, forked and extended by [cssky-dev](https://github.com/cssky-dev).
 * Special thanks to Darkall44/Qylock for providing a gorgeous material SDDM theme!
@@ -238,6 +268,6 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 
 ---
 
-## License
+## 📄 License
 
 This project is licensed under the GNU General Public License version 3. See the [LICENSE](LICENSE) file for the full license text.
