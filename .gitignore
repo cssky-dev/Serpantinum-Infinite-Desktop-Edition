@@ -1,0 +1,39 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+*.orig
+*.rej
+.idea/
+.vscode/
+.direnv/
+
+# Build and packaging output
+*.zip
+*.tar.gz
+*.pkg.tar.zst
+/result
+/result-*
+/pkg/
+/src-build/
+packaging/aur/*/src/
+packaging/aur/*/pkg/
+packaging/aur/*/*.tar.*
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Logs and local state (kept in ~/.local/state/serpantinum at runtime)
+*.log
+*.qmlc
+*.jsc
+.qmlls.ini
+
+# Local overrides and secrets
+.env
+.env.*
+*.local
