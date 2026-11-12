@@ -1,0 +1,4 @@
+DesktopSection 1.0 DesktopSection.qml
+DesktopStatus 1.0 DesktopStatus.qml
+CanvasToggleRow 1.0 CanvasToggleRow.qml
+CanvasSliderRow 1.0 CanvasSliderRow.qml
