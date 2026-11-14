@@ -39,19 +39,7 @@
 > [!WARNING]
 > **Vibecoded with Claude.** Don't trust the AI slop you see on social media about this project. Check this README and the docs instead.
 
-## ✨ At a glance
-
-| | |
-| :-- | :-- |
-| 🌌 **Infinite desktop** | One large canvas per workspace with animated pan, zoom, marks, tidy and overview |
-| 🧩 **Widget redactor** | Many widget styles, including Iridium variants and a Reminder widget |
-| 🪟 **Full shell** | Bar, dock, launcher, clipboard, notifications, system panel, calendar, media, network and volume |
-| 🔒 **Lockscreen** | Selectable animations and clock styles |
-| ⚙️ **Guide settings** | A panel or a standalone window, with a Desktop tab for infinite desktop options |
-| 🎨 **Theming** | Colors from your wallpaper, plus [app theming](./docs/configure/AppTheming.md) for GTK, Qt, terminals and editors |
-| 🪶 **Light on memory** | Settings tabs and panels are created on demand and released when idle |
-
-## 🖼️ Previews
+## Screenshots
 
 | | |
 |---|---|
@@ -60,7 +48,7 @@
 
 ---
 
-## 📦 Installation
+## Installation
 
 > [!TIP]
 > Full installation and configuration instructions live in the [docs](./docs/Overview.md).
@@ -97,13 +85,13 @@ See the [NixOS installation guide](./docs/installation/nixos/flake.md) for flake
 
 ---
 
-## 🔊 Audio engine
+## Audio engine
 
 The equalizer, balance, mono, channel swap, dynamic range modes and the dynamic EQ run on [serpantinum-audio](https://github.com/ilyamiro/serpantinum-audio), a small PipeWire processor that replaces EasyEffects. The installer and the packages install it, and on the first start after updating, Serpantinum hands your audio over from EasyEffects.
 
 ---
 
-## 🧭 Supported compositors
+## Supported compositors
 
 Hyprland, Niri, Sway and Mango. The installer detects the running compositor and deploys its configuration. On Fedora, Mango is installed from the Terra repository. On Void Linux, Hyprland is installed from the third-party black-hole.dev repository. On Gentoo, packages missing from the main tree are taken from the GURU overlay.
 
@@ -179,64 +167,7 @@ Things to know on Sway:
 
 ---
 
-## 🧩 Widgets
-
-Open the widget redactor from the Widgets tab in guide settings, or with `serpantinum redactor`.
-
-- Widgets are saved separately for Tiled and Infinite desktop.
-- **Delete all widgets** (Settings > Widgets) clears every widget from both modes on every workspace and screen with a single click.
-- Layouts live in `~/.local/state/serpantinum/widgets/`.
-
-## ⚙️ Settings
-
-```bash
-serpantinum settings           # open settings
-serpantinum settings theme     # open a specific tab
-```
-
-In Settings > General, **Standalone Window** opens settings as its own window instead of the panel. In panel mode, drag the settings panel by its header (the "Settings" title) to move it anywhere on the screen. It keeps its position while the infinite desktop moves.
-
-### Memory use
-
-Guide settings tabs and cached panels (settings, wallpaper picker, system panel) are created when you open them. Settings tabs are released 20 seconds after you close settings, and idle panels are released after about 45 seconds. The first open after that takes a moment longer, and search in settings loads all tabs the first time you use it.
-
-## 💻 CLI
-
-```bash
-serpantinum canvas toggle          # Tiled <-> Infinite desktop
-serpantinum canvas overview        # fit all windows
-serpantinum canvas zoomIn
-serpantinum canvas panBy 0 160
-serpantinum canvas markSet 1       # save a mark
-serpantinum canvas markGo 1        # jump to a mark
-serpantinum canvas status
-```
-
-Other canvas actions: `enable`, `disable`, `focus <dir>`, `fit`, `zoom <factor>`, `zoomOut`, `zoomReset`, `panPage`, `home`, `tidy`, `arrange <mode>`, `dump`.
-
-Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/cli/daemon.md).
-
----
-
-## 🗂️ Repository layout
-
-<details>
-<summary><b>Where things live</b></summary>
-
-| Path | Contents |
-| --- | --- |
-| `bin/` | `serpantinum` client and `serpantinumd` daemon |
-| `src/quickshell/` | Shell UI (QML); `canvas/` holds the infinite desktop |
-| `src/scripts/` | Helper scripts; `canvas/sway.py` is the Sway backend |
-| `compositors/` | Hyprland, Niri, Sway and Mango configs |
-| `install/` | Installer and tests |
-| `nix/`, `flake.nix` | Nix packages and modules |
-| `packaging/` | AUR PKGBUILDs |
-| `docs/` | Documentation |
-
-</details>
-
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 <details>
 <summary><b>Common problems and fixes</b></summary>
@@ -249,7 +180,7 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 
 </details>
 
-## 📚 Documentation
+## Documentation
 
 - [Overview](./docs/Overview.md)
 - [Installation](./docs/installation/installation.md)
@@ -260,7 +191,7 @@ Full command list: [client docs](./docs/cli/client.md) and [daemon docs](./docs/
 
 ---
 
-## 💜 Credits
+## Credits
 
 * Based on [ilyamiro's Serpantinum](https://github.com/ilyamiro/serpantinum) for Wayland compositors, forked by [cssky-dev](https://github.com/cssky-dev).
 
