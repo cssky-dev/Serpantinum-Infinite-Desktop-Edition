@@ -3,10 +3,6 @@
 
 ### 2.7.1
 - added(lock): video wallpaper support on the Padlock and Popwave lock screens (`.mp4`, `.mkv`, `.mov`, `.webm`, desktop wallpaper or custom lock background), like the Waved lock screen. Works with both prompt backgrounds: with "Wallpaper" the video blurs in under the frozen desktop fade, with "Desktop" the frozen still covers the video only during the intro, the login UI and the unlock.
-- fix(launcher): from the second open on, Esc, arrows and typing went to the window below. The surface stays mapped between presses and only `focusable` was toggled, so the compositor never gave the keyboard back. The launcher now takes exclusive keyboard focus on every open and releases it as it starts to close.
-- perf(canvas): Super+G acts on the cached window snapshot when no window event is pending, instead of first running `hyprctl` twice. `canvas enable` / `canvas disable` use the same path.
-- perf(cli): `serpantinum canvas ...` and the key-press guard start with fewer forks (no `dirname` subshells, no `mkdir` when the guard directory exists).
-- fix(shell): fixed all warnings Quickshell logged about itself.
 
 ### 2.6.6
 - fix(popups): first keypress did nothing and the second one worked. Dashboard (calendar & weather), Launcher, Clipboard and side-music popups closed themselves on every `Config.settingsLoaded` signal and on every bar position / style / launcher-edge change signal, and both fire spuriously (during the window's first property evaluation, and after every settings write). A settings reload now only refreshes the popup, and position / style changes close it only after it has settled (500 ms after creation).
