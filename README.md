@@ -104,7 +104,7 @@ Hyprland, Niri, Sway and Mango. The installer detects the running compositor and
 
 ---
 
-## 🚀 Running
+## Running
 
 To run the shell, launch `serpantinumd start`
 
@@ -121,7 +121,7 @@ For configuration, see the [configuration guide](./docs/configure/Configure.md).
 
 ---
 
-## 🌌 Infinite desktop
+## Infinite desktop
 
 Windows and widgets sit on one large canvas per workspace instead of a fixed screen. Pan, zoom, jump to marks, tidy everything up or fit it all into view.
 
