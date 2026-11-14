@@ -22,15 +22,6 @@
     <img alt="Arch" src="docs/assets/logos/arch.png" height="26" />&nbsp;&nbsp;
     <img alt="NixOS" src="docs/assets/logos/nixos.png" height="26" />
   </p>
-
-  <p>
-    <a href="#-installation"><b>Install</b></a> &nbsp;•&nbsp;
-    <a href="#-infinite-desktop"><b>Infinite desktop</b></a> &nbsp;•&nbsp;
-    <a href="#-supported-compositors"><b>Compositors</b></a> &nbsp;•&nbsp;
-    <a href="#-running"><b>Running</b></a> &nbsp;•&nbsp;
-    <a href="#-cli"><b>CLI</b></a> &nbsp;•&nbsp;
-    <a href="./CHANGELOG.md"><b>Changelog</b></a>
-  </p>
 </div>
 
 > [!NOTE]
