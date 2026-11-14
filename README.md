@@ -95,12 +95,7 @@ The equalizer, balance, mono, channel swap, dynamic range modes and the dynamic 
 
 Hyprland, Niri, Sway and Mango. The installer detects the running compositor and deploys its configuration. On Fedora, Mango is installed from the Terra repository. On Void Linux, Hyprland is installed from the third-party black-hole.dev repository. On Gentoo, packages missing from the main tree are taken from the GURU overlay.
 
-| Compositor | Shell | Infinite desktop | Config |
-| --- | :---: | :---: | --- |
-| Hyprland | ✅ | ✅ | [guide](./docs/configure/compositors/hyprland.md) |
-| Sway | ✅ | ✅ | [guide](./docs/configure/compositors/sway.md) |
-| Niri | ✅ | ❌ | [guide](./docs/configure/compositors/niri.md) |
-| Mango | ✅ | ❌ | [guide](./docs/configure/compositors/mango.md) |
+Infinite Desktop is only Hyprland and Sway only, Niri and Mango is not supported yet please go through the documentations 
 
 ---
 
@@ -197,6 +192,6 @@ Things to know on Sway:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the GNU General Public License version 3. See the [LICENSE](LICENSE) file for the full license text.
