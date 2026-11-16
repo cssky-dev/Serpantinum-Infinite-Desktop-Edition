@@ -94,12 +94,7 @@ The infinite desktop works on Hyprland and Sway only. Niri and Mango do not supp
 
 To run the shell, launch `serpantinumd start`
 
-```bash
-serpantinumd start             # start the shell daemon
-serpantinum settings           # open settings
-serpantinum msg toggle launcher
-serpantinum restart            # restart the shell
-```
+---
 
 Serpantinum is only a desktop shell. It does not manage your keybinds or monitors, so add the keybinds you want from the [compositor guides](#supported-compositors). The configs in [`compositors/hyprland`](./compositors/hyprland) and [`compositors/sway`](./compositors/sway) already include every infinite desktop bind.
 
@@ -116,6 +111,8 @@ Windows and widgets sit on one large canvas per workspace instead of a fixed scr
 - Each workspace restores its saved view when you return to it.
 - A newly opened app can center the desktop on itself (toggle **Apps switcher when opens** in Settings > Desktop).
 - Two zoom methods: resize every app and terminal, or sarods2d-style zoom.
+
+---
 
 ### Keybinds (Hyprland and Sway)
 
@@ -139,6 +136,8 @@ Windows and widgets sit on one large canvas per workspace instead of a fixed scr
 | `Super + Left mouse` / `Right mouse` | Drag / resize a window |
 
 On Sway, workspaces move to `Super + Alt + Up / Down` so the arrow keys can drive the canvas.
+
+---
 
 ### How it works on Sway
 
