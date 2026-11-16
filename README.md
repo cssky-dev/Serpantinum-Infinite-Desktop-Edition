@@ -54,13 +54,13 @@ For Arch-based distributions (including systemd, OpenRC, and other init systems)
 Use this installer:
 
 ```bash
-curl -fsSL https://raw.github.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/get.sh | bash
+curl -fsSL https://raw.github.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/master/install/get.sh | bash
 ```
 
 If this doesn't work, use:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/main/install/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/cssky-dev/Serpantinum-Infinite-Desktop-Edition/master/install/install.sh)"
 ```
 
 > [!NOTE]
@@ -87,22 +87,6 @@ The equalizer, balance, mono, channel swap, dynamic range modes and the dynamic 
 Hyprland, Niri, Sway and Mango. The installer detects the running compositor and deploys its configuration. On Fedora, Mango is installed from the Terra repository. On Void Linux, Hyprland is installed from the third-party black-hole.dev repository. On Gentoo, packages missing from the main tree are taken from the GURU overlay.
 
 The infinite desktop works on Hyprland and Sway only. Niri and Mango do not support it yet, see the [compositor docs](./docs/configure/Configure.md) for what they can do.
-
----
-
-## Without systemd
-
-Arch (Artix and others), Void, Gentoo and Fedora derivatives run on OpenRC, runit, dinit and s6 as well. When the installer finds no systemd it sets up the brightness service, a PipeWire session and the Bluetooth service itself, and starts the login screen at the end.
-
-The clipboard history works on every init system. `serpantinumd start` and the clipboard window run [`src/scripts/clipboard_watch.sh`](./src/scripts/clipboard_watch.sh), which records text and images with `wl-paste --watch cliphist store` and leaves recorders your compositor already started alone. It needs `wl-clipboard` and `cliphist`.
-
----
-
-## Languages
-
-The shell, the guide settings (including the Desktop tab) and the start screen are translated into 22 languages: Arabic, Azerbaijani, Bulgarian, German, Spanish, Persian, French, Hindi, Armenian, Indonesian, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Turkish, Ukrainian, Vietnamese, Chinese (Simplified) and Chinese (Traditional). English is the fallback. Pick one in Settings > General. Arabic and Persian use a right-to-left layout.
-
-The strings live in [`src/assets/languages`](./src/assets/languages), one JSON file per language.
 
 ---
 
