@@ -1,0 +1,7 @@
+include configDir/variables
+include configDir/input
+include configDir/output
+include configDir/layout
+include configDir/autostart
+include configDir/window-rules
+include configDir/keybinds

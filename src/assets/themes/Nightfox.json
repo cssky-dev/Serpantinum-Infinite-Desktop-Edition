@@ -1,0 +1,27 @@
+{
+  "name": "Nightfox",
+  "colors": {
+    "base": "#192330",
+    "mantle": "#131a24",
+    "crust": "#0f151d",
+    "text": "#cdcecf",
+    "subtext0": "#aeafb0",
+    "subtext1": "#c0c1c2",
+    "surface0": "#212e3f",
+    "surface1": "#29394f",
+    "surface2": "#39506d",
+    "overlay0": "#526175",
+    "overlay1": "#738091",
+    "overlay2": "#8a98ab",
+    "blue": "#719cd6",
+    "sapphire": "#63cdcf",
+    "peach": "#f4a261",
+    "green": "#81b29a",
+    "red": "#c94f6d",
+    "mauve": "#9d79d6",
+    "pink": "#d67ad2",
+    "yellow": "#dbc074",
+    "maroon": "#d16983",
+    "teal": "#7ad4d6"
+  }
+}

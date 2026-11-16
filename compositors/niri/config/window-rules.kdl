@@ -1,0 +1,4 @@
+window-rule {
+    match title="^Serpantinum Settings$"
+    open-floating true
+}

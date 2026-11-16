@@ -1,0 +1,1 @@
+for_window [title="^Serpantinum Settings$"] floating enable, resize set 1200 750, move position center
