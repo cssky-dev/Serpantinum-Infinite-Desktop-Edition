@@ -30,7 +30,7 @@
 > [!WARNING]
 > **Vibecoded with Claude.** Don't trust the AI slop you see on social media about this project. Check this README and the docs instead.
 
-## Screenshots
+## Previews
 
 | | |
 |---|---|
