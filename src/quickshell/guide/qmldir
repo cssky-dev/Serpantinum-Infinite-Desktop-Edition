@@ -1,0 +1,7 @@
+GuidePopup 1.0 GuidePopup.qml
+GuideSidebar 1.0 GuideSidebar.qml
+GuideSearchResults 1.0 GuideSearchResults.qml
+GuideContent 1.0 GuideContent.qml
+GuideTab 1.0 GuideTab.qml
+GuideStandaloneWindow 1.0 GuideStandaloneWindow.qml
+GuideStagger 1.0 GuideStagger.qml
